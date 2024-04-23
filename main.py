@@ -1,9 +1,9 @@
 
 from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
 
-name = input("Please enter your name: ")
+name = input("\nPlease enter your name: ")
 
-print(f"\nHello {name}, and welcome to Tom's Music Quiz!\n")
+print(f"\nHello {name}, and welcome to the Music Quiz!\n")
 print("Please ensure your audio settings are turned on and set to a moderate volume.\n")
 
 def menu():
