@@ -13,4 +13,23 @@ def menu():
     user_choice = input("\nPlease enter your selection: \n")
     return user_choice
 
-print(menu())
+choice = ""
+
+while choice != "5":
+    choice = menu()
+
+    if choice == "1":
+        print("1")
+    elif choice == "2":
+        print("2")
+    elif choice == "3":
+        print("3")
+    elif choice == "4":
+        print("4")
+    elif choice == "5":
+        print("5")
+    else: 
+        print("Please only input options shown above.")
+    
+
+print("Thanks for taking the quiz. I hope you enjoyed yourself!")
