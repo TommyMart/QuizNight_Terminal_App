@@ -1,5 +1,15 @@
+# System Packages
+import os.path
+import csv
+import random
 import time
+
+# External Packages
 from colorama import Fore, Style, Back
+
+# App functions
+
+# Function to calculate total points based on score and time
 
 def calculate_points(score, total_questions, total_time):
     # Score points: 50 points for each correct answer
@@ -14,9 +24,17 @@ def calculate_points(score, total_questions, total_time):
     
     return total_points
 
-def quiz(questions, options, answers):
+def quiz(questions, options, answers, topic_choice):
     start_time = time.time()
-    
+    file_name = "list.csv"
+
+    # If the file doesn't exist we must create it
+    # Add headings and then close it the file
+
+    if (not os.path.isfile(file_name)):
+        high_scores = open(file_name, "w")
+        high_scores.write("topic,score\n")
+        high_scores.close()
     
     score = 0
     guesses = []
@@ -59,5 +77,14 @@ def quiz(questions, options, answers):
     # Calculate total points based on score and time
     total_points = calculate_points(score, len(questions), total_time)
     print(f"Total points: {total_points}")
+    
+    with open(file_name, "a") as f:
+        writer = csv.writer(f)
+        writer.writerow([topic_choice, total_points])
 
     
+
+    
+
+# def scores_list(score, file_name):
+#     

@@ -1,6 +1,13 @@
-from quizzes import quiz
+# System Packages
+import os.path
+import csv
 import random
+
+# External Packages
 from colorama import Fore, Style, Back
+
+# App functions
+from quizzes import quiz
 
 def quiz_topics(rand_quiz=None):
     print("\nQUIZ TOPICS\n")
@@ -16,7 +23,7 @@ def quiz_topics(rand_quiz=None):
         topic_choice = input("\nPlease enter your selection: \n")
     else: 
         topic_choice = str(rand_quiz)
-        
+
 # Pop Quiz selected
 
     if topic_choice == "1": 
@@ -36,7 +43,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers)
+        quiz(questions, options, answers, topic_choice)
         
 # 70's Quiz Selected
 
@@ -56,7 +63,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers)
+        quiz(questions, options, answers, topic_choice)
 
 # 80s Quiz Selected 
 
@@ -76,7 +83,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers)
+        quiz(questions, options, answers, topic_choice)
 
     elif topic_choice == "4":
         questions = (("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
@@ -94,7 +101,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers)
+        quiz(questions, options, answers, topic_choice)
 
     elif topic_choice == "5":
         questions = (("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
@@ -112,7 +119,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers)
+        quiz(questions, options, answers, topic_choice)
 
     elif topic_choice == "6":
         return 
@@ -121,6 +128,8 @@ def quiz_topics(rand_quiz=None):
         quiz_topics()
             
 def top_scores(file_name):
+    file_name = "list.csv"
+
     with open(file_name, "r") as f:
         reader = csv.reader(f)
 
