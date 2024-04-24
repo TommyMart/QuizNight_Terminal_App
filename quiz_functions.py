@@ -11,11 +11,11 @@ from quizzes import quiz
 
 def quiz_topics(rand_quiz=None):
     print("\nQUIZ TOPICS\n")
-    print("1. Pop Culture")
-    print("2. 70's Classics")
-    print("3. 80's Classics")
-    print("4. 90's Hip Hop")
-    print("5. Rock n Roll")
+    print("1. Enter 1 for Pop Culture")
+    print("2. Enter 2 for 70's")
+    print("3. Enter 3 for 80's")
+    print("4. Enter 4 for 90's Hip Hop")
+    print("5. Enter 5 for Rock n Roll")
     print("6. Back to main menu")
 
 
@@ -128,8 +128,9 @@ def quiz_topics(rand_quiz=None):
         quiz_topics()
             
 def top_scores():
-
-    print("QUIZ HIGH SCORES!")
+    print(Fore.MAGENTA + "-----------------------------")
+    print("      QUIZ HIGH SCORES!     ")
+    print("-----------------------------" + Style.RESET_ALL)
     file_name = "list.csv"
 
     with open(file_name, "r") as f:
@@ -164,27 +165,27 @@ def top_scores():
         
         
         if not pop_highscores:
-            print("You have not cpmpleted this quiz yet.")
+            print("You have not attempted the Pop quiz yet.")
         else:
-            print(f"Your highest pop quiz score is {pop_highscores[0]:.4f}!")
+            print(f"Your highest Pop quiz score is {pop_highscores[0]:.4f}!")
         if not seventies_highscores:
-            print("You have not cpmpleted this quiz yet.")
+            print("You have not attempted the 70's quiz yet.")
         else:
             print(f"Your highest 70's quiz score is {seventies_highscores[0]:.4f}!")
         if not eighties_highscores:
-            print("You have not cpmpleted this quiz yet.")
+            print("You have not attempted the 80's quiz yet.")
         else:
             print(f"Your highest 80's quiz score is {eighties_highscores[0]:.4f}!")
         if not hiphop_highscores:
-            print("You have not cpmpleted this quiz yet.")
+            print("You have not attempted for the 90's Hip Hop quiz yet.")
         else: 
             print(f"Your highest 90's Hip Hop quiz score is {hiphop_highscores[0]:.4f}!")
         if not rocknroll_highscores:
-            print("You have not cpmpleted this quiz yet.")
+            print("You have not attempted the Rock N Roll quiz yet.")
         else:
             print(f"Your highest Rock N Roll quiz score is {rocknroll_highscores[0]:.4f}!\n")
 
-        input("Press any key to continue: \n")
+        input("Press any key for main menu: \n")
 
 def random_quiz():
     rand_quiz = random.randint(1, 5)

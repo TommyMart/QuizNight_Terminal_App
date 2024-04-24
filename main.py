@@ -6,23 +6,26 @@ import time
 
 # External Packages
 from colorama import Fore, Style, Back
+from rich import print
 
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
 
-name = input("\nPlease enter your name: ")
+name = input("\nPlease enter your name: ").title()
 
-print(f"\nHello {name}, and welcome to the Music Quiz!\n")
+print(f"\n[blue]Hello {name}, and [/blue]welcome to the Music Quiz!\n")
 
 
 
 def menu():
-    
-    print("1. Enter 1 for quiz topics")
-    print("2. Enter 2 for top scores")
+    print(Fore.GREEN + "-----------------------------")
+    print("          MAIN MENU     ")
+    print("-----------------------------" + Style.RESET_ALL)
+    print("1. Enter 1 to select a quiz topic")
+    print("2. Enter 2 to see your top scores")
     print("3. Enter 3 to quick start a random quiz")
-    print("4. Enter 4 to create a new text quiz")
-    print("5. Enter 5 to exit quiz")
+    print("4. Enter 4 to try our new audio based quiz")
+    print("5. Enter 5 to exit the game")
 
     user_choice = input("\nPlease enter your selection: \n")
     return user_choice
@@ -49,4 +52,4 @@ while choice != "5":
         print("Please only input options shown above.")
     
 
-print("Thanks for playing the quiz, I hope you enjoyed yourself!")
+print("Thanks for playing, we hope you enjoyed yourself!\n")

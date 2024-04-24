@@ -25,6 +25,7 @@ def calculate_points(score, total_questions, total_time):
     return total_points
 
 def quiz(questions, options, answers, topic_choice):
+    input("Press any key when you're ready to start the quiz! \n")
     start_time = time.time()
     file_name = "list.csv"
 
