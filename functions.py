@@ -1,5 +1,5 @@
 import time
-from colorama import Fore, Style, Back
+from colorama import Fore, Style, Back   
 
 def calculate_points(score, total_questions, total_time):
     # Score points: 50 points for each correct answer
@@ -14,13 +14,11 @@ def calculate_points(score, total_questions, total_time):
     
     return total_points
 
-def quiz(questions, options, answers):
-    start_time = time.time()
-    
-    
+def quiz_function():
     score = 0
     guesses = []
     question_num = 0
+    start_time = time.time()
     for question in questions:
         print(Fore.BLUE + Style.BRIGHT + "-----------------------------")
         print(question)
@@ -59,5 +57,3 @@ def quiz(questions, options, answers):
     # Calculate total points based on score and time
     total_points = calculate_points(score, len(questions), total_time)
     print(f"Total points: {total_points}")
-
-    
