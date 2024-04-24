@@ -135,31 +135,56 @@ def top_scores():
     with open(file_name, "r") as f:
         reader = csv.reader(f)
         # reader.__next__()
-        for i in reader:
-            # for i in row:
-            
-            pop_highscores = []
-            seventies_highscores = []
-            eighties_highscores = []
-            hiphop_highscores = []
-            rocknroll_highscores = []
-            if i[0] == "1":
-                pop_highscores.append(i[1])
-            elif i[0] == "2":
-                seventies_highscores.append(i[1])
-            elif i[0] == "3":
-                eighties_highscores.append(i[1])
-            elif i[0] == "4":
-                hiphop_highscores.append(i[1])
-            elif i[0] == "5":
-                rocknroll_highscores.append(i[1])
-        else:
-            print(pop_highscores)
-            print(seventies_highscores)
-            print(eighties_highscores)
-            print(hiphop_highscores)
-            print(rocknroll_highscores)
 
+        pop_highscores = []
+        seventies_highscores = []
+        eighties_highscores = []
+        hiphop_highscores = []
+        rocknroll_highscores = []
+
+        for i in reader:
+            if i[0] == "1":
+                pop_highscores.append(float(i[1]))
+            elif i[0] == "2":
+                seventies_highscores.append(float(i[1]))
+            elif i[0] == "3":
+                eighties_highscores.append(float(i[1]))
+            elif i[0] == "4":
+                hiphop_highscores.append(float(i[1]))
+            elif i[0] == "5":
+                rocknroll_highscores.append(float(i[1]))
+
+        pop_highscores.sort(reverse=True)
+
+        seventies_highscores.sort(reverse=True)   
+        eighties_highscores.sort(reverse=True)
+        hiphop_highscores.sort(reverse=True)
+        rocknroll_highscores.sort(reverse=True)
+
+        
+        
+        if not pop_highscores:
+            print("You have not cpmpleted this quiz yet.")
+        else:
+            print(f"Your highest pop quiz score is {pop_highscores[0]:.4f}!")
+        if not seventies_highscores:
+            print("You have not cpmpleted this quiz yet.")
+        else:
+            print(f"Your highest 70's quiz score is {seventies_highscores[0]:.4f}!")
+        if not eighties_highscores:
+            print("You have not cpmpleted this quiz yet.")
+        else:
+            print(f"Your highest 80's quiz score is {eighties_highscores[0]:.4f}!")
+        if not hiphop_highscores:
+            print("You have not cpmpleted this quiz yet.")
+        else: 
+            print(f"Your highest 90's Hip Hop quiz score is {hiphop_highscores[0]:.4f}!")
+        if not rocknroll_highscores:
+            print("You have not cpmpleted this quiz yet.")
+        else:
+            print(f"Your highest Rock N Roll quiz score is {rocknroll_highscores[0]:.4f}!\n")
+
+        input("Press any key to continue: \n")
 
 def random_quiz():
     rand_quiz = random.randint(1, 5)
