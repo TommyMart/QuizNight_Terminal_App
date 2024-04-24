@@ -127,11 +127,39 @@ def quiz_topics(rand_quiz=None):
         print("Please only input corresponding topic numbers shown above.")
         quiz_topics()
             
-def top_scores(file_name):
+def top_scores():
+
+    print("QUIZ HIGH SCORES!")
     file_name = "list.csv"
 
     with open(file_name, "r") as f:
         reader = csv.reader(f)
+        # reader.__next__()
+        for i in reader:
+            # for i in row:
+            
+            pop_highscores = []
+            seventies_highscores = []
+            eighties_highscores = []
+            hiphop_highscores = []
+            rocknroll_highscores = []
+            if i[0] == "1":
+                pop_highscores.append(i[1])
+            elif i[0] == "2":
+                seventies_highscores.append(i[1])
+            elif i[0] == "3":
+                eighties_highscores.append(i[1])
+            elif i[0] == "4":
+                hiphop_highscores.append(i[1])
+            elif i[0] == "5":
+                rocknroll_highscores.append(i[1])
+        else:
+            print(pop_highscores)
+            print(seventies_highscores)
+            print(eighties_highscores)
+            print(hiphop_highscores)
+            print(rocknroll_highscores)
+
 
 def random_quiz():
     rand_quiz = random.randint(1, 5)

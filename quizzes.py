@@ -77,7 +77,7 @@ def quiz(questions, options, answers, topic_choice):
     # Calculate total points based on score and time
     total_points = calculate_points(score, len(questions), total_time)
     print(f"Total points: {total_points}")
-    
+
     with open(file_name, "a") as f:
         writer = csv.writer(f)
         writer.writerow([topic_choice, total_points])
