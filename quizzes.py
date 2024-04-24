@@ -5,7 +5,8 @@ import random
 import time
 
 # External Packages
-from colorama import Fore, Style, Back
+# from colorama import Fore, Style, Back
+from rich import print
 
 # App functions
 
@@ -26,6 +27,7 @@ def calculate_points(score, total_questions, total_time):
 
 def quiz(questions, options, answers, topic_choice):
     input("Press any key when you're ready to start the quiz! \n")
+    
     start_time = time.time()
     file_name = "list.csv"
 

@@ -5,24 +5,24 @@ import random
 import time
 
 # External Packages
-from colorama import Fore, Style, Back
-from rich import print
+# from colorama import Fore, Style, Back
+from rich import print 
 
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
-
+print(":world: :cityscape: :scroll: :dvd: :book: :microphone:")
 name = input("\nPlease enter your name: ").title()
 
-print(f"\n[blue]Hello {name}, and [/blue]welcome to the Music Quiz!\n")
+print(f"\nHello {name}, and welcome to Quiz Night!\n")
 
 
 
 def menu():
-    print(Fore.GREEN + "-----------------------------")
-    print("          MAIN MENU     ")
-    print("-----------------------------" + Style.RESET_ALL)
+    print("-----------------------------")
+    print("    :vampire:    MAIN MENU    :vampire: ")
+    print("-----------------------------")
     print("1. Enter 1 to select a quiz topic")
-    print("2. Enter 2 to see your top scores")
+    print("2. Enter 2 to see your topic high scores")
     print("3. Enter 3 to quick start a random quiz")
     print("4. Enter 4 to try our new audio based quiz")
     print("5. Enter 5 to exit the game")

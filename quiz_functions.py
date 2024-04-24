@@ -4,19 +4,20 @@ import csv
 import random
 
 # External Packages
-from colorama import Fore, Style, Back
+# from colorama import Fore, Style, Back
+from rich import print 
 
 # App functions
 from quizzes import quiz
 
 def quiz_topics(rand_quiz=None):
     print("\nQUIZ TOPICS\n")
-    print("1. Enter 1 for Pop Culture")
-    print("2. Enter 2 for 70's")
-    print("3. Enter 3 for 80's")
-    print("4. Enter 4 for 90's Hip Hop")
-    print("5. Enter 5 for Rock n Roll")
-    print("6. Back to main menu")
+    print("1. Enter 1 for Music :microphone:")
+    print("2. Enter 2 for History :book:")
+    print("3. Enter 3 for Capital Cities :building:")
+    print("4. Enter 4 for Computer Science :dvd:")
+    print("5. Enter 5 for General Knowledge :microbe:")
+    print("6. Enter 6 to return to main menu")
 
 
     if rand_quiz is None:
@@ -128,9 +129,9 @@ def quiz_topics(rand_quiz=None):
         quiz_topics()
             
 def top_scores():
-    print(Fore.MAGENTA + "-----------------------------")
+    print(F"-----------------------------")
     print("      QUIZ HIGH SCORES!     ")
-    print("-----------------------------" + Style.RESET_ALL)
+    print("-----------------------------")
     file_name = "list.csv"
 
     with open(file_name, "r") as f:
