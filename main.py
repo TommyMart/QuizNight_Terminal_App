@@ -10,7 +10,7 @@ from rich import print
 
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
-print(":world: :cityscape: :scroll: :dvd: :book: :microphone:")
+
 name = input("\nPlease enter your name: ").title()
 
 print(f"\nHello {name}, and welcome to Quiz Night!\n")

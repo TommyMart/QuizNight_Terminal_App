@@ -36,7 +36,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = ((Fore.CYAN + Back.LIGHTGREEN_EX + "A. Chicago", "B. East", "C. Palm", "D. North"),
+        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
@@ -56,7 +56,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = ((Fore.CYAN + Back.LIGHTGREEN_EX + "A. Chicago", "B. East", "C. Palm", "D. North"),
+        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
@@ -76,7 +76,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = ((Fore.CYAN + Back.LIGHTGREEN_EX + "A. Chicago", "B. East", "C. Palm", "D. North"),
+        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
@@ -94,7 +94,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = ((Fore.CYAN + Back.LIGHTGREEN_EX + "A. Chicago", "B. East", "C. Palm", "D. North"),
+        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
@@ -112,7 +112,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = ((Fore.CYAN + Back.LIGHTGREEN_EX + "A. Chicago", "B. East", "C. Palm", "D. North"),
+        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
