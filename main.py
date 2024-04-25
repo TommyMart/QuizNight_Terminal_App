@@ -13,19 +13,23 @@ from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
 
 name = input("\nPlease enter your name: ").title()
 
-print(f"\nHello {name}, and welcome to Quiz Night!\n")
+# If no name is inputed name = Player
+if name == "":
+    name = "Player"
+
+print(f"\nHello [bold black]{name}[/bold black], and welcome to [bold bright_cyan]Quiz Night[/bold bright_cyan]!\n")
 
 
 
 def menu():
-    print("-----------------------------")
-    print("    :vampire:    MAIN MENU    :vampire: ")
-    print("-----------------------------")
-    print("1. Enter 1 to select a quiz topic")
-    print("2. Enter 2 to see your topic high scores")
-    print("3. Enter 3 to quick start a random quiz")
-    print("4. Enter 4 to try our new audio based quiz")
-    print("5. Enter 5 to exit the game")
+    print("[purple]-----------------------------[/purple]")
+    print("    :vampire:    [bold blue]MAIN MENU[/bold blue]    :vampire: ")
+    print("[purple]-----------------------------[/purple]\n")
+    print("1. Enter 1 - to see [bold red]Quiz Topics[/bold red]")
+    print("2. Enter 2 - to see your [bold yellow]Topic High Scores[/bold yellow]")
+    print("3. Enter 3 - to quick start a [bold green]Random Quiz[/bold green]")
+    print("4. Enter 4 - to try our [bold magenta]New Audio Based Quiz[/bold magenta]")
+    print("5. Enter 5 - to [bold black]EXIT[/bold black] the game...")
 
     user_choice = input("\nPlease enter your selection: \n")
     return user_choice

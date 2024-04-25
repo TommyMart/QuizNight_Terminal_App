@@ -71,9 +71,9 @@ def quiz(questions, options, answers, topic_choice):
         guesses.append(guess)
         if guess == answers[question_num]:
             score += 1
-            print("Correct!")
+            print("[green]Correct![/green]")
         else: 
-            print("Incorrect!")
+            print("[red]Incorrect![red]")
             print(f"{answers[question_num]} is the correct answer.")
         question_num += 1
     
@@ -111,49 +111,49 @@ def quiz(questions, options, answers, topic_choice):
         writer.writerow([topic_choice, total_points])
     
     total_points = float(total_points)
-    # Check to see if new high score
+    # Check to see if new High Score
     #file_name = "list.csv"
 
     with open(file_name, "r") as f:
         reader = csv.reader(f)
         # reader.__next__()
 
-        pop_highscores = []
-        seventies_highscores = []
-        eighties_highscores = []
-        hiphop_highscores = []
-        rocknroll_highscores = []
+        music_highscores = []
+        history_highscores = []
+        cities_highscores = []
+        cs_highscores = []
+        gk_highscores = []
         
         # Topic number is a list because reading from CSV file
         for i in reader:
             if i[0] == "1":
-                pop_highscores.append(float(i[1]))
+                music_highscores.append(float(i[1]))
             elif i[0] == "2":
-                seventies_highscores.append(float(i[1]))
+                history_highscores.append(float(i[1]))
             elif i[0] == "3":
-                eighties_highscores.append(float(i[1]))
+                cities_highscores.append(float(i[1]))
             elif i[0] == "4":
-                hiphop_highscores.append(float(i[1]))
+                cs_highscores.append(float(i[1]))
             elif i[0] == "5":
-                rocknroll_highscores.append(float(i[1]))
+                gk_highscores.append(float(i[1]))
 
-        pop_highscores.sort(reverse=True)
-        seventies_highscores.sort(reverse=True)   
-        eighties_highscores.sort(reverse=True)
-        hiphop_highscores.sort(reverse=True)
-        rocknroll_highscores.sort(reverse=True)
+        music_highscores.sort(reverse=True)
+        history_highscores.sort(reverse=True)   
+        cities_highscores.sort(reverse=True)
+        cs_highscores.sort(reverse=True)
+        gk_highscores.sort(reverse=True)
         
         topic_choice = int(topic_choice)
         
-        if topic_choice == 1 and total_points >= pop_highscores[0]:
-            print(f"New high score! Your new Pop quiz high score is {total_points}\n")
-        elif topic_choice == 2 and total_points >= seventies_highscores[0]:
-            print(f"New high score! Your new 70's quiz high score is {total_points}\n")
-        elif topic_choice == 3 and total_points >= eighties_highscores[0]:
-            print(f"New high score! Your new 80's quiz high score is {total_points}\n")
-        elif topic_choice == 4 and total_points >= hiphop_highscores[0]:
-            print(f"New high score! Your new 90's Hip Hop quiz high score is {total_points}\n")
-        elif topic_choice == 5 and total_points >= rocknroll_highscores[0]:
-            print(f"New high score! Your new Rock N Roll quiz high score is {total_points}\n")
+        if topic_choice == 1 and total_points >= music_highscores[0]:
+            print(f"New High Score! Your new Music Quiz High Score is {total_points}!\n")
+        elif topic_choice == 2 and total_points >= history_highscores[0]:
+            print(f"New High Score! Your new History Quiz High Score is {total_points}!\n")
+        elif topic_choice == 3 and total_points >= cities_highscores[0]:
+            print(f"New High Score! Your new Capital Cities Quiz High Score is {total_points}!\n")
+        elif topic_choice == 4 and total_points >= cs_highscores[0]:
+            print(f"New High Score! Your new Computer Science Quiz High Score is {total_points}!\n")
+        elif topic_choice == 5 and total_points >= gk_highscores[0]:
+            print(f"New High Score! Your new General Knowledge Quiz High Score is {total_points}!\n")
     
         
