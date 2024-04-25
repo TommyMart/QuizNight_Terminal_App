@@ -7,6 +7,8 @@ import time
 # External Packages
 # from colorama import Fore, Style, Back
 from rich import print 
+from rich.console import Console
+from rich.table import Table
 
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
@@ -20,20 +22,25 @@ if name == "":
 print(f"\nHello [bold black]{name}[/bold black], and welcome to [bold bright_cyan]Quiz Night[/bold bright_cyan]!\n")
 
 
-
 def menu():
-    print("[purple]-----------------------------[/purple]")
-    print("    :vampire:    [bold blue]MAIN MENU[/bold blue]    :vampire: ")
-    print("[purple]-----------------------------[/purple]\n")
-    print("1. Enter 1 - to see [bold red]Quiz Topics[/bold red]")
-    print("2. Enter 2 - to see your [bold yellow]Topic High Scores[/bold yellow]")
-    print("3. Enter 3 - to quick start a [bold green]Random Quiz[/bold green]")
-    print("4. Enter 4 - to try our [bold magenta]New Audio Based Quiz[/bold magenta]")
-    print("5. Enter 5 - to [bold black]EXIT[/bold black] the game...")
+    console = Console()
 
-    user_choice = input("\nPlease enter your selection: \n")
+    # Create a rich table
+    table = Table(title=":vampire:  MAIN MENU  :vampire:", style="bold purple", show_lines=True, title_style="bold black on purple")
+    table.add_column("Selection", style="bold cyan", justify="left")
+    table.add_column("Option", style="bold cyan", justify="left")
+
+    table.add_row("1", "Quiz Topics")
+    table.add_row("2", "Topic High Scores")
+    table.add_row("3", "Quick Start Random Quiz")
+    table.add_row("4", "New Audio Based Quiz")
+    table.add_row("5", "[bright_red]EXIT[/bright_red]")
+
+
+    console.print(table)
+
+    user_choice = input("Please enter your selection: \n")
     return user_choice
-
 
 
 
