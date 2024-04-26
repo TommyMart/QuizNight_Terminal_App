@@ -161,7 +161,7 @@ def quiz_topics(rand_quiz=None):
                  ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                  )
 
-        options = (("A. 3", "B. 6", "5", "D. 4"),
+        options = (("A. 3", "B. 6", "C. 5", "D. 4"),
                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),

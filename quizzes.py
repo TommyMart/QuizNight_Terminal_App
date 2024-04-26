@@ -9,6 +9,7 @@ from time import sleep
 # from colorama import Fore, Style, Back
 from rich import print
 from rich.progress import track
+from rich.prompt import Prompt
 
 
 # App functions
@@ -35,6 +36,7 @@ def quiz(questions, options, answers, topic_choice):
         sleep(0.02)
     for _ in track(range(100), description='[green]Get ready!'):
         process_data()
+    print()
     
     # Start time time stamp
     start_time = time.time()
@@ -59,7 +61,7 @@ def quiz(questions, options, answers, topic_choice):
     # Loop through each question in question_num counter index and print
     # Loop through each option in question_num counter index and print 
     for question in questions:
-        print("-----------------------------")
+        print("[purple]-----------------------------[/purple]")
         print(question)
         for option in options[question_num]:
             print(option)
@@ -67,43 +69,43 @@ def quiz(questions, options, answers, topic_choice):
         # User input their option answer as A, B, C or D
         # If question in question_num index guess == answer in question_num counter index + 1 score
         # Finally question_num + 1 for next question iteration
-        guess = input( "\nEnter (A, B, C, D): ").upper()
+        guess = input( "\nEnter (A, B, C, D): \n").upper()
         guesses.append(guess)
         if guess == answers[question_num]:
             score += 1
-            print("[green]Correct![/green]")
+            print("[bold green]Correct![/bold green]")
         else: 
-            print("[red]Incorrect![red]")
-            print(f"{answers[question_num]} is the correct answer.")
+            print("[bold red]Incorrect![bold red]")
+            print(f"[bold green]{answers[question_num]} is the correct answer.[/bold green]")
         question_num += 1
     
     # End time - calculate total time
     end_time = time.time()
     total_time = end_time - start_time
     
-    print("-----------------------------")
-    print("          RESULTS            ")
-    print("-----------------------------")
+    print("[purple]-----------------------------[purple]")
+    print("       [bold bright_red]   RESULTS       [/bold bright_red]     ")
+    print("[purple]-----------------------------[purple]\n")
     
     # Correct answers
-    print("Answers: ", end=" ")
+    print("[green bold]Answers: [/green bold]", end=" ")
     for answer in answers:
         print(answer, end=" ")
     
     # User answers
-    print("\nGuesses: ", end=" ")
+    print("\n[bold blue]Guesses: [/bold blue]", end=" ")
     for guess in guesses:
         print(guess, end=" ")
     
     # Total score %
     print("")
     score = int(score / len(questions) * 100)
-    print(f"Your score is {score}%")
+    print(f"\nYour score is {score}%")
     print(f"Total time taken: {total_time:.2f} seconds\n")
 
     # Calculate total points based on score and time
     total_points = calculate_points(score, len(questions), total_time)
-    print(f"Total points: {total_points}\n")
+    print(f"Total points: [bold red]{total_points:.2f}[/bold red]\n")
 
     # Append topic and total points to 'list.csv'
     with open(file_name, "a") as f:
@@ -146,14 +148,19 @@ def quiz(questions, options, answers, topic_choice):
         topic_choice = int(topic_choice)
         
         if topic_choice == 1 and total_points >= music_highscores[0]:
-            print(f"New High Score! Your new Music Quiz High Score is {total_points}!\n")
+            print(f"[bold purple]New High Score![/bold purple]")
+            print(f"Your new Music Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 2 and total_points >= history_highscores[0]:
-            print(f"New High Score! Your new History Quiz High Score is {total_points}!\n")
+            print(f"[bold purple]New High Score![/bold purple]")
+            print(f"Your new History Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 3 and total_points >= cities_highscores[0]:
-            print(f"New High Score! Your new Capital Cities Quiz High Score is {total_points}!\n")
+            print(f"[bold purple]New High Score![/bold purple]")
+            print(f"Your new Capital Cities Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 4 and total_points >= cs_highscores[0]:
-            print(f"New High Score! Your new Computer Science Quiz High Score is {total_points}!\n")
+            print(f"[bold purple]New High Score![/bold purple]")
+            print(f"Your new Computer Science Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 5 and total_points >= gk_highscores[0]:
-            print(f"New High Score! Your new General Knowledge Quiz High Score is {total_points}!\n")
+            print(f"[bold purple]New High Score![/bold purple]")
+            print(f"Your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
     
-        
+    input("Press any key for main menu: \n")    
