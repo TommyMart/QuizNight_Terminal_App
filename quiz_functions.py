@@ -74,7 +74,7 @@ def quiz_topics(rand_quiz=None):
                ("A. A Tribe Called Quest", "B. Wutang", "C. OutKast", "D. NWA"),
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Trumpet", "B. Saxophone", "C. Guitar", "D. Piano"),
-               ("A. Johnny Garbage", "B. Jonny Vicious", "C. Edgar Emerald", "D. Sid Vicious"),
+               ("A. Johnny Thunders", "B. Jonny Vicious", "C. Edgar Emerald", "D. Sid Vicious"),
                ("A. Amein Selara", "B. Farrokh Bulsara", "C. Frederick Merise", "D. Elsai Kilara"),
                ("A. Michael Jackson - Thriller", "B. The Beatles - The White Album", "C. ACDC - Back in Black", "D. Pink Floyd - The Dark Side of the Moon"),
                ("A. Robert Plant", "B. Jimmy Page", "C. John Bonham", "D, John Paul Jones"),
@@ -106,6 +106,16 @@ def quiz_topics(rand_quiz=None):
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
                ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
     )
 
         answers = ("B", "C", "B", "D", "A")
@@ -114,21 +124,42 @@ def quiz_topics(rand_quiz=None):
 # Capital Cities Quiz 
 
     elif topic_choice == "3":
-        questions = (("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
-                 ("\nWhich pop star is the godmother of both of Elton John's sons?: \n"), 
-                 ("\nWhat is Rihanna's real name?: \n"), 
-                 ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
-                 ("\nWhich pop star was Judge Judy's neighbor?: \n"),
+        questions = (("\nWhat is the capital of Romania?: \n"), 
+                 ("\nWhat is the capital of Botswana?: \n"), 
+                 ("\nWhat is the capital of Kosovo?: \n"), 
+                 ("\nWhat is the capital of Bosnia & Herzegovina?: \n"),
+                 ("\nWhat is the capital of Mauritania?: \n"),
+                 ("\nWhat is the capital of Belize?: \n"),
+                 ("\nWhat is the capital of Zambia?: \n"),
+                 ("\nWhat is the capital of Senegal?: \n"),
+                 ("\nWhat is the capital of Tuvalu?: \n"),
+                 ("\nWhat is the capital of Oman?: \n"),
+                 ("\nWhat is the capital of Angola?: \n"),
+                 ("\nWhat is the capital of Afghanistan?: \n"),
+                 ("\nWhat is the capital of Zimbabwe?: \n"),
+                 ("\nWhat is the capital of Paraguay?: \n"),
+                 ("\nWhat is the capital of Cameroon?: \n"),
+                 
                  )
 
-        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
-               ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
-               ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
-               ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
-               ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
+        options = (("A. Bucharest", "B. Monrovia", "C. Dhiresj", "D. Basseterre"),
+               ("A. Lusaka", "B. Gaborone", "C. Kampala", "D. Edali"),
+               ("A. Monrovia", "B. Khartoum", "C. Port-Vila", "D. Pristina"),
+               ("A. Sarajenko", "B. Bogota", "C. Sarajevo", "D. Beotojka"),
+               ("A. Nouakchott", "B. Port Louis", "C. Bishkek", "D. Jerusalem"),
+               ("A. Vaduz", "B. Libreville", "C. Belmopan", "D. Port Louis"),
+               ("A. Damascus", "B. Pristina", "C. Sarajevo", "D. Lusaka"),
+               ("A. Dakar", "B. Kinshasha", "C. Lome", "D. Bogota"),
+               ("A. San Jose", "B. Funafuti", "C. Tallin", "D. Fufeli"),
+               ("A. Muscat", "B. Lilongwe", "C. Lusaka", "D. Port Louis"),
+               ("A. Honiara", "B. Castries", "C. Luanda", "D. Damascus"),
+               ("A. Kampala", "B. Kabul", "C. Basseterre", "D. Ouagadougou"),
+               ("A. Zagreb", "B. Bern", "C. Kinshasha", "D. Harare"),
+               ("A. Asuncion", "B. Nairobi", "C. Nassau", "D. Bangui"),
+                ("A. Quito", "B. Nairobi", "C. Nassau", "D. Yaounde"),
     )
 
-        answers = ("B", "C", "B", "D", "A")
+        answers = ("A", "B", "D", "C", "A", "C", "C", "D", "B", "A", "C", "B", "D", "A", "D")
         quiz(questions, options, answers, topic_choice)
 
 # Computer Science Quiz 
@@ -146,6 +177,16 @@ def quiz_topics(rand_quiz=None):
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
                ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
     )
 
         answers = ("B", "C", "B", "D", "A")
@@ -166,6 +207,16 @@ def quiz_topics(rand_quiz=None):
                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
                ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
+               ("A. ", "B. ", "C. ", "D. "),
     )
 
         answers = ("B", "C", "B", "D", "A")
