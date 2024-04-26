@@ -94,31 +94,42 @@ def quiz_topics(rand_quiz=None):
 # History Quiz 
 
     elif topic_choice == "2":
-        questions = (("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
-                 ("\nWhich pop star is the godmother of both of Elton John's sons?: \n"), 
-                 ("\nWhat is Rihanna's real name?: \n"), 
-                 ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
-                 ("\nWhich pop star was Judge Judy's neighbor?: \n"),
+        questions = (("\nWhat year was the Berlin Wall built?: \n"), 
+                 ("\nWho was the first person in space?: \n"), 
+                 ("\nIn what year was Napoleon defeated at Waterloo?: \n"), 
+                 ("\nWhich of these conflicts involved two US allies fighting against each other?: \n"),
+                 ("\nWhich Roman Emperor legalised Christianity in the Roman Empire?: \n"),
+                 ("\nWhich disease has killed the most humans throughout history?: \n"),
+                 ("\nThe siege of Kohima was part of which conflict?: \n"),
+                 ("\nWhen was the Declaration of Independence signed?: \n"),
+                 ("\nThe United States bought Alaska from which country?: \n"),
+                 ("\nWhere was Martin Luther King, Jr. born?: \n"),
+                 ("\nAustralia's Parliament met in which city from 1901 to 1927?: \n"),
+                 ("\nWhere did the Rum Rebellion take place?: \n"),
+                 ("\nWhere was Ned Kelly captured after a final shootout with police?: \n"),
+                 ("\nWhat year was the Berlin Wall built?: \n"),
+                 ("\nWhat year was the Berlin Wall built?: \n"),
+                 ("\nWhat year was the Berlin Wall built?: \n"),
                  )
 
-        options = (("A. Chicago", "B. East", "C. Palm", "D. North"),
-               ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
-               ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
-               ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
-               ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
+        options = (("1948", "B. 1961", "1957", "1964"),
+               ("A. John Glenn", "B. Vladimir Komarov", "C. Neil Armtsrong", "D. Yuri Gagarin"),
+               ("A. 1815", "B. 1835", "C. 1861", "D. 1798"),
+               ("A. The Korean War", "B. The Crimean War", "C. The invasion of the Falklands", "The Boer War"),
+               ("A. Claudius", "B. Vaspasian", "C. Hadrian", "D. Constantine 1"),
+               ("A. Plague", "B. Tuberculosis", "C. Influenza", "D. Smallpox"),
+               ("A. WW2", "B. WW1", "C. Korean War", "D. Vietnam War"),
+               ("A. 1804", "B. 1745", "C. 1723", "D. 1776"),
+               ("A. Norway", "B. Finland", "C. Russia", "D. Switzerland"),
+               ("A. North Carolina", "B. New York", "C. Michigan", "D. Georgia"),
+               ("A. Sydney", "B. Melbourne", "C. Canberra", "D. Adelaide"),
+               ("A. Hobart", "B. Adelaide", "C. Sydney", "D. Melbourne"),
+               ("A. Glenrowan", "B. Jerilderie", "C. Greta", "D. Beveridge"),
                ("A. ", "B. ", "C. ", "D. "),
                ("A. ", "B. ", "C. ", "D. "),
     )
 
-        answers = ("B", "C", "B", "D", "A")
+        answers = ("B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "A", )
         quiz(questions, options, answers, topic_choice)
 
 # Capital Cities Quiz 
@@ -195,31 +206,43 @@ def quiz_topics(rand_quiz=None):
 # General Knowledge Quiz
 
     elif topic_choice == "5":
-        questions = (("\nHow many band members are in the rolling stones?: \n"), 
-                 ("\nRapper Andre 3000 is in what music group?: \n"), 
-                 ("\nWhat is Rihanna's real name?: \n"), 
-                 ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
-                 ("\nWhich pop star was Judge Judy's neighbor?: \n"),
+        questions = (("\nIn which year was television invented?: \n"), 
+                 ("\nIn which city was US President John F. Kennedy assassinated?: \n"), 
+                 ("\nKorea was split into North Korea and South Korea at the conclusion of which war?: \n"), 
+                 ("\nWho invented the first successful aeroplane?: \n"),
+                 ("\nHow many days in a week were there in ancient Roman times?"),
+                 ("\nWhat did the famous Hollywood sign originally say when it was built in 1923?: \n"),
+                 ("\nIn which ocean did the Titanic sink??: \n"),
+                 ("\nIn which year was the Berlin wall removed?: \n"),
+                 ("\nThe first person to travel into space was from which country?: \n"),
+                 ("\nWhere was the first modern Summer Olympic Games held?: \n"),
+                 ("\nHow long did the war between England and Zanzibar last?: \n"),
+                 ("\nHow long did the 100 year war last?: \n"),
+                 ("\nIn which year did Hitler commit suicide?: \n"),
+                 ("\nIn which year was John F. Kennedy assassinated?: \n"),
+                 ("\nGreenland was a colony of which country until 1981?: \n"),
+                 
+
                  )
 
-        options = (("A. 3", "B. 6", "C. 5", "D. 4"),
-               ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
-               ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
-               ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
-               ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
+        options = (("A. 1927", "B. 1941", "C. 1907", "D. 1953"),
+               ("A. New York", "B. Las Vegas", "C. Washington DC", "D. Dallas"),
+               ("A. WW1", "B. WW2", "C. Korean War", "D. Vietnam War"),
+               ("A. Karl Benz", "B. Guglielmo Marconi", "C. John Logie Baird", "D. Orville and Wilbur Wright"),
+               ("A. 5", "B. 9", "C. 6", "D. 8"),
+               ("A. HOLLYWOODVILLE", "B. HOLLYWOOD LA", "C. HOLLYWOOD HILLS", "D. HOLLYWOODLAND"),
+               ("A. Indian", "B. Atlantic", "C. Arctic", "D. Pacific"),
+               ("A. 1989", "B. 1988", "C. 1992", "D. 1991"),
+               ("A. Amercia", "B. Germany", "C. Ukraine", "D. Russia"),
+               ("A. Athens", "B. Rome", "C. Paris", "D. London"),
+               ("A. 2 days", "B. Between 5 & 2 hours", "C. 22 minutes", "D. Between 38 & 45 minutes"),
+               ("A. 100", "B. 116", "C. 108", "D. 99"),
+               ("A. 1944", "B. 1946", "C. 1945", "D. 1947"),
+               ("A. 1961", "B. 1963", "C. 1965", "D. 1967"),
+               ("A. Denmark", "B. Norway", "C. Russia", "D. Switzerland"),
     )
 
-        answers = ("B", "C", "B", "D", "A")
+        answers = ("A", "D", "B", "D", "D", "D", "B", "A", "D", "A", "D", "B", "C", "B", "A")
         quiz(questions, options, answers, topic_choice)
 
     elif topic_choice == "6":
