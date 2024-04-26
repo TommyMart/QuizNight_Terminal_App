@@ -107,16 +107,16 @@ def quiz_topics(rand_quiz=None):
                  ("\nAustralia's Parliament met in which city from 1901 to 1927?: \n"),
                  ("\nWhere did the Rum Rebellion take place?: \n"),
                  ("\nWhere was Ned Kelly captured after a final shootout with police?: \n"),
-                 ("\nWhat year was the Berlin Wall built?: \n"),
-                 ("\nWhat year was the Berlin Wall built?: \n"),
-                 ("\nWhat year was the Berlin Wall built?: \n"),
+                 ("\nWhich country did Germany invade to kickstart World War II?: \n"),
+                 ("\nMartin Luther King Jr. was assassinated in which US state?: \n"),
+                 ("\nWho discovered penicillin?: \n"),
                  )
 
-        options = (("1948", "B. 1961", "1957", "1964"),
+        options = (("A. 1948", "B. 1961", "C. 1957", "D. 1964"),
                ("A. John Glenn", "B. Vladimir Komarov", "C. Neil Armtsrong", "D. Yuri Gagarin"),
                ("A. 1815", "B. 1835", "C. 1861", "D. 1798"),
                ("A. The Korean War", "B. The Crimean War", "C. The invasion of the Falklands", "The Boer War"),
-               ("A. Claudius", "B. Vaspasian", "C. Hadrian", "D. Constantine 1"),
+               ("A. Claudius", "B. Vaspasian", "C. Hadrian", "D. Constantine"),
                ("A. Plague", "B. Tuberculosis", "C. Influenza", "D. Smallpox"),
                ("A. WW2", "B. WW1", "C. Korean War", "D. Vietnam War"),
                ("A. 1804", "B. 1745", "C. 1723", "D. 1776"),
@@ -125,11 +125,12 @@ def quiz_topics(rand_quiz=None):
                ("A. Sydney", "B. Melbourne", "C. Canberra", "D. Adelaide"),
                ("A. Hobart", "B. Adelaide", "C. Sydney", "D. Melbourne"),
                ("A. Glenrowan", "B. Jerilderie", "C. Greta", "D. Beveridge"),
-               ("A. ", "B. ", "C. ", "D. "),
-               ("A. ", "B. ", "C. ", "D. "),
+               ("A. France", "B. Ukraine", "C. Poland", "D. Belarus"),
+               ("A. Texas", "B. Louisiana", "C. Alabama", "D. Tennessee"),
+               ("A. Geoffery Bennet", "B. John Daniels", "C. Alexander Fleming", "D. Thomas Hoover"),
     )
 
-        answers = ("B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "A", )
+        answers = ("B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "C", "A", "C", "D", "C")
         quiz(questions, options, answers, topic_choice)
 
 # Capital Cities Quiz 
