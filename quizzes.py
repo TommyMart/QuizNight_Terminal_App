@@ -40,7 +40,7 @@ def quiz(questions, options, answers, topic_choice, username):
         sleep(0.02)
     for _ in track(range(100), description='[green]Get ready!'):
         process_data()
-    print(username)
+    print()
     
     # Zip questions, options and answers so that random treats their index positons as the same when shuffling
     combined = list(zip(questions, options, answers))
@@ -176,5 +176,5 @@ def quiz(questions, options, answers, topic_choice, username):
             print(f"[bold purple]New High Score![/bold purple]\n")
             print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
     
-    input("Press any key for main menu: \n") 
+    input("\nPress any key for main menu: \n") 
     return 

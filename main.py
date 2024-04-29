@@ -29,17 +29,18 @@ if (not os.path.isfile(second_file_name)):
 def sign_up(second_file_name):
     while True:
         username = input("Enter a username: \n")
-        # if len(username) < 5:   
-        #     print("Username must be at least 5 characters long.\n")
-        #     continue
-        # password = getpass.getpass("Enter a password: \n")
-        # if len(password) < 5:
-        #     print("Password must be at least 5 characters long.\n")
-        #     continue
-        # with open(second_file_name, "a", newline="") as f:
-        #     writer = csv.writer(f)
-        #     writer.writerow([username, password])
-        # print("Account created successfully!\n")
+        if len(username) < 5:   
+            print("Username must be at least 5 characters long.\n")
+            continue
+        password = getpass.getpass("Enter a password: \n")
+        if len(password) < 5:
+            print("Password must be at least 5 characters long.\n")
+            continue
+        with open(second_file_name, "a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([username, password])
+        print("Account created successfully.\n")
+        print(f"Welcome to Quiz Night {username}!\n")
         return username
 
 def sign_in(second_file_name):
@@ -52,7 +53,7 @@ def sign_in(second_file_name):
             found = False
             for row in reader:
                 if row[0] == username and row[1] == password:
-                    print(f"Welcome back {username}!\n")
+                    print(f"Welcome back to Quiz Night {username}!\n")
                     found = True
                     return username
             if found:
@@ -76,7 +77,7 @@ def topic_choice(choice, username):
     elif choice == "4":
         create_new()
     elif choice == "5":
-        print("Thanks for playing Quiz Night, we hope you enjoyed yourself!\n")
+        return
     else: 
         print("Please only input options shown above.")
 
@@ -106,7 +107,6 @@ def menu(username):
         return False
 
 def main():
-    print("Welcome to Quiz Night!\n")
     while True:
         option = input("Are you a new user? (Y/N): \n").upper()
         if option == "Y":
@@ -125,7 +125,7 @@ def main():
 main()
 # while True:
 #     menu()
-print("Thanks for playing Quiz Night, we hope you enjoyed yourself!\n")
+print("\nThanks for playing Quiz Night, we hope you enjoyed yourself!\n")
 
     
 # choice = ""

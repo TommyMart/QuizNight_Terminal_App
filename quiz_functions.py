@@ -281,28 +281,29 @@ def top_scores():
 
             for i in reader:
                 if i[0] == "1":
-                    music_highscores.append(float(i[1]))
+                    music_highscores.append((i[2], float(i[1])))
                 elif i[0] == "2":
-                    history_highscores.append(float(i[1]))
+                    history_highscores.append((i[2], float(i[1])))
                 elif i[0] == "3":
-                    cities_highscores.append(float(i[1]))
+                    cities_highscores.append((i[2], float(i[1])))
                 elif i[0] == "4":
-                    cs_highscores.append(float(i[1]))
+                    cs_highscores.append((i[2], float(i[1])))
                 elif i[0] == "5":
-                    gk_highscores.append(float(i[1]))
+                    gk_highscores.append((i[2], float(i[1])))
 
-            music_highscores.sort(reverse=True)
-            history_highscores.sort(reverse=True)   
-            cities_highscores.sort(reverse=True)
-            cs_highscores.sort(reverse=True)
-            gk_highscores.sort(reverse=True)
+            music_highscores.sort(key=lambda x: x[1], reverse=True)
+            history_highscores.sort(key=lambda x: x[1], reverse=True)
+            cities_highscores.sort(key=lambda x: x[1], reverse=True)
+            cs_highscores.sort(key=lambda x: x[1], reverse=True)
+            gk_highscores.sort(key=lambda x: x[1], reverse=True)
+
 
             # Add rows to the table
-            table.add_row("[bold]Music[/bold] :microphone:", *[f"{score:.2f}" for score in music_highscores[:3]])
-            table.add_row("[bold]History[/bold] :book:", *[f"{score:.2f}" for score in history_highscores[:3]])
-            table.add_row("[bold]Capital Cities[/bold] :house:", *[f"{score:.2f}" for score in cities_highscores[:3]])
-            table.add_row("[bold]Computer Science[/bold] :dvd:", *[f"{score:.2f}" for score in cs_highscores[:3]])
-            table.add_row("[bold]General Knowledge[/bold] :microbe:", *[f"{score:.2f}" for score in gk_highscores[:3]])
+            table.add_row("[bold]Music[/bold] :microphone:", *[f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]])
+            table.add_row("[bold]History[/bold] :book:", *[f"{score[0]} - {score[1]:.2f}" for score in history_highscores[:3]])
+            table.add_row("[bold]Capital Cities[/bold] :house:", *[f"{score[0]} - {score[1]:.2f}" for score in cities_highscores[:3]])
+            table.add_row("[bold]Computer Science[/bold] :dvd:", *[f"{score[0]} - {score[1]:.2f}" for score in cs_highscores[:3]])
+            table.add_row("[bold]General Knowledge[/bold] :microbe:", *[f"{score[0]} - {score[1]:.2f}" for score in gk_highscores[:3]])
 
             # Print the table
             console.print(table)
