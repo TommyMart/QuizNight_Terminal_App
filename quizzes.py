@@ -12,7 +12,10 @@ from rich.progress import track
 from rich.prompt import Prompt
 
 
+
+
 # App functions
+
 
 # Function to calculate total points based on score and time
 
@@ -30,7 +33,8 @@ def calculate_points(score, total_questions, total_time):
     return total_points
 
 def quiz(questions, options, answers, topic_choice):
-
+    
+    
     # Rich get ready bar 
     def process_data():
         sleep(0.02)
@@ -46,6 +50,7 @@ def quiz(questions, options, answers, topic_choice):
 
     # Start time time stamp
     start_time = time.time()
+    
     file_name = "list.csv"
 
     # If the file doesn't exist we must create it
@@ -171,4 +176,5 @@ def quiz(questions, options, answers, topic_choice):
             print(f"[bold purple]New High Score![/bold purple]\n")
             print(f"Conratulations your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
     
-    input("Press any key for main menu: \n")    
+    input("Press any key for main menu: \n") 
+    return 

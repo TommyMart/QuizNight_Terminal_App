@@ -14,8 +14,11 @@ from rich.style import Style
 # App functions
 from quizzes import quiz
 
+
 def quiz_topics(rand_quiz=None):
     
+    # Initial menu before table
+
     # print("[purple]-----------------------------[/purple]")
     # print("    :microbe:  [bold red]QUIZ TOPICS  [bold red] :microbe:")
     # print("[purple]-----------------------------[/purple]\n")
@@ -25,6 +28,7 @@ def quiz_topics(rand_quiz=None):
     # print("4. Enter 4 - for [bold yellow]Computer Science[/bold yellow] :dvd:")
     # print("5. Enter 5 - for [bold red]General Knowledge[/bold red] :microbe:")
     # print("6. Enter 6 - to return to [bold black]main menu[/bold black]")
+    
     console = Console()
 
     table = Table(title=":book:  QUIZ TOPICS  :book:", style="purple", show_lines=True, title_style="bold white on purple")
