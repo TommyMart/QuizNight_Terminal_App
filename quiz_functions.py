@@ -15,7 +15,7 @@ from rich.style import Style
 from quizzes import quiz
 
 
-def quiz_topics(rand_quiz=None):
+def quiz_topics(username, rand_quiz=None):
     
     # Initial menu before table
 
@@ -93,7 +93,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("C", "C", "B", "A", "D", "B", "A", "A", "C", "D", "B", "A", "C", "B", "A")
-        quiz(questions, options, answers, topic_choice)
+        quiz(questions, options, answers, topic_choice, username)
         
 # History Quiz 
 
@@ -135,7 +135,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "C", "A", "C", "D", "C")
-        quiz(questions, options, answers, topic_choice)
+        quiz(questions, options, answers, topic_choice, username)
 
 # Capital Cities Quiz 
 
@@ -176,7 +176,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("A", "B", "D", "C", "A", "C", "C", "D", "B", "A", "C", "B", "D", "A", "D")
-        quiz(questions, options, answers, topic_choice)
+        quiz(questions, options, answers, topic_choice, username)
 
 # Computer Science Quiz 
 
@@ -206,7 +206,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("B", "C", "B", "D", "A")
-        quiz(questions, options, answers, topic_choice)
+        quiz(questions, options, answers, topic_choice, username)
 
 # General Knowledge Quiz
 
@@ -248,7 +248,7 @@ def quiz_topics(rand_quiz=None):
     )
 
         answers = ("A", "D", "B", "D", "D", "D", "B", "A", "D", "A", "D", "B", "C", "B", "A")
-        quiz(questions, options, answers, topic_choice)
+        quiz(questions, options, answers, topic_choice, username)
 
     elif topic_choice == "6":
         return 

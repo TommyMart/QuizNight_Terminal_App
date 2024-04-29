@@ -64,15 +64,15 @@ def sign_in(second_file_name):
                     sign_up(second_file_name)
                     break
 
-def topic_choice(choice):
+def topic_choice(choice, username):
     # choice = menu()
 
     if choice == "1":
-        quiz_topics()
+        quiz_topics(username)
     elif choice == "2":
         top_scores()
     elif choice == "3":
-        random_quiz()
+        random_quiz(username)
     elif choice == "4":
         create_new()
     elif choice == "5":
@@ -82,7 +82,7 @@ def topic_choice(choice):
 
 
 # menu = ""
-def menu():
+def menu(username):
     console = Console()
 
     # Rich Main Menu table
@@ -102,7 +102,7 @@ def menu():
     if user_choice == "5":
         return True
     else:
-        topic_choice(user_choice)
+        topic_choice(user_choice, username)
         return False
 
 def main():
@@ -119,7 +119,7 @@ def main():
             print("Invalid input. Please enter Y or N.\n")
     while True:
         
-        if menu():
+        if menu(username):
             break
     
 main()

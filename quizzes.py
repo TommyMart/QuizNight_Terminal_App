@@ -32,7 +32,7 @@ def calculate_points(score, total_questions, total_time):
     
     return total_points
 
-def quiz(questions, options, answers, topic_choice):
+def quiz(questions, options, answers, topic_choice, username):
     
     
     # Rich get ready bar 
@@ -40,7 +40,7 @@ def quiz(questions, options, answers, topic_choice):
         sleep(0.02)
     for _ in track(range(100), description='[green]Get ready!'):
         process_data()
-    print()
+    print(username)
     
     # Zip questions, options and answers so that random treats their index positons as the same when shuffling
     combined = list(zip(questions, options, answers))
@@ -57,7 +57,7 @@ def quiz(questions, options, answers, topic_choice):
     # Add topic and score headings and then close it the file
     if (not os.path.isfile(file_name)):
         high_scores = open(file_name, "w")
-        high_scores.write("topic,score\n")
+        high_scores.write("topic,score,username\n")
         high_scores.close()
     
     # Correct Answers
@@ -123,7 +123,7 @@ def quiz(questions, options, answers, topic_choice):
     # Append topic and total points to 'list.csv'
     with open(file_name, "a") as f:
         writer = csv.writer(f)
-        writer.writerow([topic_choice, total_points])
+        writer.writerow([topic_choice, total_points, username])
     
     total_points = float(total_points)
     # Check to see if new High Score
@@ -162,19 +162,19 @@ def quiz(questions, options, answers, topic_choice):
         
         if topic_choice == 1 and total_points >= music_highscores[0]:
             print(f"[bold purple]New High Score![/bold purple]\n")
-            print(f"Conratulations your new Music Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            print(f"Conratulations {username} your new Music Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 2 and total_points >= history_highscores[0]:
             print(f"[bold purple]New High Score![/bold purple]\n")
-            print(f"Conratulations your new History Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            print(f"Conratulations {username} your new History Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 3 and total_points >= cities_highscores[0]:
             print(f"[bold purple]New High Score![/bold purple]\n")
-            print(f"Conratulations your new Capital Cities Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            print(f"Conratulations {username} your new Capital Cities Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 4 and total_points >= cs_highscores[0]:
             print(f"[bold purple]New High Score![/bold purple]\n")
-            print(f"Conratulations your new Computer Science Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            print(f"Conratulations {username} your new Computer Science Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         elif topic_choice == 5 and total_points >= gk_highscores[0]:
             print(f"[bold purple]New High Score![/bold purple]\n")
-            print(f"Conratulations your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
     
     input("Press any key for main menu: \n") 
     return 
