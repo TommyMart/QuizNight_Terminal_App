@@ -38,13 +38,10 @@ def quiz(questions, options, answers, topic_choice):
         process_data()
     print()
     
+    # Zip questions, options and answers so that random treats their index positons as the same when shuffling
     combined = list(zip(questions, options, answers))
-
     random.shuffle(combined)
-
     shuffled_questions, shuffled_options, shuffled_answers = zip(*combined)
-
-
 
 
     # Start time time stamp
