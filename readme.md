@@ -97,7 +97,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ## Main Menu
 
-![Main Menu](images/Screenshot 2024-04-30 at 2.10.14 pm.png)
+![Main Menu](Screenshot 2024-04-30 at 2.10.14 pm.png)
 
 ###### 1. Quiz Topics 
 - Enter 1 to see the quiz topics menu.
@@ -120,7 +120,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ## Quiz Topics
 
-![Quiz Topics](images/Screenshot 2024-04-30 at 2.25.58 pm.png)
+![Quiz Topics](Screenshot 2024-04-30 at 2.25.58 pm.png)
 
 The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral values. To start any of the quizzes please enter their value. 
 
@@ -132,15 +132,15 @@ The Quiz Topics menu shown above displays the quiz topic genres available and th
 - Or to return to the Main Menu enter 6
 
 If you chose to take a quiz, a 'get ready' timer bar will run before your quiz and time starts. 
-![Timer bar](images/Screenshot 2024-04-30 at 2.31.27 pm.png)
+![Timer bar](Screenshot 2024-04-30 at 2.31.27 pm.png)
 
 When the the bar reaches 100% it's time to play!
 
 The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections above and notified if they their answer is correct or incorrect, if incorrect the correct answer is displayed to the user. 
 
-![Quiz question example](images/Screenshot 2024-04-30 at 2.32.59 pm.png)
+![Quiz question example](Screenshot 2024-04-30 at 2.32.59 pm.png)
 
 If the user enters a character that is not from the selected options they are notified that their selection was invalid and are not able to re answer the question. 
 
-![Invalid quiz answer](images/Screenshot 2024-04-30 at 2.39.04 pm.png)
+![Invalid quiz answer](Screenshot 2024-04-30 at 2.39.04 pm.png)
 
