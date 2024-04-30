@@ -28,11 +28,11 @@ if (not os.path.isfile(second_file_name)):
 
 def sign_up(second_file_name):
     while True:
-        username = input("Enter a username: \n")
+        username = input("Please enter a username: \n")
         if len(username) < 5:   
             print("Username must be at least 5 characters long.\n")
             continue
-        password = getpass.getpass("Enter a password: \n")
+        password = getpass.getpass("Please enter a password: \n")
         if len(password) < 5:
             print("Password must be at least 5 characters long.\n")
             continue
@@ -45,8 +45,8 @@ def sign_up(second_file_name):
 
 def sign_in(second_file_name):
     while True:
-        username = input("Enter your username: \n")
-        password = getpass.getpass("Enter your password: \n")
+        username = input("Please enter your username: \n")
+        password = getpass.getpass("Please enter your password: \n")
         with open(second_file_name, "r") as f:
             reader = csv.reader(f)
             next(reader)  
@@ -94,7 +94,7 @@ def menu(username):
     table.add_row("1", "Quiz Topics")
     table.add_row("2", "Topic High Scores")
     table.add_row("3", "Quick Start Random Quiz")
-    table.add_row("4", "New Audio Based Quiz")
+    table.add_row("4", "Quiz Instructions")
     table.add_row("5", "[bright_red]EXIT[/bright_red]")
 
     console.print(table)

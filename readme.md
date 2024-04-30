@@ -59,6 +59,12 @@ The application runs both external and built in Python system packages, these in
 
 ---
 
+## Style Guide
+
+The chosen code style guide for the applicaton is [Pep 8](https://peps.python.org/pep-0008/).
+
+---
+
 #### Congratulations! You've made it past the difficult part. 
 
 #### Now let's have some fun!
@@ -97,21 +103,21 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ## Main Menu
 
-![Main Menu](images/Screenshot2024-04-30at2.10.14pm.png)
+![Main Menu](images/Screenshot2024-04-30at3.16.53pm.png)
 
 ###### 1. Quiz Topics 
 - Enter 1 to see the quiz topics menu.
 
-###### 2. High Scores
+###### 2. Topic High Scores
 - Enter 2 to see the high scores board.
 
-###### 3. Random Quiz
+###### 3. Quick Start Random Quiz
 - Enter 3 to quick start a random quiz.
 
-###### 4. Instructions
+###### 4. Quiz Instructions
 - Enter 4 to see a detailed explanation of the game instructions. 
 
-###### 5. Exit
+###### 5. EXIT
 - Enter 5 to exit the application. 
 
 ##### If you've had enough of reading and just want to jump in please be my guest! You can enter 3 and the app will select a random quiz for you to get started on. 
@@ -138,7 +144,7 @@ If you chose to take a quiz, a 'get ready' timer bar will run before your quiz a
 
 ##### Ready, Set, Go!
 
-When the the bar reaches 100% it's time to play!
+When the the bar reaches 100%, it's time to play!
 
 The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections. Once a selection has been entered the user is notified if they their answer is correct or incorrect, if incorrect, the correct answer is displayed to the user. 
 
@@ -148,13 +154,44 @@ If the user enters a character that is not from the selected options they are no
 
 ![Invalid quiz answer](images/Screenshot2024-04-30at2.39.04pm.png)
 
-Once the user has answered all the questions, their score as a percentile, time in seconds and total points are display. Total points is a function that takes the user's score and time taken and provides a total points score. If the score is a new high score the user is notifed at the end of the quiz after their results. 
+Once the user has answered all the questions, score percentile, time and total points are displayed. Total points is a function that takes the user's score and time taken and provides a total points score for the sake of the high scores board. If the score is a new high score the user is notifed at the end of the quiz after their results as shown in the image below. 
 
 ![Quiz Results](images/Screenshot2024-04-30at3.07.03pm.png)
 
-The image above is notifying username - Tommy that they have achieved a new game high score of 1148.51 points! 
+The image above is notifying username - 'Tommy' that they have achieved a new game high score of 1148.51 points! 
 
 
-## High Scores
+## Topic High Scores
+
+![Topic High Scores](images/highscores.png)
+
+Accessible by entering 2 from the main menu is the topic high scores table. Here any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the scores. Luckily, high scores are not just viewable fto the current username signed in but for all usernames, allowing users to compete against one and other for top top! 
+
+The image above only shows Tommy's scores because at this stage they are the only user to have played any quiz, and if no quiz has been played the high scores table is not shown, instead the user is notified that there are no quiz scores to be displayed. 
+
+## Quick Start Random Quiz
+
+This option from the main menu is for those who don't like waiting! This allows users to jump straight in and let the app decide which quiz topic the user will take. Those topic choices are of course music, history, captial cities, computer science and general knowledge. 
+
+## Quiz Instructions
+
+Unlike the main menu selection above, instructions, accessible by entering 4 from the main menu, is for those are like to understand the ins and outs of the app before playing. Or, of course, if the user doesn't understand any aspect of the app. 
+
+## EXIT
+
+Maybe you've had enough, or maybe your sister wants to try and beat your new high score! 
+
+You can probably guess what entering 5 does from the main menu.. Yes, you're correct, it exits the app. 
+
+---
+
+## Project Management
+
+
+
+---
+
+## Features
+
 
 
