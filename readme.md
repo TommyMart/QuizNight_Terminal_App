@@ -63,24 +63,41 @@ The application runs both external and built in Python system packages, these in
 
 #### Now let's have some fun!
 
-## Signing Up/In
+## Signing Up
 
 Firstly, as a new user you will have to create an account by entering a username and password. Please ensure you remember the password if you want to try and build on your high scores later down the track.
 
-Please select Y if you are a new user: <br>
+- Please select Y if you are a new user: <br>
 ```Are you a new user? (Y/N): Y``` 
 
-Please enter a username that is at least five characters long. <br>
+- Please enter a username that is at least five characters long. <br>
 ```Please enter a username: ```
 
-Please enter a password that is at least five characters long - please be sure to remember it! <br>
+- Please enter a password that is at least five characters long - please be sure to remember it! <br>
 ```Please enter a password: ```
+
+## Siging In
+
+Assuming you've already signed up following the previous instructions and created an account by entering a username and password... 
+
+- Please select N beacause you are not a new user: <br>
+```Are you a new user? (Y/N): N``` 
+
+- Please enter your username. <br>
+```Please enter your username: ```
+
+- Please enter your passwor. <br>
+```Please enter your password: ```
+
+If for any reason you cannot remember your username or password, then it's probably best to cut your losses and enter S to create a new account... Please be sure to remember your details this time!
 
 ---
 
+##### Let's continue... 
+
 ## Main Menu
 
-![Main Menu](/Users/thomasmartin/coder-academy/T1A3_Terminal_App/images/Screenshot 2024-04-30 at 2.10.14 pm.png)
+![Main Menu](images/Screenshot 2024-04-30 at 2.10.14 pm.png)
 
 ###### 1. Quiz Topics 
 - Enter 1 to see the quiz topics menu.
@@ -97,4 +114,33 @@ Please enter a password that is at least five characters long - please be sure t
 ###### 5. Exit
 - Enter 5 to exit the application. 
 
+### If you've had enough of reading and just want to jump in please be my guest! You can enter 3 and we will select a random quiz for you to get started on. 
+
+---
+
+## Quiz Topics
+
+![Quiz Topics](images/Screenshot 2024-04-30 at 2.25.58 pm.png)
+
+The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral values. To start any of the quizzes please enter their value. 
+
+- For Music enter 1
+- For History enter 2
+- For Capital Cities enter 3
+- For Computer Science enter 4
+- And for General Knowledge enter 5
+- Or to return to the Main Menu enter 6
+
+If you chose to take a quiz, a 'get ready' timer bar will run before your quiz and time starts. 
+![Timer bar](images/Screenshot 2024-04-30 at 2.31.27 pm.png)
+
+When the the bar reaches 100% it's time to play!
+
+The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections above and notified if they their answer is correct or incorrect, if incorrect the correct answer is displayed to the user. 
+
+![Quiz question example](images/Screenshot 2024-04-30 at 2.32.59 pm.png)
+
+If the user enters a character that is not from the selected options they are notified that their selection was invalid and are not able to re answer the question. 
+
+![Invalid quiz answer](images/Screenshot 2024-04-30 at 2.39.04 pm.png)
 
