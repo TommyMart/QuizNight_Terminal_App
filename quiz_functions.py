@@ -428,9 +428,9 @@ def top_scores():
 #         input("Press any key for main menu: \n")
     
 
-def random_quiz():
+def random_quiz(username):
     rand_quiz = random.randint(1, 5)
-    quiz_topics(rand_quiz)
+    quiz_topics(username, rand_quiz)
     
 
 def create_new():

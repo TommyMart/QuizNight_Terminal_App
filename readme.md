@@ -97,7 +97,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ## Main Menu
 
-![Main Menu](Screenshot 2024-04-30 at 2.10.14 pm.png)
+![Main Menu](images/Screenshot2024-04-30at2.10.14pm.png)
 
 ###### 1. Quiz Topics 
 - Enter 1 to see the quiz topics menu.
@@ -114,33 +114,47 @@ If for any reason you cannot remember your username or password, then it's proba
 ###### 5. Exit
 - Enter 5 to exit the application. 
 
-### If you've had enough of reading and just want to jump in please be my guest! You can enter 3 and we will select a random quiz for you to get started on. 
+##### If you've had enough of reading and just want to jump in please be my guest! You can enter 3 and the app will select a random quiz for you to get started on. 
 
 ---
 
 ## Quiz Topics
 
-![Quiz Topics](Screenshot 2024-04-30 at 2.25.58 pm.png)
+![Quiz Topics](images/Screenshot2024-04-30at2.25.58pm.png)
 
 The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral values. To start any of the quizzes please enter their value. 
 
-- For Music enter 1
-- For History enter 2
-- For Capital Cities enter 3
-- For Computer Science enter 4
-- And for General Knowledge enter 5
-- Or to return to the Main Menu enter 6
+- Enter 1 for Music 
+- Enter 2 for History 
+- Enter 3 for Capital Cities 
+- Enter 4 for Computer Science 
+- Enter 5 for General Knowledge 
+- Enter 6 to return to the Main Menu 
 
-If you chose to take a quiz, a 'get ready' timer bar will run before your quiz and time starts. 
-![Timer bar](Screenshot 2024-04-30 at 2.31.27 pm.png)
+## Playing the Quiz
+
+If you chose to take a quiz, a 'get ready' timer bar will run before your quiz and timer starts. 
+![Timer bar](images/Screenshot2024-04-30at2.31.27pm.png)
+
+##### Ready, Set, Go!
 
 When the the bar reaches 100% it's time to play!
 
-The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections above and notified if they their answer is correct or incorrect, if incorrect the correct answer is displayed to the user. 
+The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections. Once a selection has been entered the user is notified if they their answer is correct or incorrect, if incorrect, the correct answer is displayed to the user. 
 
-![Quiz question example](Screenshot 2024-04-30 at 2.32.59 pm.png)
+![Quiz question example](images/Screenshot2024-04-30at2.32.59pm.png)
 
-If the user enters a character that is not from the selected options they are notified that their selection was invalid and are not able to re answer the question. 
+If the user enters a character that is not from the selected options they are notified that their selection was invalid and are not able to re answer the question or shown the answer. 
 
-![Invalid quiz answer](Screenshot 2024-04-30 at 2.39.04 pm.png)
+![Invalid quiz answer](images/Screenshot2024-04-30at2.39.04pm.png)
+
+Once the user has answered all the questions, their score as a percentile, time in seconds and total points are display. Total points is a function that takes the user's score and time taken and provides a total points score. If the score is a new high score the user is notifed at the end of the quiz after their results. 
+
+![Quiz Results](images/Screenshot2024-04-30at3.07.03pm.png)
+
+The image above is notifying username - Tommy that they have achieved a new game high score of 1148.51 points! 
+
+
+## High Scores
+
 
