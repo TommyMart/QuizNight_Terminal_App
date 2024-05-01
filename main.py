@@ -1,8 +1,6 @@
 # System Packages
 import os.path
 import csv
-import random
-import time
 import getpass
 
 # External Packages
@@ -11,21 +9,19 @@ from rich.console import Console
 from rich.table import Table
 
 # App functions
-from quiz_functions import quiz_topics, random_quiz, top_scores, create_new
+from quiz_functions import quiz_topics, random_quiz, top_scores, instructions
 
-
-
+# Create a variable and assign it to the csv file
 second_file_name = "user_names.csv"
 
-    # If the file doesn't exist we must create it using the "w" or write
+    # If the file doesn't exist we must create it using the "w" (write mode)
     # Add user_name and password and then close the file
-    
 if (not os.path.isfile(second_file_name)):
     user_names = open(second_file_name, "w")
     user_names.write("user_name,password\n")
     user_names.close()
 
-
+# Sign up function
 def sign_up(second_file_name):
     while True:
         username = input("Please enter a username: \n")
@@ -42,14 +38,15 @@ def sign_up(second_file_name):
         print("Account created successfully.\n")
         print(f"Welcome to Quiz Night {username}!\n")
         return username
-
+    
+# Sign in function
 def sign_in(second_file_name):
     while True:
         username = input("Please enter your username: \n")
         password = getpass.getpass("Please enter your password: \n")
         with open(second_file_name, "r") as f:
             reader = csv.reader(f)
-            next(reader)  
+            next(reader)  # Skip headings
             found = False
             for row in reader:
                 if row[0] == username and row[1] == password:
@@ -65,9 +62,8 @@ def sign_in(second_file_name):
                     sign_up(second_file_name)
                     break
 
+# Main menu selection function call
 def topic_choice(choice, username):
-    # choice = menu()
-
     if choice == "1":
         quiz_topics(username)
     elif choice == "2":
@@ -75,30 +71,32 @@ def topic_choice(choice, username):
     elif choice == "3":
         random_quiz(username)
     elif choice == "4":
-        create_new()
+        instructions()
     elif choice == "5":
         return
     else: 
         print("Please only input options shown above.")
 
-
-# menu = ""
+# Main Menu Table & Input
 def menu(username):
     console = Console()
 
-    # Rich Main Menu table
+    # Rich Main Menu table data
     table = Table(title=":vampire:  MAIN MENU  :vampire:", style="bold purple", show_lines=True, title_style="bold black on purple")
     table.add_column("Selection", style="bold cyan", justify="left")
     table.add_column("Option", style="bold cyan", justify="left")
 
+    # Table selections
     table.add_row("1", "Quiz Topics")
     table.add_row("2", "Topic High Scores")
     table.add_row("3", "Quick Start Random Quiz")
     table.add_row("4", "Quiz Instructions")
     table.add_row("5", "[bright_red]EXIT[/bright_red]")
 
+    # Print table
     console.print(table)
 
+    # User menu selection
     user_choice = input("Please enter your selection: \n")
     if user_choice == "5":
         return True
@@ -106,6 +104,7 @@ def menu(username):
         topic_choice(user_choice, username)
         return False
 
+# First main function directing users to sign in or up
 def main():
     while True:
         option = input("Are you a new user? (Y/N): \n").upper()
@@ -118,17 +117,16 @@ def main():
         else:
             print("Invalid input. Please enter Y or N.\n")
     while True:
-        
         if menu(username):
             break
-    
-main()
-# while True:
-#     menu()
-print("\nThanks for playing Quiz Night, we hope you enjoyed yourself!\n")
 
+# Call main function to start the user experience   
+main()
+
+# User has selected 5 from the main menu and wishes to exit the app
+print("\nGoodbye, we hope to see you again soon!\n")
     
-# choice = ""
+
 
 
 

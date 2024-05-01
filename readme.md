@@ -31,6 +31,20 @@ Link to [Trello Board](https://trello.com/b/wfUXTR4Q/quiz-night-terminal-app).
 
 ---
 
+## System / Hardware Requirements
+
+There are no system or hardware requirements for the application besides the device needs to have a terminal to run the app. The application does not need much processing power so should be runnable on all modern devices. 
+
+The application has been designed to run on the following operating systems:
+
+- macOS
+- Windows
+- Linux
+
+Please also make sure that Python 3 is installed.
+
+--- 
+
 ## Getting Started 
 
 First you must clone the [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
@@ -57,17 +71,17 @@ The application runs both external and built in Python system packages, these in
 ##### External Packages
 - Rich
 
+These are downloaded automatically in a virtual environment when running the run.sh file above. 
+
 ---
 
-## Style Guide
+## Code Style Guide
 
 The chosen code style guide for the applicaton is [Pep 8](https://peps.python.org/pep-0008/).
 
 ---
 
 #### Congratulations! You've made it past the difficult part. 
-
-#### Now let's have some fun!
 
 ## Signing Up
 
@@ -99,7 +113,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ---
 
-##### Let's continue... 
+#### Now let's have some fun!
 
 ## Main Menu
 
@@ -165,9 +179,9 @@ The image above is notifying username - 'Tommy' that they have achieved a new ga
 
 ![Topic High Scores](images/highscores.png)
 
-Accessible by entering 2 from the main menu is the topic high scores table. Here any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the scores. Luckily, high scores are not just viewable fto the current username signed in but for all usernames, allowing users to compete against one and other for top top! 
+Accessible by entering 2 from the main menu is the topic high scores table. Here, any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the score. Luckily, high scores are not just viewable for the current username signed in but for all usernames, allowing users to compete against one and other for the top spot! 
 
-The image above only shows Tommy's scores because at this stage they are the only user to have played any quiz, and if no quiz has been played the high scores table is not shown, instead the user is notified that there are no quiz scores to be displayed. 
+The image above only shows Tommy's scores because at this stage they are the only user to have played any quiz. If no quiz has been played the high scores table is not shown, instead the user is notified that there are no quiz scores to be displayed. 
 
 ## Quick Start Random Quiz
 
@@ -175,23 +189,119 @@ This option from the main menu is for those who don't like waiting! This allows 
 
 ## Quiz Instructions
 
-Unlike the main menu selection above, instructions, accessible by entering 4 from the main menu, is for those are like to understand the ins and outs of the app before playing. Or, of course, if the user doesn't understand any aspect of the app. 
+Unlike the main menu selection above, instructions, accessible by entering 4 from the main menu, is for those are like to understand the ins and outs of the app before playing. Or, of course, if the user doesn't understand something. 
 
 ## EXIT
 
-Maybe you've had enough, or maybe your sister wants to try and beat your new high score! 
+Maybe you've had enough, or, more likely, maybe your sister wants to try and beat your new high score! 
 
 You can probably guess what entering 5 does from the main menu.. Yes, you're correct, it exits the app. 
 
----
-
-## Project Management
-
-
+```"Goodbye, we hope to see you again soon!"```
 
 ---
 
 ## Features
+
+### Sign In/Up Feature
+
+A sign in / up feature that requires a password will be implemented. The main reason for this feature is because of the high scores table and the username associated with the scores. Just having the scores by themselves and no name attached would not have the same effect. 
+
+The sign up feature requires the user to enter a username that is five characters or more long, it is then converted to a title (capital first letter) to greet the user once sign up is completed. The next user requirement is a password, this also needs to be 5 or more characters long. The username and password is then written to a csv file called user_names.csv to facilitate the sign in function. 
+
+The sign in function require the user to enter their previously entered username and password, entered during the sign up feature, that opens and reads the user_names.csv file. While reading the file, using a for loop, the application check to see if the username matches an existing username, if there is, it then checks to see if the password matches. If the entered two values match an existing two values, the user is granted entry to the quiz under the entered username. If a match is not found, the user is then asked if they would like to sign up with a new account, or, try and sign in again. 
+
+- Import csv system package.
+- Create a csv file called user_names.csv and assign it to the second_file_name variable.
+- Open the variable under write mode so that a file is created if one does not already exist.
+- Write username and password to the file seperated by commas so the app can access each during sign in/up.
+- Close the app, because 'with' was not used.
+
+##### Sign Up
+
+- Input username that is at least 5 characters long. 
+- Input password that is at least 5 characters long.
+- Write new username and password to csv file.
+- Welcome username.
+
+##### Sign In
+
+- Input username.
+- Input password. 
+- Open csv file variable in 'r' (read) mode. 
+- Loop through each row of csv file and see if username matches index 0 in the row list, if a match is found, check if password matches index 1 of that specific row list. 
+- If found, Welcome user to the Quiz Night app and return their username.
+- If not found, notify the user they have not entered the right username or password. Or, give them an option to return to sign up function. 
+
+---
+
+### Quiz Feature 
+
+Some may think, hmmmm, writing code for a quiz must be pretty easy... Well, I've got news for you! Let's put aside time taken and total points for now, I'll explain them later. 
+
+Initally, a function was written that takes the topic choice, question, four answer options, answer and username. The questions, answers and options must then be bundled together and randomly sorted so that their indexes remained constant between the sets but shuffled for each quiz attempt. This allows the question order to be at random, eridicating the chance of users writing down or memorising the answers and input them without reading the question. 
+
+This is achieved by zipping the lists, using the random shuffle package to shuffle, and then assign the newly shuffled lists to new variables - shuffled_questions, shuffled_options, shuffled_answers. These new variable lists can now be used for the quiz and will have the same corresponding indexes, so the questions, options and answers still marry up. 
+
+A score counter is initiated and set to 0, that increases by one every time the users guess and answer match. This final score is then displayed at the end of the quiz as a percentile. It is also used to calculate the total points along with the total time taken.
+
+A variable question_num is set to 0, and a for loop is used to loop through the shuffled questions, options and answers, using question_num for the index of each, which is then increased by 1 after displaying the result to the user at the end of the loop. Since the questions data is a set, the for loop will loop through question in questions until there are not more questions. 
+
+The results are then displayed as answers and guesses, a percentile score and total time. 
+
+![Results](images/results.png)
+
+---
+
+### Total Points and Time Taken Feature
+
+To eliminate the chance of a user googling the answers a total points scoring function is created using score, number of questions and total time. 
+
+A time stamp is saved to a start_time variable which happens after the get ready progress bar has reached 100%, this is achieved by using the time package. The quiz loop then runs for all questions and then another time stamp is saved to a end_time variable. The total time is calculated by subtracting the start time and from the end time which is displayed to the user as 'total time taken' in the results section and then passed to the calculate_points function to calculate total points. 
+
+The calculate points function take the score, which is a percentile and multiplies is by 50, and saved to the score points variable. This is done to give the calculation some room to move when taking time into account. A variable max time is calculated by muliplying the number of questions in the quiz with the allocated time of 30 seconds per question, if the user takes less time than the allocated 30 seconds per question max time for the overall quiz, then that time difference is added to the score points variable. 
+
+This might be a little confusing... so here's an example to clear things up. 
+
+- If there was 5 questions in the quiz
+- And the user got questions 3 correct 
+- Their score would be 60 (3 / 5 * 100)
+- Their score points would be 300 (60 * 50)
+- Their max time would be 150 (5 * 30) 
+- Their total time is 120 
+- Their time points would be 30 (150 - 120)
+- Their total points would therefor be 330 (300 + 30)
+
+This way the user is rewarded when they take less time than the allocated 30 seconds per question. 
+
+The total points, username and quiz topic are then appended to the list.csv so that the high scores feature can read, then reverse sort the lists based on total points so that the 3 highest scores can be displayed and their username. 
+
+A csv file is then created using "w" write mode if it has not been created already and the headings topic, score (total points) and username are written to the first row. 
+
+---
+
+## High Scores Board
+
+
+The high scores board opens the list.csv file that was saved to the variable file_name in 'r' read mode, and appends each row entry of topic, score and username to a list. 
+
+![List Headings](images/listhaedings.png)
+
+Because the file was open with ```with``` the file does not need to be closed. This then seperates the scores into their topics, this is important so that the board can display the highest scores for all topics and not just the highest overall. This is achieved by using a for loop, and if the first index ```i[0]``` equals 1 for example, ```i[2]``` username, now index 0, and ```float(i[1])```, now index 1, are appended to the music topic list - and the same for all other list topics. 
+
+Once the loop has appened all the rows data to their corresponding topic lists, the lists are then sorted using the .sort method and in reverse based on index 1, ```x[1]``` or scores, so that the highest scores are at the start of the list and lowest at the end.  
+
+List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three lists, or highest three scores, within the list and display their scores or index 1. ```score[1]:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off. Index 0 is also displayed, which as mentioned previously, is now username in this new list. 
+
+These results are then printed to the termal as a rich module table in different colours. 
+
+![High Scores Board](images/highscores.png)
+
+---
+
+
+
+## Project Management
 
 
 

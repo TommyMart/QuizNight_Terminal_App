@@ -255,7 +255,7 @@ def quiz_topics(username, rand_quiz=None):
     else: 
         print("Please only input corresponding topic numbers shown above.\n")
         input("Enter any key to return to quiz topics menu\n")
-        quiz_topics()
+        quiz_topics(username)
 
 
 def top_scores():
@@ -312,127 +312,13 @@ def top_scores():
     except: 
         print("Sorry, there's no quiz scores to show right now.\n")
         input("Press any key for main menu: \n")
-# def top_scores():
-#     print("[purple]-----------------------------[/purple]")
-#     print("     :dart:  [bold blue]HIGH SCORES[/bold blue]  :dart: ")
-#     print("[purple]-----------------------------[/purple]\n")
-#     file_name = "list.csv"
 
-#     try:
-#         with open(file_name, "r") as f:
-#             reader = csv.reader(f)
-#             # reader.__next__()
-
-#             music_highscores = []
-#             history_highscores = []
-#             cities_highscores = []
-#             cs_highscores = []
-#             gk_highscores = []
-
-#             for i in reader:
-#                 if i[0] == "1":
-#                     music_highscores.append(float(i[1]))
-#                 elif i[0] == "2":
-#                     history_highscores.append(float(i[1]))
-#                 elif i[0] == "3":
-#                     cities_highscores.append(float(i[1]))
-#                 elif i[0] == "4":
-#                     cs_highscores.append(float(i[1]))
-#                 elif i[0] == "5":
-#                     gk_highscores.append(float(i[1]))
-
-#             music_highscores.sort(reverse=True)
-#             history_highscores.sort(reverse=True)   
-#             cities_highscores.sort(reverse=True)
-#             cs_highscores.sort(reverse=True)
-#             gk_highscores.sort(reverse=True)
-
-#             # Music High Scores
-#             print("[purple]-----------------------------[/purple]")
-#             print("       :microphone:   [bold red]MUSIC  [/bold red]:microphone:")
-#             print("[purple]-----------------------------[/purple]")
-#             if not music_highscores:
-#                 print("No attempts")
-#             else:
-#                 print(f":trophy: - [bold underline]{music_highscores[0]:.2f}[/bold underline]\n")
-#             if len(music_highscores) >= 2: 
-#                 print(f"[green]2 - {music_highscores[1]:.2f}[/green]")
-            
-#             if len(music_highscores) >= 3: 
-#                 print(f"[purple]3 - {music_highscores[2]:.2f}[/purple]")
-            
-#             # History High Scores
-#             print("[purple]-----------------------------[/purple]")
-#             print("      :book:   [bold red]HISTORY  [/bold red]:book:")
-#             print("[purple]-----------------------------[/purple]")
-#             if not history_highscores:
-#                 print("No attempts")
-#             else:
-#                 print(f"       :trophy: - [bold]{history_highscores[0]:.4f}[/bold]\n")
-#             if len(history_highscores) >= 2: 
-#                 print(f"     [green]Second - {history_highscores[1]:.4f}[/green]")
-            
-#             if len(history_highscores) >= 3: 
-#                 print(f"     [purple]Third - {history_highscores[2]:.4f}[/purple]")
-            
-
-#             # Capital Cities High Scores
-#             print("[purple]-----------------------------[/purple]")
-#             print("    :house: [bold red]CAPITAL CITIES[/bold red]  :house:")
-#             print("[purple]-----------------------------[/purple]")
-#             if not cities_highscores:
-#                 print("No attempts")
-#             else:
-#                 print(f"       :trophy: - {cities_highscores[0]:.4f}")
-#             if len(cities_highscores) >= 2: 
-#                 print(f"     Second - {cities_highscores[1]:.4f}")
-            
-#             if len(cities_highscores) >= 3: 
-#                 print(f"     Third - {cities_highscores[2]:.4f}")
-            
-
-#             # Computer Science High Scores
-#             print("[purple]-----------------------------[/purple]")
-#             print("   :dvd: [bold red]COMPUTER SCIENCE[/bold red]  :dvd:")
-#             print("[purple]-----------------------------[/purple]")
-#             if not cs_highscores:
-#                 print("No attempts")
-#             else: 
-#                 print(f"       :trophy: - {cs_highscores[0]:.4f}!\n")
-#             if len(cs_highscores) >= 2: 
-#                 print(f"     Second - {cs_highscores[1]:.4f}")
-            
-#             if len(cs_highscores) >= 3: 
-#                 print(f"     Third - {cs_highscores[2]:.4f}")
-            
-
-#             # General Knowledge High Scores
-#             print("[purple]-----------------------------[/purple]")
-#             print("   :microbe: [bold red]GENERAL KNOWLEDGE[/bold red]  :microbe:")
-#             print("[purple]-----------------------------[/purple]")
-#             if not gk_highscores:
-#                 print("You have not attempted the General Knowledge Quiz yet.")
-#             else:
-#                 print(f"       :trophy: - {gk_highscores[0]:.4f}\n")
-#             if len(gk_highscores) >= 2: 
-#                 print(f"     Second - {gk_highscores[1]:.4f}")
-            
-#             if len(gk_highscores) >= 3: 
-#                 print(f"     Third - {gk_highscores[2]:.4f}")
-            
-
-#             input("Press any key for main menu: \n")
-#     except: 
-        
-#         print("Sorry, there's no quiz scores to show right now.\n")
-#         input("Press any key for main menu: \n")
-    
-
+# Random Quiz Function
 def random_quiz(username):
     rand_quiz = random.randint(1, 5)
     quiz_topics(username, rand_quiz)
     
 
-def create_new():
+def instructions():
     print("new")
 
