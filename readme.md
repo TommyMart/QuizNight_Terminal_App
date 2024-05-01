@@ -81,7 +81,7 @@ The chosen code style guide for the applicaton is [Pep 8](https://peps.python.or
 
 ---
 
-#### Congratulations! You've made it past the difficult part. 
+#### Congratulations! You've made it past the difficult part - now let's create a username and password. 
 
 ## Signing Up
 
@@ -113,7 +113,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ---
 
-#### Now let's have some fun!
+#### Now let's have some Quiz Night fun!
 
 ## Main Menu
 
@@ -134,7 +134,7 @@ If for any reason you cannot remember your username or password, then it's proba
 ###### 5. EXIT
 - Enter 5 to exit the application. 
 
-##### If you've had enough of reading and just want to jump in please be my guest! You can enter 3 and the app will select a random quiz for you to get started on. 
+##### If you've had enough of reading and just want to jump in, please be my guest! You can enter 3 from the main menu and the app will select a random quiz for you to get started on. 
 
 ---
 
@@ -255,6 +255,8 @@ The results are then displayed as answers and guesses, a percentile score and to
 
 ![Results](images/results.png)
 
+Error handling has been utilised by printing 'Incorrect!' if the user enters a wrong answer, followed by a string displaying the correct answer. If the user enters an input that doesn't match the options, A, B, C or D, the a message is displayed that the input was not a valid answer. This alone should handle most errors, but just in case a try and except code is executed in case of any unlikely errors. The progress bar also has a try and except block, just in case it doesn't work on some operating systems. 
+
 ---
 
 ### Total Points and Time Taken Feature
@@ -276,11 +278,15 @@ This might be a little confusing... so here's an example to clear things up.
 - Their time points would be 30 (150 - 120)
 - Their total points would therefore be 330 (300 + 30)
 
+![Total points](images/totalpoint.png)
+
 This way the user is rewarded when they take less time than the allocated 30 seconds per question. 
 
 The total points, username and quiz topic are then appended to the list.csv so that the high scores feature can read, then reverse sort the lists based on total points so that the 3 highest scores can be displayed and their username. 
 
 A csv file is created at the start of the quiz "w" write mode if it has not been made already and the headings topic, score (total points) and username are written to the first row. The data is then appended to the list so it can be read at different stages of the app. 
+
+Error handling has been implemented into the code by using try and except on the quiz function itself, in which the time variables are assigned locally. The calculate points function also has try and except incase any unlikely errors should occur. 
 
 ---
 
@@ -300,6 +306,10 @@ These results are then printed to the termal as a rich package module table in d
 
 ![High Scores Board](images/highscores.png)
 
+During the writing of this function, a bug arose where if the topic high scores were called when the csv scores list had not been created yet. In this scenario the application was trying to read a file that did not exist, so it threw a tantrum. After some trial and error coding, this bug was resolved by using try and except, if the file did not exist it meant that no one has attempted a quiz yet, because the write file was at the start of the quiz function. This file could have been moved so that it was created earlier, but I decided to use the except block to print ```Sorry, there's no quiz scores to show right now.``` instead. This way the user is more inclined to want to attempt a quiz so they can see what the high scores board looks like!
+
+A parent try and except was also used at the very start of the function so if any unlikely errors were to occur they would be caught and a more appropriate message would be displayed. 
+
 ---
 
 ## Random Quiz Feature
@@ -313,9 +323,75 @@ For example:
 
 For the users quiz score and username to be appended to the list csv file, the username must also be passed through the functions. The rand_quiz must also be set to equal None in the quiz topics function so that is the function is called from the main menu, rand_quiz doesn't not impact what quiz is ran. 
 
+Error handling was implemented to this function by using try and except. The random integer can also only be between 1 and 5 which corresponds to each quiz, so that no errors can occur. 
+
 ---
 
 ## Project Management
 
-To 
+For project management and planning a Trello Board was created, this provided a due date for each feature and a checklist of items needed to be completed to satify the completation of the feature. Once done the feature card is able to be moved to the 'Done' category, this greatly helped in organisation, time management and lessened stress when not knowing which feature to work on. 
+
+### Sign Up/In
+
+Due date: 3rd May 
+Completion: 1st May
+
+- Import csv system package.
+- Create a csv file called user_names.csv and assign it to the second_file_name variable.
+- Open the variable under write mode so that a file is created if one does not already exist.
+- Write username and password to the file seperated by commas so the app can access each during sign in/up.
+- Close the app, because 'with' was not used.
+
+##### Sign Up
+
+- Input username that is at least 5 characters long. 
+- Input password that is at least 5 characters long.
+- Write new username and password to csv file.
+- Welcome username.
+
+##### Sign In
+
+- Input username.
+- Input password. 
+- Open csv file variable in 'r' (read) mode. 
+- Loop through each row of csv file and see if username matches index 0 in the row list, if a match is found, check if password matches index 1 of that specific row list. 
+- If found, Welcome user to the Quiz Night app and return their username.
+- If not found, notify the user they have not entered the right username or password. Or, give them an option to return to sign up function. 
+
+![Trello Sign In/Up](images/trello.signin.png)
+
+## Quiz 
+
+Due date: 1st May
+Completation: 1st May
+
+- Write a quiz function that takes the index, or question number, and accesses each index within the three questions, options and answer lists, then returns if the users guess is equal to the answer.
+- Input quiz questions, options and answer data as sets. 
+- Shuffle the questions, answers and options using the random function so that the order of questions change each time.  
+- Keep track of scores using a score += counter per correct user guess. 
+- Write a string that informs the user if their guess was correct or incorrect per question. 
+- Display a string of the users guesses and the correct answers.
+- Display the users score as a percentile. 
+
+![Trello Quiz](images/trello.quizfunction.png)
+
+## Total Points and Time Taken
+
+Due Date: 3rd May
+Completion 1st May
+
+- Write a time stamp to use as start time.
+- Write a time stamp to use as end time.
+- Write a calculation that works out total time taken.
+- Write a function that takes total time taken and score and calculates a total points score that produces a higher score the less time the user takes. 
+- Write a string that display total points at the end of the quiz. 
+- Error handling so if an error occurs during the calculate points function of quiz function.
+
+![Total Points Trello](images/totalpoints.trello.png)
+
+## High Scores Board
+
+Due Date: 4th May
+Completion: 3rd May
+
 
