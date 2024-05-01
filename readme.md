@@ -201,7 +201,7 @@ You can probably guess what entering 5 does from the main menu.. Yes, you're cor
 
 ---
 
-## Features
+## FEATURES
 
 ### Sign In/Up Feature
 
@@ -237,7 +237,6 @@ Error handling has been ulitised by printing a incorrect username or password st
 
 ```"Oops! Something seems to be not working, please try again."```
 
----
 
 ### Quiz Feature 
 
@@ -257,7 +256,6 @@ The results are then displayed as answers and guesses, a percentile score and to
 
 Error handling has been utilised by printing 'Incorrect!' if the user enters a wrong answer, followed by a string displaying the correct answer. If the user enters an input that doesn't match the options, A, B, C or D, the a message is displayed that the input was not a valid answer. This alone should handle most errors, but just in case a try and except code is executed in case of any unlikely errors. The progress bar also has a try and except block, just in case it doesn't work on some operating systems. 
 
----
 
 ### Total Points and Time Taken Feature
 
@@ -288,9 +286,8 @@ A csv file is created at the start of the quiz "w" write mode if it has not been
 
 Error handling has been implemented into the code by using try and except on the quiz function itself, in which the time variables are assigned locally. The calculate points function also has try and except incase any unlikely errors should occur. 
 
----
 
-## High Scores Board Feature
+### High Scores Board Feature
 
 The high scores board opens the list.csv file that was saved to the variable file_name in 'r' read mode, and appends each row entry of topic, score and username to a list. 
 
@@ -310,9 +307,8 @@ During the writing of this function, a bug arose where if the topic high scores 
 
 A parent try and except was also used at the very start of the function so if any unlikely errors were to occur they would be caught and a more appropriate message would be displayed. 
 
----
 
-## Random Quiz Feature
+### Random Quiz Feature
 
 The random quiz feature takes the username, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. The function then uses the random package to assign a random integer of 1 to 5, because there are 5 quiz topics, to the variable rand_quiz. That variable integar is then passed to quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar. 
 
@@ -327,9 +323,10 @@ Error handling was implemented to this function by using try and except. The ran
 
 ---
 
-## Project Management
+## PROJECT MANAGEMENT
 
 For project management and planning a Trello Board was created, this provided a due date for each feature and a checklist of items needed to be completed to satify the completation of the feature. Once done the feature card is able to be moved to the 'Done' category, this greatly helped in organisation, time management and lessened stress when not knowing which feature to work on. 
+
 
 ### Sign Up/In
 
@@ -360,7 +357,8 @@ Completion: 1st May
 
 ![Trello Sign In/Up](images/trello.signin.png)
 
-## Quiz 
+
+### Quiz 
 
 Due date: 1st May
 Completation: 1st May
@@ -375,7 +373,8 @@ Completation: 1st May
 
 ![Trello Quiz](images/trello.quizfunction.png)
 
-## Total Points and Time Taken
+
+### Total Points and Time Taken
 
 Due Date: 3rd May
 Completion 1st May
@@ -389,9 +388,48 @@ Completion 1st May
 
 ![Total Points Trello](images/totalpoints.trello.png)
 
-## High Scores Board
+
+### High Scores Board
 
 Due Date: 4th May
-Completion: 3rd May
+Completion: 2nd May
 
+- Open the csv file which hold the topics, scores and username in read mode. 
+- Append row data to new lists based on topic number.
+- Sort list from highest score to lowest score.
+- Display first three lists within list username and score for each new list.
+- Add this data to display in a table.
+- Write error handling for function itself and if the csv list doesn't exist.
+- Test it works. 
+
+![High Scores Trello](images/highscores.trello.png)
+
+
+### Random Quiz
+
+- Import Random. 
+- Write random function that generates random a integer between range 1 and 5 inclusive each time it is called. 
+- Pass that number to the Quiz function so that the random integar equals the quiz topic value.
+- Ensure the high scores board does not produce an error if the scores csv file has not yet been created. 
+- Write error handling should an error occur. 
+- Test it works. 
+
+![Random Quiz Trello](images/random.trello.png)
+
+
+### Other Cards
+
+Some other cards used in project management trello board are:
+
+- Error Handling
+- Aesthetics 
+- Package research
+- Quiz Data
+- Main Menu
+- Quiz Topics Menu
+- Write Scripts
+
+##### Work in progress Trello Board
+
+![WIP Trello Board](images/WIPTrello.png)
 
