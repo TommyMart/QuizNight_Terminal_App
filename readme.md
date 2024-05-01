@@ -233,6 +233,10 @@ The sign in function require the user to enter their previously entered username
 - If found, Welcome user to the Quiz Night app and return their username.
 - If not found, notify the user they have not entered the right username or password. Or, give them an option to return to sign up function. 
 
+Error handling has been ulitised by printing a incorrect username or password string if there isn't a match, the user then has the opportunity to retry or enter s to sign up. If the user enters a character other than Y or N, then 'Invalid input. please enter Y or N' is displayed. Try and except code error handling has also been added in case of the unlikely event that an error is thrown during the main, sign_in or sing_up functions. 
+
+```"Oops! Something seems to be not working, please try again."```
+
 ---
 
 ### Quiz Feature 
@@ -267,21 +271,20 @@ This might be a little confusing... so here's an example to clear things up.
 - And the user got questions 3 correct 
 - Their score would be 60 (3 / 5 * 100)
 - Their score points would be 300 (60 * 50)
-- Their max time would be 150 (5 * 30) 
-- Their total time is 120 
+- Their max time would be 150 seconds (5 * 30) 
+- Let's say their total time is 120 seconds
 - Their time points would be 30 (150 - 120)
-- Their total points would therefor be 330 (300 + 30)
+- Their total points would therefore be 330 (300 + 30)
 
 This way the user is rewarded when they take less time than the allocated 30 seconds per question. 
 
 The total points, username and quiz topic are then appended to the list.csv so that the high scores feature can read, then reverse sort the lists based on total points so that the 3 highest scores can be displayed and their username. 
 
-A csv file is then created using "w" write mode if it has not been created already and the headings topic, score (total points) and username are written to the first row. 
+A csv file is created at the start of the quiz "w" write mode if it has not been made already and the headings topic, score (total points) and username are written to the first row. The data is then appended to the list so it can be read at different stages of the app. 
 
 ---
 
-## High Scores Board
-
+## High Scores Board Feature
 
 The high scores board opens the list.csv file that was saved to the variable file_name in 'r' read mode, and appends each row entry of topic, score and username to a list. 
 
@@ -293,15 +296,26 @@ Once the loop has appened all the rows data to their corresponding topic lists, 
 
 List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three lists, or highest three scores, within the list and display their scores or index 1. ```score[1]:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off. Index 0 is also displayed, which as mentioned previously, is now username in this new list. 
 
-These results are then printed to the termal as a rich module table in different colours. 
+These results are then printed to the termal as a rich package module table in different colours. 
 
 ![High Scores Board](images/highscores.png)
 
 ---
 
+## Random Quiz Feature
 
+The random quiz feature takes the username, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. The function then uses the random package to assign a random integer of 1 to 5, because there are 5 quiz topics, to the variable rand_quiz. That variable integar is then passed to quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar. 
+
+For example: 
+
+- If the random integer is 1, the topic choice is 1 and the music quiz is ran called.
+- If the random integer is 4, the topic choice is 4 and the computer science quiz is called. 
+
+For the users quiz score and username to be appended to the list csv file, the username must also be passed through the functions. The rand_quiz must also be set to equal None in the quiz topics function so that is the function is called from the main menu, rand_quiz doesn't not impact what quiz is ran. 
+
+---
 
 ## Project Management
 
-
+To 
 
