@@ -16,8 +16,8 @@ from quizzes import quiz
 
 # Quiz Topics Menu and Quiz data function
 def quiz_topics(username, rand_quiz=None):
-    
     try:
+        # Create console variable for the rich table
         console = Console()
 
         # Table columns with selection and topic headings
@@ -41,13 +41,12 @@ def quiz_topics(username, rand_quiz=None):
         # If random quiz has not been called asked user for selection
         if rand_quiz is None:
             topic_choice = input("\nPlease enter your selection: \n")
+
         else: 
             # Random quiz has been called and rand_quiz integar ='s topic_choice
             topic_choice = str(rand_quiz)
 
-
     # Music Quiz if topic choice ='s 1
-
         if topic_choice == "1": 
             # Questions
             questions = (
@@ -93,8 +92,8 @@ def quiz_topics(username, rand_quiz=None):
             quiz(questions, options, answers, topic_choice, username)
             
     # History Quiz if topic choice ='s 2
-
         elif topic_choice == "2":
+
             # Questions
             questions = (
                     ("\nWhat year was the Berlin Wall built?: \n"), 
@@ -114,6 +113,7 @@ def quiz_topics(username, rand_quiz=None):
                     ("\nMartin Luther King Jr. was assassinated in which US state?: \n"),
                     ("\nWho discovered penicillin?: \n"),
                     )
+            
             # Options 
             options = (
                 ("A. 1948", "B. 1961", "C. 1957", "D. 1964"),
@@ -133,16 +133,18 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. Texas", "B. Louisiana", "C. Alabama", "D. Tennessee"),
                 ("A. Geoffery Bennet", "B. John Daniels", "C. Alexander Fleming", "D. Thomas Hoover"),
                 )
+            
             #Answers
             answers = (
                 "B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "C", "A", "C", "D", "C"
                 )
+            
             # Call quiz function to run quiz 
             quiz(questions, options, answers, topic_choice, username)
 
     # Capital Cities Quiz if topic choice ='s 3
-
         elif topic_choice == "3":
+
             # Questions
             questions = (
                     ("\nWhat is the capital of Romania?: \n"), 
@@ -160,8 +162,8 @@ def quiz_topics(username, rand_quiz=None):
                     ("\nWhat is the capital of Zimbabwe?: \n"),
                     ("\nWhat is the capital of Paraguay?: \n"),
                     ("\nWhat is the capital of Cameroon?: \n"),
-                    
                     )
+            
             # Options
             options = (
                 ("A. Bucharest", "B. Monrovia", "C. Dhiresj", "D. Basseterre"),
@@ -180,16 +182,18 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. Asuncion", "B. Nairobi", "C. Nassau", "D. Bangui"),
                 ("A. Quito", "B. Nairobi", "C. Nassau", "D. Yaounde"),
                 )
+            
             # Answers
             answers = (
                 "A", "B", "D", "C", "A", "C", "C", "D", "B", "A", "C", "B", "D", "A", "D"
                 )
+            
             # Call quiz function to run quiz 
             quiz(questions, options, answers, topic_choice, username)
 
     # Computer Science Quiz if topic choice ='s 4
-
         elif topic_choice == "4":
+
             # Questions
             questions = (
                     ("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
@@ -198,6 +202,7 @@ def quiz_topics(username, rand_quiz=None):
                     ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
                     ("\nWhich pop star was Judge Judy's neighbor?: \n"),
                     )
+            
             # Options
             options = (
                 ("A. Chicago", "B. East", "C. Palm", "D. North"),
@@ -216,16 +221,18 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. ", "B. ", "C. ", "D. "),
                 ("A. ", "B. ", "C. ", "D. "),
         )
+            
             # Answers
             answers = (
                 "B", "C", "B", "D", "A"
                 )
+            
             # Call quiz function to run quiz 
             quiz(questions, options, answers, topic_choice, username)
 
     # General Knowledge Quiz if topic choice ='s 5
-
         elif topic_choice == "5":
+
             # Questions
             questions = (
                     ("\nIn which year was television invented?: \n"), 
@@ -244,6 +251,7 @@ def quiz_topics(username, rand_quiz=None):
                     ("\nIn which year was John F. Kennedy assassinated?: \n"),
                     ("\nGreenland was a colony of which country until 1981?: \n"),
                     )
+            
             # Options
             options = (
                 ("A. 1927", "B. 1941", "C. 1907", "D. 1953"),
@@ -261,25 +269,30 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. 1944", "B. 1946", "C. 1945", "D. 1947"),
                 ("A. 1961", "B. 1963", "C. 1965", "D. 1967"),
                 ("A. Denmark", "B. Norway", "C. Russia", "D. Switzerland"),
-        )
+                )
+            
             # Answers
             answers = (
                 "A", "D", "B", "D", "D", "D", "B", "A", "D", "A", "D", "B", "C", "B", "A"
                 )
+            
             # Call quiz function to run quiz 
             quiz(questions, options, answers, topic_choice, username)
 
         # Return to Main Menu
         elif topic_choice == "6":
             return 
+        
         else: 
             # Error handling if invalid input is entered
             print("Please only input corresponding topic numbers shown above.\n")
             input("Enter any key to return to quiz topics menu\n")
             quiz_topics(username)
+
     except: 
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
+
 
 # High Scores Board Function
 def top_scores():
@@ -293,10 +306,11 @@ def top_scores():
         table.add_column("2nd Place", style="red", justify="center")
         table.add_column("3rd Place", style="yellow", justify="center")
 
+        # Assign variable file_name to list.csv so that it can be opened
         file_name = "list.csv"
 
         try: 
-            # Open csv file holding the scores in read mode 
+            # Open csv file holding the scores in read mode and creat 5 new lists
             with open(file_name, "r") as f:
                 reader = csv.reader(f)
                 music_highscores = []
@@ -325,7 +339,6 @@ def top_scores():
                 cs_highscores.sort(key=lambda x: x[1], reverse=True)
                 gk_highscores.sort(key=lambda x: x[1], reverse=True)
 
-
                 # Add rows to the table and display index [0] username and index [1] score for the first three itertaions [:3]
                 table.add_row("[bold]Music[/bold] :microphone:", *[f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]])
                 table.add_row("[bold]History[/bold] :book:", *[f"{score[0]} - {score[1]:.2f}" for score in history_highscores[:3]])
@@ -336,23 +349,30 @@ def top_scores():
                 # Print the table
                 console.print(table)
 
+                # Input holder so
                 input("Press any key for main menu: \n")
+
         except: 
             # If the csv file holding the scores has not been created yet
             print("Sorry, there's no quiz scores to show right now.\n")
             input("Press any key for main menu: \n")
+
     except: 
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
+
 # Random Quiz Function
 def random_quiz(username):
     try:
+        # Use random package to return a integer between 1 and 5
         rand_quiz = random.randint(1, 5)
+        # quiz_topics function passing the rand_quiz integer
         quiz_topics(username, rand_quiz)
     except: 
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
+
 
 # Instructions Function
 def instructions():

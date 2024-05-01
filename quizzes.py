@@ -9,19 +9,14 @@ from time import sleep
 # from colorama import Fore, Style, Back
 from rich import print
 from rich.progress import track
-from rich.prompt import Prompt
-
-
-
+# from rich.prompt import Prompt
 
 # App functions
 
 
 # Function to calculate total points based on score and time
-
 def calculate_points(score, total_questions, total_time):
     try:
-
         # Score points: 50 points for each correct answer
         score_points = score * 50
         
@@ -31,22 +26,27 @@ def calculate_points(score, total_questions, total_time):
         
         # Total points: sum of score points and time points
         total_points = score_points + time_points
-        
         return total_points
+    
+    # Unexpected Error Handling    
     except: 
         print("Oops! Something seems to be not working, please try again.")
 
+
+# Function that runs and displays the quiz data and results
 def quiz(questions, options, answers, topic_choice, username):
-    
     try:
         try:
+
             # Rich get ready bar 
             def process_data():
                 sleep(0.02)
             for _ in track(range(100), description='[green]Get ready!'):
                 process_data()
             print()
+
         except: 
+            # Unexpected Error Handling
             print("Oops! Something seems to be not working, please try again.")
     
         # Zip questions, options and answers so that random treats their index positons as the same when shuffling
@@ -58,6 +58,7 @@ def quiz(questions, options, answers, topic_choice, username):
         # Start time time stamp
         start_time = time.time()
         
+        # Assign new list to variable file_name
         file_name = "list.csv"
 
         # If the file doesn't exist we must create it
@@ -67,13 +68,13 @@ def quiz(questions, options, answers, topic_choice, username):
             high_scores.write("topic,score,username\n")
             high_scores.close()
         
-        # Correct Answers
+        # Correct Answers score counter starting at 0
         score = 0
 
-        # Number of questions answered
+        # A black list to append user guesses per question
         guesses = []
 
-        # Question counter
+        # Question number counter starting at 0
         question_num = 0
 
         # Loop through each question in question_num counter index and print
@@ -89,21 +90,24 @@ def quiz(questions, options, answers, topic_choice, username):
             # Finally question_num + 1 for next question iteration
             guess = input( "\nEnter (A, B, C, D): \n").upper()
             guesses.append(guess)
+
             if guess == shuffled_answers[question_num]:
                 score += 1
                 print("[bold green]Correct![/bold green]")
+
             elif guess not in ["A", "B", "C", "D"]:
                 print(f"{guess} is not a valid answer!")
+
             else: 
                 print("[bold red]Incorrect![bold red]")
                 print(f"[bold green]{shuffled_answers[question_num]} is the correct answer.[/bold green]")
             question_num += 1
-    
 
         # End time - calculate total time
         end_time = time.time()
         total_time = end_time - start_time
         
+        # Print results banner
         print("[purple]-----------------------------[purple]")
         print("       [bold bright_red]   RESULTS       [/bold bright_red]     ")
         print("[purple]-----------------------------[purple]\n")
@@ -113,7 +117,7 @@ def quiz(questions, options, answers, topic_choice, username):
         for answer in answers:
             print(answer, end=" ")
         
-        # User answers
+        # User guesses
         print("\n[bold blue]Guesses: [/bold blue]", end=" ")
         for guess in guesses:
             print(guess, end=" ")
@@ -159,15 +163,20 @@ def quiz(questions, options, answers, topic_choice, username):
                     cs_highscores.append(float(i[1]))
                 elif i[0] == "5":
                     gk_highscores.append(float(i[1]))
-
+            
+            # Sorting and reversing the new lists so the highest 
+            # numbers are at the start
             music_highscores.sort(reverse=True)
             history_highscores.sort(reverse=True)   
             cities_highscores.sort(reverse=True)
             cs_highscores.sort(reverse=True)
             gk_highscores.sort(reverse=True)
             
+            # Make the topic choice and integar
             topic_choice = int(topic_choice)
             
+            # If the new total points score is higher than the first
+            # score in the new topic list then display new high score
             if topic_choice == 1 and total_points >= music_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(f"Conratulations {username} your new Music Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
@@ -184,7 +193,10 @@ def quiz(questions, options, answers, topic_choice, username):
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
         
+        # Input staller so user can view information before returning 
         input("\nPress any key for main menu: \n") 
         return 
+    
     except: 
+        # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")

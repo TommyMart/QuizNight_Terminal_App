@@ -11,25 +11,25 @@ from rich.table import Table
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, instructions
 
+# Create a variable and assign it to the csv file that will hold the
+# username and password data
+second_file_name = "user_names.csv"
+
+try:
+    # If the csv file doesn't exist we must create it using the "w" (write mode)
+    if (not os.path.isfile(second_file_name)):
+        user_names = open(second_file_name, "w")
+        # Add user_name and password headings and then close the file
+        user_names.write("user_name,password\n")
+        user_names.close()
+
+except: 
+    # Unexpected Error Handling
+    print("Oops! Something seems to be not working, please try again.")
+
 
 # Sign up function
-def sign_up():
-
-    # Create a variable and assign it to the csv file that will be created
-    # next
-    second_file_name = "user_names.csv"
-
-    try:
-        # If the csv file doesn't exist we must create it using the "w" (write mode)
-        if (not os.path.isfile(second_file_name)):
-            user_names = open(second_file_name, "w")
-            # Add user_name and password headings and then close the file
-            user_names.write("user_name,password\n")
-            user_names.close()
-
-    except: 
-        # Unexpected Error Handling
-        print("Oops! Something seems to be not working, please try again.")
+def sign_up(second_file_name):
 
     try:
         while True:
@@ -64,7 +64,7 @@ def sign_up():
 
 
 # Sign in function
-def sign_in():
+def sign_in(second_file_name):
     try:
         while True:
             # Ask user to enter previous username
@@ -176,11 +176,11 @@ def main():
             option = input("Are you a new user? (Y/N): \n").upper()
             # If yes call sign_up function
             if option == "Y":
-                username = sign_up()
+                username = sign_up(second_file_name)
                 break
             # If no - call sign in function 
             elif option == "N":
-                username = sign_in()
+                username = sign_in(second_file_name)
                 break
             # Error handling if the user enters anything other than Y or N
             else:
