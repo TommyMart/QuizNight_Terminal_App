@@ -4,10 +4,10 @@ import random
 from operator import itemgetter
 
 # Related third party imports
-from rich import print 
+from rich import print
 from rich.console import Console
 from rich.table import Table
-#from rich.style import Style
+# from rich.style import Style
 
 # Local application/library specific imports
 from quizzes import quiz
@@ -20,51 +20,59 @@ def quiz_topics(username, rand_quiz=None):
         console = Console()
 
         # Table columns with selection and topic headings
-        table = Table(title=":book:  QUIZ TOPICS  :book:", style="purple", show_lines=True, title_style="bold white on purple")
+        table = Table(
+            title=":book:  QUIZ TOPICS  :book:",
+            style="purple",
+            show_lines=True,
+            title_style="bold white on purple")
         table.add_column("Selection", style="bold cyan", justify="center")
         table.add_column("Topic", style="bold cyan", justify="center")
         table.add_column("", style="green", justify="center")
 
-        # Table rows with quiz topics and number selects 
+        # Table rows with quiz topics and number selects
         table.add_row("1", "Music", ":microphone:")
         table.add_row("2", "History", ":book:")
         table.add_row("3", "Capital Cities", ":house:")
         table.add_row("4", "Computer Science", ":dvd:")
         table.add_row("5", "General Knowledge", ":microbe:")
-        table.add_row("6", "[bright_red]Return to Main Menu[/bright_red]", ":back:")
+        table.add_row(
+            "6",
+            "[bright_red]Return to Main Menu[/bright_red]",
+            ":back:")
 
         # If random quiz has not been called print the table
-        if rand_quiz == None:
+        if rand_quiz is None:
             console.print(table)
 
         # If random quiz has not been called asked user for selection
         if rand_quiz is None:
             topic_choice = input("\nPlease enter your selection: \n")
 
-        else: 
-            # Random quiz has been called and rand_quiz integar ='s topic_choice
+        else:
+            # Random quiz has been called and rand_quiz integar ='s
+            # topic_choice
             topic_choice = str(rand_quiz)
 
     # Music Quiz if topic choice ='s 1
-        if topic_choice == "1": 
+        if topic_choice == "1":
             # Questions
             questions = (
-                    ("\nHow many band members are there in the Rolling Stones?: \n"), 
-                    ("\nArtist Andre 3000 is a rapper in what well-known music group?: \n"), 
-                    ("\nWhat is Rihanna's real name?: \n"), 
-                    ("\nArtist Miles Davis played the what?: \n"),
-                    ("\nThe name of the lead singer in the Sex Pistols is?: \n"),
-                    ("\nWhat is Freddy Mercury's real name?:\n"),
-                    ("\nWhat is the best selling album of all time?: \n"),
-                    ("\nWhy was the leads singer of Led Zeppelin?: \n"),
-                    ("\nWho is referred to as the queen of pop?: \n"),
-                    ("\nWho is the song 'Could you be loved' by?: \n"),
-                    ("\nWhich of these name aren't of a member from the Beatles?: \n"),
-                    ("\nIn The Big Lebowski, The Dude can't stand which band?: \n"),
-                    ("\nWhich classical composer was deaf?: \n"),
-                    ("\nWhere was Tupac Shakur born?: \n"),
-                    ("\nWhich of these names aren't a member of NWA?: \n"),
-                    )
+                ("\nHow many band members are there in the Rolling Stones?: \n"),
+                ("\nArtist Andre 3000 is a rapper in what well-known music group?: \n"),
+                ("\nWhat is Rihanna's real name?: \n"),
+                ("\nArtist Miles Davis played the what?: \n"),
+                ("\nThe name of the lead singer in the Sex Pistols is?: \n"),
+                ("\nWhat is Freddy Mercury's real name?:\n"),
+                ("\nWhat is the best selling album of all time?: \n"),
+                ("\nWhy was the leads singer of Led Zeppelin?: \n"),
+                ("\nWho is referred to as the queen of pop?: \n"),
+                ("\nWho is the song 'Could you be loved' by?: \n"),
+                ("\nWhich of these name aren't of a member from the Beatles?: \n"),
+                ("\nIn The Big Lebowski, The Dude can't stand which band?: \n"),
+                ("\nWhich classical composer was deaf?: \n"),
+                ("\nWhere was Tupac Shakur born?: \n"),
+                ("\nWhich of these names aren't a member of NWA?: \n"),
+            )
             # Options
             options = (
                 ("A. 4", "B. 7", "C. 5", "D. 6"),
@@ -82,38 +90,51 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. Mozart", "B. Vivaldi", "C. Beethoven", "D. Bach"),
                 ("A. Detroit", "B. New York", "C. Los Angeles", "D. Georgia"),
                 ("A. Method Man", "B. DJ Yella", "C. Snoop Dogg", "D. MC Ren"),
-                )
+            )
             # Answers
             answers = (
-                "C", "C", "B", "A", "D", "B", "A", "A", "C", "D", "B", "A", "C", "B", "A"
-                )
-            # Call quiz function to run quiz 
+                "C",
+                "C",
+                "B",
+                "A",
+                "D",
+                "B",
+                "A",
+                "A",
+                "C",
+                "D",
+                "B",
+                "A",
+                "C",
+                "B",
+                "A")
+            # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
-            
+
     # History Quiz if topic choice ='s 2
         elif topic_choice == "2":
 
             # Questions
             questions = (
-                    ("\nWhat year was the Berlin Wall built?: \n"), 
-                    ("\nWho was the first person in space?: \n"), 
-                    ("\nIn what year was Napoleon defeated at Waterloo?: \n"), 
-                    ("\nWhich of these conflicts involved two US allies fighting against each other?: \n"),
-                    ("\nWhich Roman Emperor legalised Christianity in the Roman Empire?: \n"),
-                    ("\nWhich disease has killed the most humans throughout history?: \n"),
-                    ("\nThe siege of Kohima was part of which conflict?: \n"),
-                    ("\nWhen was the Declaration of Independence signed?: \n"),
-                    ("\nThe United States bought Alaska from which country?: \n"),
-                    ("\nWhere was Martin Luther King, Jr. born?: \n"),
-                    ("\nAustralia's Parliament met in which city from 1901 to 1927?: \n"),
-                    ("\nWhere did the Rum Rebellion take place?: \n"),
-                    ("\nWhere was Ned Kelly captured after a final shootout with police?: \n"),
-                    ("\nWhich country did Germany invade to kickstart World War II?: \n"),
-                    ("\nMartin Luther King Jr. was assassinated in which US state?: \n"),
-                    ("\nWho discovered penicillin?: \n"),
-                    )
-            
-            # Options 
+                ("\nWhat year was the Berlin Wall built?: \n"),
+                ("\nWho was the first person in space?: \n"),
+                ("\nIn what year was Napoleon defeated at Waterloo?: \n"),
+                ("\nWhich of these conflicts involved two US allies fighting against each other?: \n"),
+                ("\nWhich Roman Emperor legalised Christianity in the Roman Empire?: \n"),
+                ("\nWhich disease has killed the most humans throughout history?: \n"),
+                ("\nThe siege of Kohima was part of which conflict?: \n"),
+                ("\nWhen was the Declaration of Independence signed?: \n"),
+                ("\nThe United States bought Alaska from which country?: \n"),
+                ("\nWhere was Martin Luther King, Jr. born?: \n"),
+                ("\nAustralia's Parliament met in which city from 1901 to 1927?: \n"),
+                ("\nWhere did the Rum Rebellion take place?: \n"),
+                ("\nWhere was Ned Kelly captured after a final shootout with police?: \n"),
+                ("\nWhich country did Germany invade to kickstart World War II?: \n"),
+                ("\nMartin Luther King Jr. was assassinated in which US state?: \n"),
+                ("\nWho discovered penicillin?: \n"),
+            )
+
+            # Options
             options = (
                 ("A. 1948", "B. 1961", "C. 1957", "D. 1964"),
                 ("A. John Glenn", "B. Vladimir Komarov", "C. Neil Armtsrong", "D. Yuri Gagarin"),
@@ -131,14 +152,13 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. France", "B. Ukraine", "C. Poland", "D. Belarus"),
                 ("A. Texas", "B. Louisiana", "C. Alabama", "D. Tennessee"),
                 ("A. Geoffery Bennet", "B. John Daniels", "C. Alexander Fleming", "D. Thomas Hoover"),
-                )
-            
-            #Answers
-            answers = (
-                "B", "D", "B", "C", "D", "B", "A", "D", "C", "D", "B", "C", "A", "C", "D", "C"
-                )
-            
-            # Call quiz function to run quiz 
+            )
+
+            # Answers
+            answers = ("B", "D", "B", "C", "D", "B", "A", "D",
+                       "C", "D", "B", "C", "A", "C", "D", "C")
+
+            # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
     # Capital Cities Quiz if topic choice ='s 3
@@ -146,23 +166,23 @@ def quiz_topics(username, rand_quiz=None):
 
             # Questions
             questions = (
-                    ("\nWhat is the capital of Romania?: \n"), 
-                    ("\nWhat is the capital of Botswana?: \n"), 
-                    ("\nWhat is the capital of Kosovo?: \n"), 
-                    ("\nWhat is the capital of Bosnia & Herzegovina?: \n"),
-                    ("\nWhat is the capital of Mauritania?: \n"),
-                    ("\nWhat is the capital of Belize?: \n"),
-                    ("\nWhat is the capital of Zambia?: \n"),
-                    ("\nWhat is the capital of Senegal?: \n"),
-                    ("\nWhat is the capital of Tuvalu?: \n"),
-                    ("\nWhat is the capital of Oman?: \n"),
-                    ("\nWhat is the capital of Angola?: \n"),
-                    ("\nWhat is the capital of Afghanistan?: \n"),
-                    ("\nWhat is the capital of Zimbabwe?: \n"),
-                    ("\nWhat is the capital of Paraguay?: \n"),
-                    ("\nWhat is the capital of Cameroon?: \n"),
-                    )
-            
+                ("\nWhat is the capital of Romania?: \n"),
+                ("\nWhat is the capital of Botswana?: \n"),
+                ("\nWhat is the capital of Kosovo?: \n"),
+                ("\nWhat is the capital of Bosnia & Herzegovina?: \n"),
+                ("\nWhat is the capital of Mauritania?: \n"),
+                ("\nWhat is the capital of Belize?: \n"),
+                ("\nWhat is the capital of Zambia?: \n"),
+                ("\nWhat is the capital of Senegal?: \n"),
+                ("\nWhat is the capital of Tuvalu?: \n"),
+                ("\nWhat is the capital of Oman?: \n"),
+                ("\nWhat is the capital of Angola?: \n"),
+                ("\nWhat is the capital of Afghanistan?: \n"),
+                ("\nWhat is the capital of Zimbabwe?: \n"),
+                ("\nWhat is the capital of Paraguay?: \n"),
+                ("\nWhat is the capital of Cameroon?: \n"),
+            )
+
             # Options
             options = (
                 ("A. Bucharest", "B. Monrovia", "C. Dhiresj", "D. Basseterre"),
@@ -180,14 +200,27 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. Zagreb", "B. Bern", "C. Kinshasha", "D. Harare"),
                 ("A. Asuncion", "B. Nairobi", "C. Nassau", "D. Bangui"),
                 ("A. Quito", "B. Nairobi", "C. Nassau", "D. Yaounde"),
-                )
-            
+            )
+
             # Answers
             answers = (
-                "A", "B", "D", "C", "A", "C", "C", "D", "B", "A", "C", "B", "D", "A", "D"
-                )
-            
-            # Call quiz function to run quiz 
+                "A",
+                "B",
+                "D",
+                "C",
+                "A",
+                "C",
+                "C",
+                "D",
+                "B",
+                "A",
+                "C",
+                "B",
+                "D",
+                "A",
+                "D")
+
+            # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
     # Computer Science Quiz if topic choice ='s 4
@@ -195,13 +228,13 @@ def quiz_topics(username, rand_quiz=None):
 
             # Questions
             questions = (
-                    ("\nWhat name is NOT one of Kim or Kanye's children?: \n"), 
-                    ("\nWhich pop star is the godmother of both of Elton John's sons?: \n"), 
-                    ("\nWhat is Rihanna's real name?: \n"), 
-                    ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
-                    ("\nWhich pop star was Judge Judy's neighbor?: \n"),
-                    )
-            
+                ("\nWhat name is NOT one of Kim or Kanye's children?: \n"),
+                ("\nWhich pop star is the godmother of both of Elton John's sons?: \n"),
+                ("\nWhat is Rihanna's real name?: \n"),
+                ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
+                ("\nWhich pop star was Judge Judy's neighbor?: \n"),
+            )
+
             # Options
             options = (
                 ("A. Chicago", "B. East", "C. Palm", "D. North"),
@@ -219,14 +252,14 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. ", "B. ", "C. ", "D. "),
                 ("A. ", "B. ", "C. ", "D. "),
                 ("A. ", "B. ", "C. ", "D. "),
-        )
-            
+            )
+
             # Answers
             answers = (
                 "B", "C", "B", "D", "A"
-                )
-            
-            # Call quiz function to run quiz 
+            )
+
+            # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
     # General Knowledge Quiz if topic choice ='s 5
@@ -234,23 +267,23 @@ def quiz_topics(username, rand_quiz=None):
 
             # Questions
             questions = (
-                    ("\nIn which year was television invented?: \n"), 
-                    ("\nIn which city was US President John F. Kennedy assassinated?: \n"), 
-                    ("\nKorea was split into North Korea and South Korea at the conclusion of which war?: \n"), 
-                    ("\nWho invented the first successful aeroplane?: \n"),
-                    ("\nHow many days in a week were there in ancient Roman times?"),
-                    ("\nWhat did the famous Hollywood sign originally say when it was built in 1923?: \n"),
-                    ("\nIn which ocean did the Titanic sink??: \n"),
-                    ("\nIn which year was the Berlin wall removed?: \n"),
-                    ("\nThe first person to travel into space was from which country?: \n"),
-                    ("\nWhere was the first modern Summer Olympic Games held?: \n"),
-                    ("\nHow long did the war between England and Zanzibar last?: \n"),
-                    ("\nHow long did the 100 year war last?: \n"),
-                    ("\nIn which year did Hitler commit suicide?: \n"),
-                    ("\nIn which year was John F. Kennedy assassinated?: \n"),
-                    ("\nGreenland was a colony of which country until 1981?: \n"),
-                    )
-            
+                ("\nIn which year was television invented?: \n"),
+                ("\nIn which city was US President John F. Kennedy assassinated?: \n"),
+                ("\nKorea was split into North Korea and South Korea at the conclusion of which war?: \n"),
+                ("\nWho invented the first successful aeroplane?: \n"),
+                ("\nHow many days in a week were there in ancient Roman times?"),
+                ("\nWhat did the famous Hollywood sign originally say when it was built in 1923?: \n"),
+                ("\nIn which ocean did the Titanic sink??: \n"),
+                ("\nIn which year was the Berlin wall removed?: \n"),
+                ("\nThe first person to travel into space was from which country?: \n"),
+                ("\nWhere was the first modern Summer Olympic Games held?: \n"),
+                ("\nHow long did the war between England and Zanzibar last?: \n"),
+                ("\nHow long did the 100 year war last?: \n"),
+                ("\nIn which year did Hitler commit suicide?: \n"),
+                ("\nIn which year was John F. Kennedy assassinated?: \n"),
+                ("\nGreenland was a colony of which country until 1981?: \n"),
+            )
+
             # Options
             options = (
                 ("A. 1927", "B. 1941", "C. 1907", "D. 1953"),
@@ -268,27 +301,40 @@ def quiz_topics(username, rand_quiz=None):
                 ("A. 1944", "B. 1946", "C. 1945", "D. 1947"),
                 ("A. 1961", "B. 1963", "C. 1965", "D. 1967"),
                 ("A. Denmark", "B. Norway", "C. Russia", "D. Switzerland"),
-                )
-            
+            )
+
             # Answers
             answers = (
-                "A", "D", "B", "D", "D", "D", "B", "A", "D", "A", "D", "B", "C", "B", "A"
-                )
-            
-            # Call quiz function to run quiz 
+                "A",
+                "D",
+                "B",
+                "D",
+                "D",
+                "D",
+                "B",
+                "A",
+                "D",
+                "A",
+                "D",
+                "B",
+                "C",
+                "B",
+                "A")
+
+            # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
         # Return to Main Menu
         elif topic_choice == "6":
-            return 
-        
-        else: 
+            return
+
+        else:
             # Error handling if invalid input is entered
             print("Please only input corresponding topic numbers shown above.\n")
             input("Enter any key to return to quiz topics menu\n")
             quiz_topics(username)
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -299,7 +345,11 @@ def top_scores():
         console = Console()
 
         # Create a rich table with 1st, 2nd and 3rd columns
-        table = Table(title=":trophy: High Scores :trophy:", style="bold purple", show_lines=True, title_style="bold white on purple")
+        table = Table(
+            title=":trophy: High Scores :trophy:",
+            style="bold purple",
+            show_lines=True,
+            title_style="bold white on purple")
         table.add_column("Category", style="cyan", justify="left")
         table.add_column("1st Place", style="green", justify="center")
         table.add_column("2nd Place", style="red", justify="center")
@@ -308,8 +358,9 @@ def top_scores():
         # Assign variable file_name to list.csv so that it can be opened
         file_name = "list.csv"
 
-        try: 
-            # Open csv file holding the scores in read mode and creat 5 new lists
+        try:
+            # Open csv file holding the scores in read mode and creat 5 new
+            # lists
             with open(file_name, "r") as f:
                 reader = csv.reader(f)
                 music_highscores = []
@@ -317,8 +368,9 @@ def top_scores():
                 cities_highscores = []
                 cs_highscores = []
                 gk_highscores = []
-                
-                # Loop through csv list and append data row based on topic number
+
+                # Loop through csv list and append data row based on topic
+                # number
                 for i in reader:
                     if i[0] == "1":
                         music_highscores.append((i[2], float(i[1])))
@@ -333,30 +385,36 @@ def top_scores():
 
                 # Sort the new lists in reverse order by scores or x[1]
                 # lambda did not adhere to the pep 8 styling
-                # So itemgetter(1) was used to access scores, then sort and reverse
+                # So itemgetter(1) was used to access scores, then sort and
+                # reverse
 
-                #music_highscores.sort(key=lambda x: x[1], reverse=True)
+                # music_highscores.sort(key=lambda x: x[1], reverse=True)
                 music_highscores.sort(key=itemgetter(1), reverse=True)
-                
-                #history_highscores.sort(key=lambda x: x[1], reverse=True)
+
+                # history_highscores.sort(key=lambda x: x[1], reverse=True)
                 history_highscores.sort(key=itemgetter(1), reverse=True)
 
-                #cities_highscores.sort(key=lambda x: x[1], reverse=True)
+                # cities_highscores.sort(key=lambda x: x[1], reverse=True)
                 cities_highscores.sort(key=itemgetter(1), reverse=True)
 
-                #cs_highscores.sort(key=lambda x: x[1], reverse=True)
+                # cs_highscores.sort(key=lambda x: x[1], reverse=True)
                 cs_highscores.sort(key=itemgetter(1), reverse=True)
 
-                #gk_highscores.sort(key=lambda x: x[1], reverse=True)
+                # gk_highscores.sort(key=lambda x: x[1], reverse=True)
                 gk_highscores.sort(key=itemgetter(1), reverse=True)
 
-                # Add rows to the table and display index [0] username and index [1] 
+                # Add rows to the table and display index [0] username and index [1]
                 # score for the first three itertaions [:3]
-                table.add_row("[bold]Music[/bold] :microphone:", *[f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]])
-                table.add_row("[bold]History[/bold] :book:", *[f"{score[0]} - {score[1]:.2f}" for score in history_highscores[:3]])
-                table.add_row("[bold]Capital Cities[/bold] :house:", *[f"{score[0]} - {score[1]:.2f}" for score in cities_highscores[:3]])
-                table.add_row("[bold]Computer Science[/bold] :dvd:", *[f"{score[0]} - {score[1]:.2f}" for score in cs_highscores[:3]])
-                table.add_row("[bold]General Knowledge[/bold] :microbe:", *[f"{score[0]} - {score[1]:.2f}" for score in gk_highscores[:3]])
+                table.add_row("[bold]Music[/bold] :microphone:", *
+                              [f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]])
+                table.add_row("[bold]History[/bold] :book:", *
+                              [f"{score[0]} - {score[1]:.2f}" for score in history_highscores[:3]])
+                table.add_row("[bold]Capital Cities[/bold] :house:", *
+                              [f"{score[0]} - {score[1]:.2f}" for score in cities_highscores[:3]])
+                table.add_row("[bold]Computer Science[/bold] :dvd:", *
+                              [f"{score[0]} - {score[1]:.2f}" for score in cs_highscores[:3]])
+                table.add_row("[bold]General Knowledge[/bold] :microbe:",
+                              *[f"{score[0]} - {score[1]:.2f}" for score in gk_highscores[:3]])
 
                 # Print the table
                 console.print(table)
@@ -364,12 +422,12 @@ def top_scores():
                 # Input holder so
                 input("Press any key for main menu: \n")
 
-        except: 
+        except BaseException:
             # If the csv file holding the scores has not been created yet
             print("Sorry, there's no quiz scores to show right now.\n")
             input("Press any key for main menu: \n")
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -381,7 +439,7 @@ def random_quiz(username):
         rand_quiz = random.randint(1, 5)
         # quiz_topics function passing the rand_quiz integer
         quiz_topics(username, rand_quiz)
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -391,7 +449,6 @@ def instructions():
     try:
         print("new")
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
-

@@ -43,6 +43,13 @@ Please also make sure that Python 3.8 or is installed.
 
 First you must clone the [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
 
+Alternatively, download the zipped folder and via your terminal nevigate to the root directory of the app by using change directory ```cd``` command. 
+
+
+###### Need Help?
+
+If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd```. 
+
 ##### Feel free to copy and paste the following code steps! 
 
 - Launch your terminal and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
@@ -248,9 +255,23 @@ Initally, a function was written that takes the topic choice, question, four ans
 
 This is achieved by zipping the lists, using the random shuffle package to shuffle, and then assign the newly shuffled lists to new variables - shuffled_questions, shuffled_options, shuffled_answers. These new variable lists can now be used for the quiz and will have the same corresponding indexes, so the questions, options and answers still marry up. 
 
-A score counter is initiated and set to 0, that increases by one every time the users guess and answer match. This final score is then displayed at the end of the quiz as a percentile. It is also used to calculate the total points along with the total time taken.
+```combined = list(zip(questions, options, answers))
+    random.shuffle(combined)
+    shuffled_questions, shuffled_options, shuffled_answers = (*combined)```
+
+To walk through this process step by step...
+- The combined zipped variable results in a tuple including one question, four guess options and the answer. 
+- Since they are now zipped in seperate tuples, they can now be shuffled without getting mismacthing questions, options or answers. This is executed with the help of the random.shuffle package.
+- The * is then used to unpack the combined zipped variable into new 'shuffled' tuples with new a random order but with all questions, options and answers still matching! 
+
+
+A score counter is initiated and set to 0, that increases by one every time the users guess and answer match. This final score is then displayed at the end of the quiz as a percentile. Using ```score = int(score / len(shuffled_questions) *100)``` It is also used to calculate the total points along with the total time taken.
 
 A variable question_num is set to 0, and a for loop is used to loop through the shuffled questions, options and answers, using question_num for the index of each, which is then increased by 1 after displaying the result to the user at the end of the loop. Since the questions data is a set, the for loop will loop through question in questions until there are not more questions. 
+
+The quiz is executed using a for loop, where for question in shuffled questions the question is printed, and then a nest for loop to print the four options as ```for option in shuffled_options[question_num]:``` because this is a nested loop it will keep looping until all options in shuffled_options has been looped for whatever index the question_num is on. If the users guess equals the shuffled_answers and the same question_num idex then, you guest it, correct guess! And the score counter increasese by 1. The users guess is also appended to a guesses list to display at the end of the quiz and the user guess is made a capital because you'd be pretty annoyed if you entered a when the answer was A and you were marked incorrect! An elif statement is used for if the users guess is incorrect, which is displayed and also an else statement if the user enter something that isn't A, B, C, or D. Finally at the end of the loop, the question_num counter is increased by one so that the shuffled lists index all match for the next loop. 
+
+The counter question_num was implemented so that the quizzes can be manipulated in the future, maybe to add more questions, or even change the data for CS Fundamental test revision next semester. 
 
 The results are then displayed as answers and guesses, a percentile score and total time. 
 

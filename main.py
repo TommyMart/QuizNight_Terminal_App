@@ -1,15 +1,18 @@
-# System Packages
+# Stanard Library Imports
 import os.path
 import csv
 import getpass
 
-# External Packages
-from rich import print 
+# Related third party imports
+from rich import print
 from rich.console import Console
 from rich.table import Table
 
-# App functions
-from quiz_functions import quiz_topics, random_quiz, top_scores, instructions
+# Local application/library specific imports
+from quiz_functions import quiz_topics
+from quiz_functions import random_quiz
+from quiz_functions import top_scores
+from quiz_functions import instructions
 
 
 # Sign up function
@@ -20,17 +23,17 @@ def sign_up(second_file_name):
             # Input new username that's 5 characters or longer
             username = input("Please enter a username: \n")
 
-            if len(username) < 5:   
+            if len(username) < 5:
                 print("Username must be at least 5 characters long.\n")
-                continue       
+                continue
             # Input new password that's 5 characters or longer
             password = getpass.getpass("Please enter a password: \n")
 
             if len(password) < 5:
                 print("Password must be at least 5 characters long.\n")
-                continue            
+                continue
 
-            # Open csv file in append mode and write the new username and 
+            # Open csv file in append mode and write the new username and
             # password to a new row
             with open(second_file_name, "a", newline="") as f:
                 writer = csv.writer(f)
@@ -41,8 +44,8 @@ def sign_up(second_file_name):
 
             # Return username so it can be used in other functions
             return username
-        
-    except: 
+
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -60,10 +63,10 @@ def sign_in(second_file_name):
             with open(second_file_name, "r") as f:
                 reader = csv.reader(f)
                 # Skip headings
-                next(reader)  
+                next(reader)
                 found = False
 
-                # Loop through each row in csv file to see if the username and password 
+                # Loop through each row in csv file to see if the username and password
                 # matches an existing username
                 for row in reader:
 
@@ -73,20 +76,23 @@ def sign_in(second_file_name):
                         found = True
                         # Return username so it can be used in other functions
                         return username
-                    
+
                 if found:
                     break
 
                 # If cannot find a username and password match, display incorrect username
-                # or password to user and give them an option to sign up instead 'S'
+                # or password to user and give them an option to sign up
+                # instead 'S'
                 else:
-                    print("Incorrect username or password. Please try again or sign up.\n")
-                    choice = input("Enter 'S' to sign up or any other key to try again: \n").upper()
+                    print(
+                        "Incorrect username or password. Please try again or sign up.\n")
+                    choice = input(
+                        "Enter 'S' to sign up or any other key to try again: \n").upper()
                     if choice == "S":
                         sign_up(second_file_name)
                         break
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -120,9 +126,13 @@ def menu(username):
     try:
         console = Console()
 
-        # Rich Main Menu table data - Heading, Selection and Option column options
-        table = Table(title=":vampire:  MAIN MENU  :vampire:", style="bold purple", 
-                    show_lines=True, title_style="bold black on purple")
+        # Rich Main Menu table data - Heading, Selection and Option column
+        # options
+        table = Table(
+            title=":vampire:  MAIN MENU  :vampire:",
+            style="bold purple",
+            show_lines=True,
+            title_style="bold black on purple")
         table.add_column("Selection", style="bold cyan", justify="left")
         table.add_column("Option", style="bold cyan", justify="left")
 
@@ -146,8 +156,8 @@ def menu(username):
         else:
             topic_choice(user_choice, username)
             return False
-        
-    except: 
+
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -160,18 +170,19 @@ def main():
     second_file_name = "user_names.csv"
 
     try:
-        # If the csv file doesn't exist we must create it using the "w" (write mode)
+        # If the csv file doesn't exist we must create it using the "w" (write
+        # mode)
         if (not os.path.isfile(second_file_name)):
             user_names = open(second_file_name, "w")
             # Add user_name and password headings and then close the file
             user_names.write("user_name,password\n")
             user_names.close()
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
-    try: 
+    try:
         # Ask user if they're a new or returning
         while True:
             option = input("Are you a new user? (Y/N): \n").upper()
@@ -179,7 +190,7 @@ def main():
             if option == "Y":
                 username = sign_up(second_file_name)
                 break
-            # If no - call sign in function 
+            # If no - call sign in function
             elif option == "N":
                 username = sign_in(second_file_name)
                 break
@@ -192,7 +203,7 @@ def main():
             if menu(username):
                 break
 
-    except: 
+    except BaseException:
         # Unexpected Error Handling
         print("Oops! Something seems to be not working, please try again.")
 
@@ -203,8 +214,3 @@ main()
 
 # User has selected 5 from the main menu and wishes to exit the app
 print("\nGoodbye from us at Quiz Night, we hope to see you again soon!\n")
-    
-
-
-
-
