@@ -11,12 +11,6 @@ Link to [Git Respository](https://github.com/TommyMart/T1A3_Terminal_App).
 
 ---
 
-### Walk-Through Presentation  
-
-Link to Walk Through Presentation. 
-
----
-
 ### Project Managment Trello Board
 
 Link to [Trello Board](https://trello.com/b/wfUXTR4Q/quiz-night-terminal-app).
@@ -25,7 +19,7 @@ Link to [Trello Board](https://trello.com/b/wfUXTR4Q/quiz-night-terminal-app).
 
 ## Application running requirements
 
-- The app requires python version 3.12.1 to be in installed, if you want to check which version of Python you have installed please open your terminal and run the following command ```python3 --version```. 
+- The app requires python version 3.8 or higher to be in installed, if you want to check which version of Python you have installed please open your terminal and run the following command ```python3 --version```. 
 
 - If you do not have Python 3 installed no version will be displayed, that's okay, but please download it from the [Official Python Website](https://www.python.org/downloads/) before proceeding. Please follow the same procedure if you have any other version of Python installed - such as version 2. 
 
@@ -41,7 +35,7 @@ The application has been designed to run on the following operating systems:
 - Windows
 - Linux
 
-Please also make sure that Python 3 is installed.
+Please also make sure that Python 3.8 or is installed.
 
 --- 
 
@@ -53,9 +47,13 @@ First you must clone the [T1A3 Terminal App Repository](https://github.com/Tommy
 
 - Launch your terminal and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
 
-- Convert the run.sh file into an executable bash script by running: ```chmod +x run.sh```
+- Convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
 
-- Then run the bash script which will start a virtual terminal environment: ```./run.sh```
+- Then run the bash script which will start a virtual terminal environment: ```scripts/run.sh```
+
+Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know after you run the above code.
+
+If for the unlikely reason the above steps aren't working, please install Python 3.12 or higher and try again. 
 
  ---
 
@@ -462,7 +460,7 @@ Given user terminals are often ran with a black background, colours were tested 
 
 Error handling has been used at the start and end of all functions using try and except, this means the user will not be shown any ugly terminal errors, instead they will see ```Oops! Something seems to be not working, please try again.```
 
-Error handling has also been implemented into some of the child functions and loops that may cause an error, like the progress bar, just in case it doesn't work on a different operating system. Else statements have also been used 
+Error handling has also been implemented into some of the child functions and loops that may cause an error, like the progress bar, just in case it doesn't work on a different operating system. Else statements have also been used to as a likely input or to catch invalid inputs or unexpected errors. 
 
 ---
 
@@ -470,5 +468,8 @@ Error handling has also been implemented into some of the child functions and lo
 
 #### DRY
 
-Initally the menus were called in a function, but due to wanting to add emojis and extra columns and row, plus table styling from the rich module, it was decided to write them seperately. I understand that a function could have been used but this would have come at the expense of the overall quality and user experience of the app. 
+Initally the menus were called in a one function, but due to wanting to add emojis and extra columns and rows, plus table styling from the rich module, it was decided to write them seperately. I understand that a function could have been used but this would have come at the expense of the overall quality and user experience of the app. 
 
+#### Pep 8
+
+In some instances the Pep 8 guidelines were overridden based common sense and readability. This occured mainly during the table rows and columns, where the recommedned line length was exceeded. I thought it was important that each column and row stayed as one line of code to avoid messy and confusing code. 

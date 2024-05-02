@@ -1,28 +1,26 @@
-# System Packages
+# Stanard Library Imports
 import os.path
 import csv
 import random
 import time
 from time import sleep
 
-# External Packages
-# from colorama import Fore, Style, Back
+# Related third party imports
 from rich import print
 from rich.progress import track
-# from rich.prompt import Prompt
 
-# App functions
+# Local application/library specific imports
 
 
 # Function to calculate total points based on score and time
 def calculate_points(score, total_questions, total_time):
     try:
         # Score points: 50 points for each correct answer
-        score_points = score * 50
+        score_points = score *50
         
         # Time points: 1 point for each second saved
-        max_time = total_questions * 30  # Assuming 30 seconds per question
-        time_points = (max_time - total_time) if total_time < max_time else 0
+        max_time = total_questions *30  # Assuming 30 seconds per question
+        time_points = (max_time-total_time) if total_time < max_time else 0
         
         # Total points: sum of score points and time points
         total_points = score_points + time_points
@@ -151,8 +149,7 @@ def quiz(questions, options, answers, topic_choice, username):
             cs_highscores = []
             gk_highscores = []
             
-            # Topic number is in a child list because reading from CSV file
-            # i[0] is the first index in each row list which is topic number
+            # Topic number is a list because reading from CSV file
             for i in reader:
                 if i[0] == "1":
                     music_highscores.append(float(i[1]))
@@ -176,7 +173,7 @@ def quiz(questions, options, answers, topic_choice, username):
             # Make the topic choice and integar
             topic_choice = int(topic_choice)
             
-            # If the new total points score is higher than the first
+            # If the new total points score is higher than highscores[0]
             # score in the new topic list then display new high score
             if topic_choice == 1 and total_points >= music_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
@@ -193,10 +190,6 @@ def quiz(questions, options, answers, topic_choice, username):
             elif topic_choice == 5 and total_points >= gk_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
-            # Probably doesn't need to be here as topic choice must be an integer between 1 and 5
-            # But for extra error handling it was decided to be used
-            else: 
-                print("Oops! Something seems to be not working, please try again.")
 
         # Input staller so user can view information before returning 
         input("\nPress any key for main menu: \n") 

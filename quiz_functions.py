@@ -1,16 +1,15 @@
-# System Packages
-#import os.path
+# Stanard Library Imports
 import csv
 import random
+from operator import itemgetter
 
-# External Packages
-# from colorama import Fore, Style, Back
+# Related third party imports
 from rich import print 
 from rich.console import Console
 from rich.table import Table
 #from rich.style import Style
 
-# App functions
+# Local application/library specific imports
 from quizzes import quiz
 
 
@@ -333,13 +332,26 @@ def top_scores():
                         gk_highscores.append((i[2], float(i[1])))
 
                 # Sort the new lists in reverse order by scores or x[1]
-                music_highscores.sort(key=lambda x: x[1], reverse=True)
-                history_highscores.sort(key=lambda x: x[1], reverse=True)
-                cities_highscores.sort(key=lambda x: x[1], reverse=True)
-                cs_highscores.sort(key=lambda x: x[1], reverse=True)
-                gk_highscores.sort(key=lambda x: x[1], reverse=True)
+                # lambda did not adhere to the pep 8 styling
+                # So itemgetter(1) was used to access scores, then sort and reverse
 
-                # Add rows to the table and display index [0] username and index [1] score for the first three itertaions [:3]
+                #music_highscores.sort(key=lambda x: x[1], reverse=True)
+                music_highscores.sort(key=itemgetter(1), reverse=True)
+                
+                #history_highscores.sort(key=lambda x: x[1], reverse=True)
+                history_highscores.sort(key=itemgetter(1), reverse=True)
+
+                #cities_highscores.sort(key=lambda x: x[1], reverse=True)
+                cities_highscores.sort(key=itemgetter(1), reverse=True)
+
+                #cs_highscores.sort(key=lambda x: x[1], reverse=True)
+                cs_highscores.sort(key=itemgetter(1), reverse=True)
+
+                #gk_highscores.sort(key=lambda x: x[1], reverse=True)
+                gk_highscores.sort(key=itemgetter(1), reverse=True)
+
+                # Add rows to the table and display index [0] username and index [1] 
+                # score for the first three itertaions [:3]
                 table.add_row("[bold]Music[/bold] :microphone:", *[f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]])
                 table.add_row("[bold]History[/bold] :book:", *[f"{score[0]} - {score[1]:.2f}" for score in history_highscores[:3]])
                 table.add_row("[bold]Capital Cities[/bold] :house:", *[f"{score[0]} - {score[1]:.2f}" for score in cities_highscores[:3]])
