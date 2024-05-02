@@ -86,6 +86,8 @@ These are downloaded automatically in a virtual environment when running the run
 
 The chosen code style guide for the applicaton is [Pep 8](https://peps.python.org/pep-0008/).
 
+Initially, the code was manually styled as per the Pep 8 guidelines above so that the style guide was successfully learnt. Then autopep8 v2.1.0 was installed and ran on the three .py python files for a more aggressive take on the styling rules. The link to the external package can be found [here](https://pypi.org/project/autopep8/). 
+
 ---
 
 #### Congratulations! You've made it past the difficult part - now let's create a username and password. 
@@ -494,3 +496,11 @@ Initally the menus were called in a one function, but due to wanting to add emoj
 #### Pep 8
 
 In some instances the Pep 8 guidelines were overridden based common sense and readability. This occured mainly during the table rows and columns, where the recommedned line length was exceeded. I thought it was important that each column and row stayed as one line of code to avoid messy and confusing code. 
+
+---
+
+## Reference List
+
+- Hattori, H n.d., autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide, PyPI.
+- Python 2019, Download Python, Python.org, Python.org.
+- van Rossum, G, Warsaw, B & Coghlan, N 2001, PEP 8 – Style Guide for Python Code, peps.python.org.
