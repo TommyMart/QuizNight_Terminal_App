@@ -257,9 +257,9 @@ Initally, a function was written that takes the topic choice, question, four ans
 
 This is achieved by zipping the lists, using the random shuffle package to shuffle, and then assign the newly shuffled lists to new variables - shuffled_questions, shuffled_options, shuffled_answers. These new variable lists can now be used for the quiz and will have the same corresponding indexes, so the questions, options and answers still marry up. 
 
-```combined = list(zip(questions, options, answers))
-    random.shuffle(combined)
-    shuffled_questions, shuffled_options, shuffled_answers = (*combined)```
+```combined = list(zip(questions, options, answers))```
+```random.shuffle(combined)```
+```shuffled_questions, shuffled_options, shuffled_answers = (*combined)```
 
 To walk through this process step by step...
 - The combined zipped variable results in a tuple including one question, four guess options and the answer. 
