@@ -49,6 +49,8 @@ Please also make sure that Python 3 is installed.
 
 First you must clone the [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
 
+##### Feel free to copy and paste the following code steps! 
+
 - Launch your terminal and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
 
 - Convert the run.sh file into an executable bash script by running: ```chmod +x run.sh```
@@ -203,6 +205,8 @@ You can probably guess what entering 5 does from the main menu.. Yes, you're cor
 
 ## FEATURES
 
+##### For further explanation of the code with a visual representation, please refer to the in-code comments in the main.py, quiz_functions.py and quizzes.py Python files. 
+
 ### Sign In/Up Feature
 
 A sign in / up feature that requires a password will be implemented. The main reason for this feature is because of the high scores table and the username associated with the scores. Just having the scores by themselves and no name attached would not have the same effect. 
@@ -293,13 +297,13 @@ The high scores board opens the list.csv file that was saved to the variable fil
 
 ![List Headings](images/listhaedings.png)
 
-Because the file was open with ```with``` the file does not need to be closed. This then seperates the scores into their topics, this is important so that the board can display the highest scores for all topics and not just the highest overall. This is achieved by using a for loop, and if the first index ```i[0]``` equals 1 for example, ```i[2]``` username, now index 0, and ```float(i[1])```, now index 1, are appended to the music topic list - and the same for all other list topics. 
+Because the file was opened with ```with``` the file does not need to be closed. This then seperates the scores into their topics, this is important so that the board can display the highest scores for all topics and not just the highest overall. This is achieved by using a for loop, and if the first index ```i[0]``` equals 1 for example, ```i[2]``` username, now index 0, and ```float(i[1])```, now index 1, are appended to the music topic list - and the same for all other list topics. Topic is not added because it has already been used to seperate the data into their topic lists. 
 
-Once the loop has appened all the rows data to their corresponding topic lists, the lists are then sorted using the .sort method and in reverse based on index 1, ```x[1]``` or scores, so that the highest scores are at the start of the list and lowest at the end.  
+Once the loop has appended all the rows data to their corresponding topic lists, the lists are then sorted using the .sort method and in reverse based on index 1, ```x[1]``` or scores, so that the highest scores are at the start of the list and lowest at the end.  
 
-List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three lists, or highest three scores, within the list and display their scores or index 1. ```score[1]:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off. Index 0 is also displayed, which as mentioned previously, is now username in this new list. 
+List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three lists, or highest three scores, within the parent list and displays their scores or index 1. ```score[1]:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off. Index 0 is also displayed, which as mentioned previously, is now username in this new list. This enables users to know who achieved the high scores, which is crucial in a competative game environment. 
 
-These results are then printed to the termal as a rich package module table in different colours. 
+These results are then printed to the termal as a rich external package module table in different colours for 1st, 2nd and 3rd.  
 
 ![High Scores Board](images/highscores.png)
 
@@ -310,12 +314,12 @@ A parent try and except was also used at the very start of the function so if an
 
 ### Random Quiz Feature
 
-The random quiz feature takes the username, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. The function then uses the random package to assign a random integer of 1 to 5, because there are 5 quiz topics, to the variable rand_quiz. That variable integar is then passed to quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar. 
+The random quiz feature takes the username, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. The function then uses the random package to assign a random integer between 1 and 5, because there are 5 quiz topics, to the variable rand_quiz. That variable rand_quiz integar is then passed to quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar. The quiz topic table is not ran because the rand_quiz does not equal None. 
 
 For example: 
 
-- If the random integer is 1, the topic choice is 1 and the music quiz is ran called.
-- If the random integer is 4, the topic choice is 4 and the computer science quiz is called. 
+- If the random integer is 1, the topic choice is 1 and the music quiz is ran.
+- If the random integer is 4, the topic choice is 4 and the computer science quiz is ran. 
 
 For the users quiz score and username to be appended to the list csv file, the username must also be passed through the functions. The rand_quiz must also be set to equal None in the quiz topics function so that is the function is called from the main menu, rand_quiz doesn't not impact what quiz is ran. 
 
@@ -432,4 +436,39 @@ Some other cards used in project management trello board are:
 ##### Work in progress Trello Board
 
 ![WIP Trello Board](images/WIPTrello.png)
+
+### Testing
+
+Due date: 4th May
+Completed 4th May
+
+Testing is the final step from a project management perspective. This will be achieved manually by trying to run through every possible scenario. The file will also be passed to my fellow students, preferably running different operating systems, to test the functionality of the quiz, make sure no errors occur, and that the bash scripts install the correct packages in the virtual encironnent. 
+
+---
+
+Given user terminals are often ran with a black background, colours were tested against this background to ensure the visability of the app was adequate. With some minor adjustments the colours used with a black terminal look great! And have a high contrast that should be easily visable for most. 
+
+##### Main Menu on dark background
+
+![Main Menu on Dark Background](images/mainmenudark.png)
+
+##### Quiz Topic Menu on dark background
+
+![Quiz Topic Menu on Dark Background](images/topicmenudark.png)
+
+---
+
+## Error Handling
+
+Error handling has been used at the start and end of all functions using try and except, this means the user will not be shown any ugly terminal errors, instead they will see ```Oops! Something seems to be not working, please try again.```
+
+Error handling has also been implemented into some of the child functions and loops that may cause an error, like the progress bar, just in case it doesn't work on a different operating system. Else statements have also been used 
+
+---
+
+## Challenges 
+
+#### DRY
+
+Initally the menus were called in a function, but due to wanting to add emojis and extra columns and row, plus table styling from the rich module, it was decided to write them seperately. I understand that a function could have been used but this would have come at the expense of the overall quality and user experience of the app. 
 

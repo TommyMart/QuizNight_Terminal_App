@@ -151,7 +151,8 @@ def quiz(questions, options, answers, topic_choice, username):
             cs_highscores = []
             gk_highscores = []
             
-            # Topic number is a list because reading from CSV file
+            # Topic number is in a child list because reading from CSV file
+            # i[0] is the first index in each row list which is topic number
             for i in reader:
                 if i[0] == "1":
                     music_highscores.append(float(i[1]))
@@ -192,6 +193,8 @@ def quiz(questions, options, answers, topic_choice, username):
             elif topic_choice == 5 and total_points >= gk_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
+            # Probably doesn't need to be here as topic choice must be an integer between 1 and 5
+            # But for extra error handling it was decided to be used
             else: 
                 print("Oops! Something seems to be not working, please try again.")
 
