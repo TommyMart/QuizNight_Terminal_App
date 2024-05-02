@@ -11,22 +11,6 @@ from rich.table import Table
 # App functions
 from quiz_functions import quiz_topics, random_quiz, top_scores, instructions
 
-# Create a variable and assign it to the csv file that will hold the
-# username and password data
-second_file_name = "user_names.csv"
-
-try:
-    # If the csv file doesn't exist we must create it using the "w" (write mode)
-    if (not os.path.isfile(second_file_name)):
-        user_names = open(second_file_name, "w")
-        # Add user_name and password headings and then close the file
-        user_names.write("user_name,password\n")
-        user_names.close()
-
-except: 
-    # Unexpected Error Handling
-    print("Oops! Something seems to be not working, please try again.")
-
 
 # Sign up function
 def sign_up(second_file_name):
@@ -170,6 +154,23 @@ def menu(username):
 
 # First main function directing users to sign in or up
 def main():
+
+    # Create a variable and assign it to the csv file that will hold the
+    # username and password data
+    second_file_name = "user_names.csv"
+
+    try:
+        # If the csv file doesn't exist we must create it using the "w" (write mode)
+        if (not os.path.isfile(second_file_name)):
+            user_names = open(second_file_name, "w")
+            # Add user_name and password headings and then close the file
+            user_names.write("user_name,password\n")
+            user_names.close()
+
+    except: 
+        # Unexpected Error Handling
+        print("Oops! Something seems to be not working, please try again.")
+
     try: 
         # Ask user if they're a new or returning
         while True:
@@ -196,12 +197,12 @@ def main():
         print("Oops! Something seems to be not working, please try again.")
 
 
-# Call main function to start the user experience   
+# Call main function to start the app!
 main()
 
 
 # User has selected 5 from the main menu and wishes to exit the app
-print("\nGoodbye, we hope to see you again soon!\n")
+print("\nGoodbye from Quiz Night, we hope to see you again soon!\n")
     
 
 

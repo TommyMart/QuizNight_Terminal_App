@@ -192,7 +192,9 @@ def quiz(questions, options, answers, topic_choice, username):
             elif topic_choice == 5 and total_points >= gk_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{total_points:.2f}[/bold red]!\n")
-        
+            else: 
+                print("Oops! Something seems to be not working, please try again.")
+
         # Input staller so user can view information before returning 
         input("\nPress any key for main menu: \n") 
         return 
