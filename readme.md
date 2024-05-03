@@ -21,7 +21,7 @@ Link to [Trello Board](https://trello.com/b/wfUXTR4Q/quiz-night-terminal-app).
 
 - The app requires python version 3.8 or higher to be in installed, if you want to check which version of Python you have installed please open your terminal and run the following command ```python3 --version```. 
 
-- If you do not have Python 3 installed no version will be displayed, that's okay, but please download it from the [Official Python Website](https://www.python.org/downloads/) before proceeding. Please follow the same procedure if you have any other version of Python installed - such as version 2. 
+- If you do not have Python 3 installed, that's fine, but please download it from the [Official Python Website](https://www.python.org/downloads/) before proceeding. Please follow the same procedure if you have any other version of Python installed - such as version 2. 
 
 ---
 
@@ -41,7 +41,7 @@ Please also make sure that Python 3.8 or is installed.
 
 ## Getting Started 
 
-#### Clone Repo
+#### Options 1 - Clone the Repository
 
 ##### Unix-based Systems (macOS, Linux)
 
@@ -55,7 +55,11 @@ Please also make sure that Python 3.8 or is installed.
 
 - Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
 
-#### Download Zip File
+- Done!! How easy was that? 
+
+You should now see ```Are you a new user? (Y/N): ```
+
+#### Option 2 - Download Zip File
 
 - If you opted to download the zip file, please download it from here - [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
 
@@ -69,6 +73,10 @@ Please also make sure that Python 3.8 or is installed.
 
 - Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
 
+- Done!! How easy was that?
+
+You should now see ```Are you a new user? (Y/N): ```
+
 ##### Windows
 
 - Install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -81,15 +89,15 @@ Please also make sure that Python 3.8 or is installed.
 
 - Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
 
-Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know before it installs the packages, you may have to scroll up if your terminal is small, after you run the above code.
+Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know before it installs the packages, you may have to scroll up if your terminal window is small, after you run the above code.
 
-If for highly the unlikely situation where the above steps don't work, please install Python 3.12.1 or higher and try again. Alternatively, download the zipped folder and via your terminal navigate to the root directory of the app by using change directory ```cd T1A3_Terminal_App``` command. 
+In the highly unlikely situation where the above steps don't work, please install Python 3.12.1 or higher and try again. Alternatively, download the zipped folder and via your terminal navigate to the root directory of the app by using change directory ```cd T1A3_Terminal_App``` command. 
 
 For more information please see [About Remote Respositories](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories).
 
 ###### Need Help?
 
-If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd```. 
+If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd``` followed by the directory name like so ```cd T1A3_Terminal_App```. 
 
  ---
 
@@ -108,7 +116,7 @@ The application runs both external and built in Python system packages, these in
 ##### Related third party imports
 - Rich
 
-These are downloaded automatically in a virtual environment when running the run.sh file above. 
+Don't worry - These are downloaded automatically in a virtual environment when running the run.sh file above. Sit back and relax, we've taken care of everything for you. 
 
 ---
 
@@ -116,9 +124,10 @@ These are downloaded automatically in a virtual environment when running the run
 
 The chosen code style guide for the applicaton is [Pep 8](https://peps.python.org/pep-0008/).
 
-Initially, the code was manually styled as per the Pep 8 guidelines above so that the style guide was successfully learnt. Then autopep8 v2.1.0 was installed and ran on the three .py python files for a more aggressive take on the styling rules. The link to the external package can be found [here](https://pypi.org/project/autopep8/). 
+Initially, the code was manually styled as per the Pep 8 guidelines above so that the style guide was successfully learnt. Then autopep8 v2.1.0 was installed and ran on the three .py python files for a more aggressive take on the styling rules. The link to the external package can be found [here](https://pypi.org/project/autopep8/). The autopep8 script file is still available in the scripts folder should you wish to see how it was ran. 
 
 ---
+
 
 #### Congratulations! You've made it past the difficult part - now let's create a username and password. 
 
@@ -151,6 +160,8 @@ Assuming you've already signed up following the previous instructions and create
 If for any reason you cannot remember your username or password, then it's probably best to cut your losses and enter S to create a new account... Please be sure to remember your details this time!
 
 ---
+
+##### For best user experience, please make sure your terminal window is at a medium size. We also prefer a black background, but hey, that's just our opinion! 
 
 #### Now let's have some Quiz Night fun!
 
@@ -209,7 +220,7 @@ If the user enters a character that is not from the selected options they are no
 
 Once the user has answered all the questions, score percentile, time and total points are displayed. Total points is a function that takes the user's score and time taken and provides a total points score for the sake of the high scores board. If the score is a new high score the user is notifed at the end of the quiz after their results as shown in the image below. 
 
-![Quiz Results](images/Screenshot2024-04-30at3.07.03pm.png)
+![Quiz Results](images/scores.png)
 
 The image above is notifying username - 'Tommy' that they have achieved a new game high score of 1148.51 points! 
 
@@ -244,18 +255,18 @@ You can probably guess what entering 5 does from the main menu.. Yes, you're cor
 
 ##### For further explanation of the code with a visual representation, please refer to the in-code comments in the main.py, quiz_functions.py and quizzes.py Python files. 
 
-### Sign In/Up Feature
+### Feature 1. Sign In/Up 
 
 A sign in / up feature that requires a password will be implemented. The main reason for this feature is because of the high scores table and the username associated with the scores. Just having the scores by themselves and no name attached would not have the same effect. 
 
-The sign up feature requires the user to enter a username that is five characters or more long, it is then converted to a title (capital first letter) to greet the user once sign up is completed. The next user requirement is a password, this also needs to be 5 or more characters long. The username and password is then written to a csv file called user_names.csv to facilitate the sign in function. 
+The sign up feature requires the user to enter a username that is five characters or more long, it is then converted to a title (capital first letter) to greet the user once sign up is completed. The next user requirement is a password, this also needs to be 5 or more characters long and is written invisibly to the user usering the getpass package. The username and password is then written to a csv file called user_names.csv to facilitate the sign in function. 
 
-The sign in function require the user to enter their previously entered username and password, entered during the sign up feature, that opens and reads the user_names.csv file. While reading the file, using a for loop, the application check to see if the username matches an existing username, if there is, it then checks to see if the password matches. If the entered two values match an existing two values, the user is granted entry to the quiz under the entered username. If a match is not found, the user is then asked if they would like to sign up with a new account, or, try and sign in again. 
+The sign in function require the user to enter their previously entered username and password, entered during the sign up feature, that opens and reads the user_names.csv file. While reading the file, using a for loop, the application checks to see if their is a matching username and password. If the entered two values match an existing two values, the user is granted entry to the quiz under the entered username and welcomed using that name. If a match is not found, the user is then asked if they would like to sign up with a new account, or, try signing in again. 
 
 - Import csv system package.
 - Create a csv file called user_names.csv and assign it to the second_file_name variable.
 - Open the variable under write mode so that a file is created if one does not already exist.
-- Write username and password to the file seperated by commas so the app can access each during sign in/up.
+- Write username and password to the file seperated by commas as a list.
 - Close the app, because 'with' was not used.
 
 ##### Sign Up
@@ -270,40 +281,42 @@ The sign in function require the user to enter their previously entered username
 - Input username.
 - Input password. 
 - Open csv file variable in 'r' (read) mode. 
-- Loop through each row of csv file and see if username matches index 0 in the row list, if a match is found, check if password matches index 1 of that specific row list. 
-- If found, Welcome user to the Quiz Night app and return their username.
-- If not found, notify the user they have not entered the right username or password. Or, give them an option to return to sign up function. 
+- Loop through each row of csv file and see if username matches index 0 in the row list, if a match is found, check if password matches index 1 of that row list. 
+- If found, Welcome username to the Quiz Night app.
+- If not found, notify the user they have not entered the right username or password. And, give them an option to return to the sign up function. 
 
-Error handling has been ulitised by printing a incorrect username or password string if there isn't a match, the user then has the opportunity to retry or enter s to sign up. If the user enters a character other than Y or N, then 'Invalid input. please enter Y or N' is displayed. Try and except code error handling has also been added in case of the unlikely event that an error is thrown during the main, sign_in or sing_up functions. 
+Error handling has been ulitised by printing a incorrect username or password string if there isn't a match, the user then has the opportunity to retry or enter s to sign up. If the user enters a character other than Y or N, then 'Invalid input' is printed to the screen, and then 'please enter Y or N' is displayed. Try and except code error handling has also been added in case of the unlikely event that an error is thrown during the main, sign_in or sing_up functions. 
 
 ```"Oops! Something seems to be not working, please try again."```
 
 
-### Quiz Feature 
+### Feature 2. The Quiz 
 
-Some may think, hmmmm, writing code for a quiz must be pretty easy... Well, I've got news for you! Let's put aside time taken and total points for now, I'll explain them later. 
+Some may think, hmmmm, writing code for a quiz must be pretty easy... Well, I've got news for you! 
 
-Initally, a function was written that takes the topic choice, question, four answer options, answer and username. The questions, answers and options must then be bundled together and randomly sorted so that their indexes remained constant between the sets but shuffled for each quiz attempt. This allows the question order to be at random, eridicating the chance of users writing down or memorising the answers and input them without reading the question. 
+Let's put aside time taken and total points for now, I'll explain them later. 
+
+Initally, a function was written that takes the topic choice, question, four guess options, answer and username. The questions, answers and options must then be bundled together and randomly sorted so that their indexes remained constant between the sets but shuffled for each quiz attempt. This allows the question order to be at random, eridicating the chance of users writing down or memorising the answers and inputting them without reading the question. 
 
 This is achieved by zipping the lists, using the random shuffle package to shuffle, and then assign the newly shuffled lists to new variables - shuffled_questions, shuffled_options, shuffled_answers. These new variable lists can now be used for the quiz and will have the same corresponding indexes, so the questions, options and answers still marry up. 
 
-```combined = list(zip(questions, options, answers))```
-```random.shuffle(combined)```
-```shuffled_questions, shuffled_options, shuffled_answers = (*combined)```
+```combined = list(zip(questions, options, answers))```\
+```random.shuffle(combined)```\
+```shuffled_questions, shuffled_options, shuffled_answers = (*combined)```\
 
-To walk through this process step by step...
-- The combined zipped variable results in a tuple including one question, four guess options and the answer. 
-- Since they are now zipped in seperate tuples, they can now be shuffled without getting mismacthing questions, options or answers. This is executed with the help of the random.shuffle package.
-- The * is then used to unpack the combined zipped variable into new 'shuffled' tuples with new a random order but with all questions, options and answers still matching! 
+Confused? Let's walk through it...
+- The combined zipped variable results in a tuple including an index from each list - one question, four guess options and the answer. 
+- Since they are now zipped in seperate tuples, the tuples can now be shuffled without getting mismacthing questions, options or answers. This is executed with the help of the random.shuffle package.
+- The * is then used to unpack the combined zipped variable into new 'shuffled' tuples with new a random order but with all questions, options and answers still matching.
+- They are then assigned to new shuffled variables, and this happened every time before a quiz is called!
 
+A score counter is initiated and set to 0, that increases by one every time the users guess and answer match. This final score is then displayed at the end of the quiz as a percentile. Using ```score = int(score / len(shuffled_questions) *100)```. It is also used to calculate the total points along with the total time taken in the next feature.
 
-A score counter is initiated and set to 0, that increases by one every time the users guess and answer match. This final score is then displayed at the end of the quiz as a percentile. Using ```score = int(score / len(shuffled_questions) *100)``` It is also used to calculate the total points along with the total time taken.
+A variable question_num is set to 0, and a for loop is used to loop through the shuffled questions, options and answers, using question_num for the constant index of each of the new lists for each loop, which is then increased by 1 after displaying the result to the user at the end of the loop. Since the questions data is a set, the for loop will loop through question in questions until there are no more questions. 
 
-A variable question_num is set to 0, and a for loop is used to loop through the shuffled questions, options and answers, using question_num for the index of each, which is then increased by 1 after displaying the result to the user at the end of the loop. Since the questions data is a set, the for loop will loop through question in questions until there are not more questions. 
+The quiz is executed using a for loop, where for question in shuffled questions the question is printed, and then a nested for loop to print the four options as ```for option in shuffled_options[question_num]:``` because this is a nested loop it will keep looping until all options in shuffled_options has been looped for whatever index the question_num is on. If the users guess equals the shuffled_answers and the same question_num idex then, you guest it, correct guess! And the score counter increasese by 1. The users guess is also appended to a guesses list to display at the end of the quiz. The user guess is also made a capital because you'd be pretty annoyed if you entered an a when the answer was A and you were marked incorrect. An elif statement is used for if the users guess is incorrect, which is displayed and also an else statement if the user enter something that isn't A, B, C, or D. Finally at the end of the loop, the question_num counter is increased by one so that the shuffled lists index all match for the next loop. 
 
-The quiz is executed using a for loop, where for question in shuffled questions the question is printed, and then a nest for loop to print the four options as ```for option in shuffled_options[question_num]:``` because this is a nested loop it will keep looping until all options in shuffled_options has been looped for whatever index the question_num is on. If the users guess equals the shuffled_answers and the same question_num idex then, you guest it, correct guess! And the score counter increasese by 1. The users guess is also appended to a guesses list to display at the end of the quiz and the user guess is made a capital because you'd be pretty annoyed if you entered a when the answer was A and you were marked incorrect! An elif statement is used for if the users guess is incorrect, which is displayed and also an else statement if the user enter something that isn't A, B, C, or D. Finally at the end of the loop, the question_num counter is increased by one so that the shuffled lists index all match for the next loop. 
-
-The counter question_num was implemented so that the quizzes can be manipulated in the future, maybe to add more questions, or even change the data for CS Fundamental test revision next semester. 
+The counter question_num was implemented so that the quizzes can be manipulated in the future, maybe to add more questions, or even change the data for CS Fundamental test revision next semester. It also allows for the topic points function to run when quiz topics have different numbers of questions. 
 
 The results are then displayed as answers and guesses, a percentile score and total time. 
 
@@ -312,28 +325,34 @@ The results are then displayed as answers and guesses, a percentile score and to
 Error handling has been utilised by printing 'Incorrect!' if the user enters a wrong answer, followed by a string displaying the correct answer. If the user enters an input that doesn't match the options, A, B, C or D, the a message is displayed that the input was not a valid answer. This alone should handle most errors, but just in case a try and except code is executed in case of any unlikely errors. The progress bar also has a try and except block, just in case it doesn't work on some operating systems. 
 
 
-### Total Points and Time Taken Feature
+### Feature 3. Total Points and Time Taken 
 
-To eliminate the chance of a user googling the answers a total points scoring function is created using score, number of questions and total time. 
+To eliminate the chance of a user googling the answers a total points scoring function is created using score, number of questions and total time. It was achieved by basic multiplication, adding and subtracting, plus some trial and error with constants (allocated time and score *). 
 
 A time stamp is saved to a start_time variable which happens after the get ready progress bar has reached 100%, this is achieved by using the time package. The quiz loop then runs for all questions and then another time stamp is saved to a end_time variable. The total time is calculated by subtracting the start time and from the end time which is displayed to the user as 'total time taken' in the results section and then passed to the calculate_points function to calculate total points. 
 
 The calculate points function take the score, which is a percentile and multiplies is by 50, and saved to the score points variable. This is done to give the calculation some room to move when taking time into account. A variable max time is calculated by muliplying the number of questions in the quiz with the allocated time of 30 seconds per question, if the user takes less time than the allocated 30 seconds per question max time for the overall quiz, then that time difference is added to the score points variable. 
 
+```time_points = (max_time - total_time) if total_time < max_time else 0```
+
+If total_time is less (<) max_time, time_points equals the result, but if max_time is bigger than total return 0. This is a form of error handling, if the user takes the maximum time allocated of 30 seconds per question or longer, this code ensures 0 is returned, and no extra points will be added to total points. 
+
 This might be a little confusing... so here's an example to clear things up. 
 
 - If there was 5 questions in the quiz
-- And the user got questions 3 correct 
-- Their score would be 60 (3 / 5 * 100)
-- Their score points would be 300 (60 * 50)
-- Their max time would be 150 seconds (5 * 30) 
-- Let's say their total time is 120 seconds
-- Their time points would be 30 (150 - 120)
-- Their total points would therefore be 330 (300 + 30)
+- And the user got 3 questions correct 
+- Their score would be 60% (correct guesses / number questions * 100)
+- Their score points would be 300 (score * 50)
+- Their max time would be 150 seconds (number of questions * 30) 
+- Let's say time taken was 120 seconds 
+- Their time points would be 30 (max time - time taken)
+- Their total points would therefore be 330 (score points + time points)
+
+Pretty simple when you break it down right?
+
+This way the user is rewarded when they take less time than the allocated 30 seconds per question.
 
 ![Total points](images/totalpoint.png)
-
-This way the user is rewarded when they take less time than the allocated 30 seconds per question. 
 
 The total points, username and quiz topic are then appended to the list.csv so that the high scores feature can read, then reverse sort the lists based on total points so that the 3 highest scores can be displayed and their username. 
 
@@ -342,37 +361,39 @@ A csv file is created at the start of the quiz "w" write mode if it has not been
 Error handling has been implemented into the code by using try and except on the quiz function itself, in which the time variables are assigned locally. The calculate points function also has try and except incase any unlikely errors should occur. 
 
 
-### High Scores Board Feature
+### Feature 4. High Scores Board 
 
-The high scores board opens the list.csv file that was saved to the variable file_name in 'r' read mode, and appends each row entry of topic, score and username to a list. 
+The high scores board opens the list.csv file that was saved to the variable file_name in 'r' read mode, and appends each row entry of topic, score and username as a list, to a parent list. 
 
 ![List Headings](images/listhaedings.png)
 
-Because the file was opened with ```with``` the file does not need to be closed. This then seperates the scores into their topics, this is important so that the board can display the highest scores for all topics and not just the highest overall. This is achieved by using a for loop, and if the first index ```i[0]``` equals 1 for example, ```i[2]``` username, now index 0, and ```float(i[1])```, now index 1, are appended to the music topic list - and the same for all other list topics. Topic is not added because it has already been used to seperate the data into their topic lists. 
+Because the file was opened with ```with``` the file does not need to be closed. This then seperates the scores into their topics, which is important so that the board can display the highest scores for all 5 topics and not just the highest overall. This is achieved by using a for loop, and sorting the row lists into seperate new lists based on their first topic index ```i[0]```. If ```i[0]``` equals 1 for example, then the username ```i[2]``` and score ```float(i[1])``` are appended to their own topic list. The data index position of the new lists is index 0 is now username, and total points now index 1 - and the same for all other list topics. Topic is not appended to the list because it has already been used to seperate the data into their topic lists and all child lists would have the same topic. 
 
-Once the loop has appended all the rows data to their corresponding topic lists, the lists are then sorted using the .sort method and in reverse based on index 1, ```x[1]``` or scores, so that the highest scores are at the start of the list and lowest at the end.  
+Once the loop has appended all the row lists to their corresponding topic lists, the lists are then sorted using the .sort method and reverseed based on index 1, ```x[1]``` or total points, so that the highest scores are at the start of the list and lowest at the end.  
 
-List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three lists, or highest three scores, within the parent list and displays their scores or index 1. ```score[1]:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off. Index 0 is also displayed, which as mentioned previously, is now username in this new list. This enables users to know who achieved the high scores, which is crucial in a competative game environment. 
+List comprehension is then used to extract the first 3 highest scores in each list. ```list[:3]``` iterates over the first three child lists within the parent topic list. These topic score lists and then used to represent the top three highest score data in the corresponding table rows using the rich external package. ```[f"{score[0]} - {score[1]:.2f}" for score in music_highscores[:3]]``` As we know the the username in the new topics list is index 0, or score[0], and index 1 is total points, or score[1]. A for loop is then used to iterate and display the username and total_points data for three iterations [:3]. Knowing the username who achieved the high scores is crucial in a competative game. 
+
+Also, ```:.2f``` means that only two decimal points will be displayed of the float, the rest will be cut off, otherwise the total points can be too long. 
 
 These results are then printed to the termal as a rich external package module table in different colours for 1st, 2nd and 3rd.  
 
 ![High Scores Board](images/highscores.png)
 
-During the writing of this function, a bug arose where if the topic high scores were called when the csv scores list had not been created yet. In this scenario the application was trying to read a file that did not exist, so it threw a tantrum. After some trial and error coding, this bug was resolved by using try and except, if the file did not exist it meant that no one has attempted a quiz yet, because the write file was at the start of the quiz function. This file could have been moved so that it was created earlier, but I decided to use the except block to print ```Sorry, there's no quiz scores to show right now.``` instead. This way the user is more inclined to want to attempt a quiz so they can see what the high scores board looks like!
+During the writing of this function, a bug arose where if the topic high scores were called when the csv scores list had not been created yet. In this scenario the application was trying to read a file that did not exist, so it threw a tantrum (error). After some trial and error coding, this bug was resolved by using try and except, if the file did not exist, it means that no one has attempted a quiz yet, because the write file is at the start of the quiz function. This file could have been moved so that it was created earlier, but I decided to use the except block to print ```Sorry, there's no quiz scores to show right now.``` instead. This way the user is more inclined to want to attempt a quiz so they can see what the high scores board looks like!
 
 A parent try and except was also used at the very start of the function so if any unlikely errors were to occur they would be caught and a more appropriate message would be displayed. 
 
 
-### Random Quiz Feature
+### Feature 5. Random Quiz 
 
-The random quiz feature takes the username, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. The function then uses the random package to assign a random integer between 1 and 5, because there are 5 quiz topics, to the variable rand_quiz. That variable rand_quiz integar is then passed to quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar. The quiz topic table is not ran because the rand_quiz does not equal None. 
+The function uses the random package to assign a random integer between 1 and 5, because there are 5 quiz topics, to the variable rand_quiz. That variable rand_quiz integar is then passed to the quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar as the topic choice. The quiz topic table is not ran because the rand_quiz does not equal None. 
 
 For example: 
 
 - If the random integer is 1, the topic choice is 1 and the music quiz is ran.
 - If the random integer is 4, the topic choice is 4 and the computer science quiz is ran. 
 
-For the users quiz score and username to be appended to the list csv file, the username must also be passed through the functions. The rand_quiz must also be set to equal None in the quiz topics function so that is the function is called from the main menu, rand_quiz doesn't not impact what quiz is ran. 
+The random quiz feature takes the username variable, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. This is so the users quiz total points and username can be appended to the list csv file. The username must also be passed through other functions so it is mostly accessible. The rand_quiz must also be set to equal None in the quiz topics function, so that if the function is called from the main menu, rand_quiz doesn't impact what quiz is ran because it equals none if a topic is called from that menu. 
 
 Error handling was implemented to this function by using try and except. The random integer can also only be between 1 and 5 which corresponds to each quiz, so that no errors can occur. 
 

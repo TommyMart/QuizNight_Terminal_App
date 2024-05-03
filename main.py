@@ -26,6 +26,8 @@ def sign_up(second_file_name):
             if len(username) < 5:
                 print("Username must be at least 5 characters long.\n")
                 continue
+            # Let user know their password will be invisible
+            print("WARNING! Your password below will be invisible.\n")
             # Input new password that's 5 characters or longer
             password = getpass.getpass("Please enter a password: \n")
 
@@ -56,6 +58,8 @@ def sign_in(second_file_name):
         while True:
             # Ask user to enter previous username
             username = input("Please enter your username: \n")
+            # Let user know their password will be invisible
+            print("WARNING! Your password below will be invisible.\n")
             # Ask user to enter previous password
             password = getpass.getpass("Please enter your password: \n")
 
@@ -152,6 +156,8 @@ def menu(username):
         # If user enters five exit the app
         if user_choice == "5":
             return True
+        elif user_choice not in ["1", "2", "3", "4"]:
+            print("Invalid entry, please try again.")
         # Calls topic_choice function with the user's choice
         else:
             topic_choice(user_choice, username)

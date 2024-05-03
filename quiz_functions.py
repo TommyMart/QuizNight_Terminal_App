@@ -469,13 +469,13 @@ def top_scores():
                 # Print the table
                 console.print(table)
 
-                # Input holder so
+                # Input holder so user can view table
                 input("Press any key for main menu: \n")
 
         except BaseException:
             # If the csv file holding the scores has not been created yet
             print("Sorry, there's no quiz scores to show right now.\n")
-            input("Press any key for main menu: \n")
+            input("Enter any key for main menu: \n")
 
     except BaseException:
         # Unexpected Error Handling
@@ -529,8 +529,9 @@ Let's go over the basic instructions to get the ball rolling.\n
 
 - To exit the app, please navigate to the Main Menu and enter 5.\n
 
-- For any further information, please refer to the readme.md file
-located in the root directory. 
+- For further information or help, please refer to the readme.md file
+  located in the root directory. Or at - 
+  https://github.com/TommyMart/T1A3_Terminal_App \n
             """)
         input("Press any key for main menu: \n")
 

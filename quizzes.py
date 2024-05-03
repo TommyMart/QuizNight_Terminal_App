@@ -12,7 +12,8 @@ from rich.progress import track
 # Local application/library specific imports
 
 
-# Function to calculate total points based on score and time
+# Function to calculate total points based on score, number of q's 
+# and time
 def calculate_points(score, total_questions, total_time):
     try:
         # Score points: 50 points for each correct answer
