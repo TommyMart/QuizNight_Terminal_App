@@ -108,7 +108,7 @@ def quiz_topics(username, rand_quiz=None):
                 "C",
                 "B",
                 "A"
-                )
+            )
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
@@ -157,23 +157,23 @@ def quiz_topics(username, rand_quiz=None):
 
             # Answers
             answers = (
-                    "B", 
-                    "D", 
-                    "B", 
-                    "C", 
-                    "D", 
-                    "B", 
-                    "A", 
-                    "D",
-                    "C", 
-                    "D", 
-                    "B", 
-                    "C", 
-                    "A", 
-                    "C", 
-                    "D", 
-                    "C"
-                    )
+                "B",
+                "D",
+                "B",
+                "C",
+                "D",
+                "B",
+                "A",
+                "D",
+                "C",
+                "D",
+                "B",
+                "C",
+                "A",
+                "C",
+                "D",
+                "C"
+            )
 
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
@@ -289,22 +289,22 @@ def quiz_topics(username, rand_quiz=None):
 
             # Answers
             answers = (
-                "C", 
-                "A", 
-                "C", 
-                "D", 
-                "C", 
-                "B", 
-                "A", 
-                "C", 
-                "B", 
-                "D", 
-                "B", 
-                "C", 
-                "B", 
-                "A", 
-                "D", 
-                "C", 
+                "C",
+                "A",
+                "C",
+                "D",
+                "C",
+                "B",
+                "A",
+                "C",
+                "B",
+                "D",
+                "B",
+                "C",
+                "B",
+                "A",
+                "D",
+                "C",
                 "B"
             )
 
@@ -369,7 +369,7 @@ def quiz_topics(username, rand_quiz=None):
                 "C",
                 "B",
                 "A"
-                )
+            )
 
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
@@ -497,7 +497,42 @@ def random_quiz(username):
 # Instructions Function
 def instructions():
     try:
-        print("new")
+        print("""Since you've made it this far let's assume you've signed up
+correctly.\n""")
+        print(
+            """
+Now you're ready to play...\n
+
+Let's go over the basic instructions to get the ball rolling.\n
+
+- From the Main Menu enter 1 to see the Quiz Topics Menu.\n
+
+- From the Quiz Topics Menu enter a number from 1 to 5 to choose
+  which quiz genre topic you'd like to play.\n
+
+- Read the question and choose from the guess options by entering
+  A, B, C or D.\n
+
+- The Quiz will then let you know if you were correct or incorrect
+  and dislay a new question, provided you're not at the end of the quiz.\n
+
+- When you have reached the end of the quiz, the terminal will
+  display your time taken, your score as a percentile and
+  your total points.\n
+
+- Total points is a score system that takes into account
+  the score percentile and the time taken. For more information please
+  refer to the readme.md file located in the root directory.\n
+
+- To view the high score board, please navigate to the Main Menu
+  and select 2.\n
+
+- To exit the app, please navigate to the Main Menu and enter 5.\n
+
+- For any further information, please refer to the readme.md file
+located in the root directory. 
+            """)
+        input("Press any key for main menu: \n")
 
     except BaseException:
         # Unexpected Error Handling

@@ -213,4 +213,5 @@ main()
 
 
 # User has selected 5 from the main menu and wishes to exit the app
-print("\nGoodbye from all of us here at Quiz Night, we hope to see you again soon!\n")
+print("""\nGoodbye from all of us here at Quiz Night.\n
+We hope to see you again soon!\n""")
