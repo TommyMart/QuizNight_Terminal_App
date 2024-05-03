@@ -182,27 +182,27 @@ def quiz(questions, options, answers, topic_choice, username):
             if topic_choice == 1 and total_points >= music_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(
-                    f"Conratulations {username} your new Music Quiz Highest Score is [bold red]{
+                    f"Conratulations {username}! New Music Quiz High Score - [bold red]{
                         total_points:.2f}[/bold red]!\n")
             elif topic_choice == 2 and total_points >= history_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(
-                    f"Conratulations {username} your new History Quiz Highest Score is [bold red]{
+                    f"Conratulations {username}! New History Quiz High Score - [bold red]{
                         total_points:.2f}[/bold red]!\n")
             elif topic_choice == 3 and total_points >= cities_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(
-                    f"Conratulations {username} your new Capital Cities Quiz Highest Score is [bold red]{
+                    f"Conratulations {username}! New Capital Cities Quiz High Score - [bold red]{
                         total_points:.2f}[/bold red]!\n")
             elif topic_choice == 4 and total_points >= cs_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(
-                    f"Conratulations {username} your new Computer Science Quiz Highest Score is [bold red]{
+                    f"Conratulations {username}! New Computer Science Quiz High Score - [bold red]{
                         total_points:.2f}[/bold red]!\n")
             elif topic_choice == 5 and total_points >= gk_highscores[0]:
                 print(f"[bold purple]New High Score![/bold purple]\n")
                 print(
-                    f"Conratulations {username} your new General Knowledge Quiz Highest Score is [bold red]{
+                    f"Conratulations {username}! New General Knowledge Quiz High Score - [bold red]{
                         total_points:.2f}[/bold red]!\n")
 
         # Input staller so user can view information before returning

@@ -228,35 +228,50 @@ def quiz_topics(username, rand_quiz=None):
 
             # Questions
             questions = (
-                ("\nWhat name is NOT one of Kim or Kanye's children?: \n"),
-                ("\nWhich pop star is the godmother of both of Elton John's sons?: \n"),
-                ("\nWhat is Rihanna's real name?: \n"),
-                ("\nWhich pop star accidentally set fire to her home gym with candles?: \n"),
-                ("\nWhich pop star was Judge Judy's neighbor?: \n"),
+                ("\nWhich is considered to be the computer's short-term memory?: \n"),
+                ("\nWhat is the brain of the computer?: \n"),
+                ("\nWhat allows multiple programs to run on a computer?: \n"),
+                ("\nWhen was the world wide web invented?: \n"),
+                ("\nEverything physical in a computer is attached to the...?: \n"),
+                ("\nInformation that is broken down into small chunks before it is sent to another computer are called...: \n"),
+                ("\nWhat does GUI stand for....?: \n"),
+                ("\nThe Second Generation Computer used …?: \n"),
+                ("\nWhich among the following works faster?: \n"),
+                ("\n……………. is a set of finite elements that interconnects different elements of computer systems.: \n"),
+                ("\nThe .com used frequently in website url can be expressed as …: \n"),
+                ("\nWhat is the full form of the CPU?: \n"),
+                ("\nWhich of the following is the binary representation of 4 5/8?: \n"),
+                ("\nA numeric value used to identify a memory cell?: \n"),
+                ("\nA means of encoding text in which each symbol is represented by 16 bits: \n"),
+                ("\nA numeric value used to identify a memory cell?: \n"),
+                ("\nA digital circuit capable of holding a single digit: \n"),
+                ("\nWhich of the following bit patterns represents the value 5 in twos complement notation?: \n"),
             )
 
             # Options
             options = (
-                ("A. Chicago", "B. East", "C. Palm", "D. North"),
-                ("A. Mariah Carey", "B. Tina Turner", "C. Lady Gaga", "D. Madonna"),
-                ("A. Rihanna Felty", "B. Robyn Fenty", "C. Robin Dern", "D. Rachel Feaner"),
-                ("A. Lady Gaga", "B. Rihanna", "C. Miley Cyrus", "D. Britney Spears"),
-                ("A. Justin Bieber", "B. Adele", "C. Taylor Swift", "D. Bruno Mars"),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
-                ("A. ", "B. ", "C. ", "D. "),
+                ("A. Rim", "B. Rom", "C. Ram", "D. Rem"),
+                ("A. CPU", "B. NIC", "C. Motherboard", "D. Memory"),
+                ("A. NIC", "B. API", "C. OS", "D. GUI"),
+                ("A. 1975", "1984", "C. 1991", "D. 1989"),
+                ("A. Hard drive", "B. CPU", "C. Monitor", "D. Motherboard"),
+                ("A. Letters", "B. Packets", "C. Packages", "D. Messages"),
+                ("A. Graphical User Interface", "B. Graphical User Interim", "C. Graphical Usage Interface ", "D. Geographical User Interface"),
+                ("A. Chip", "B. Vacuum Tube", "C. Transistors", "D. Integrated Circuitry"),
+                ("A. Ram", "B. Cache", "C. Register", "D. Rom"),
+                ("A. Starfish", "B. Nodes", "C. Junctions", "D. Mesh"),
+                ("A. Corporation", "B. Commercial", "C. Common", "D. Conditional"),
+                ("A. Central Program Unit", "B. Central Programming Unit", "C. Central Processing Unit", "D. Centralised Processing Unit"),
+                ("A. 100.101", "B. 110.101", "C. 10.011", "D. 100.110"),
+                ("A. Address", "B. Hexadecimal Notation", "C. ", "D. Bit"),
+                ("A. ISO", "B. ASCII", "C. LZW", "D. Unicode"),
+                ("A. Pixel", "B. Bit", "C. Flip Flop", "D. Key Field"),
+                ("A. 11111011", "B. 00000101", "C. 11110011", "D. 00011010"),
             )
 
             # Answers
             answers = (
-                "B", "C", "B", "D", "A"
+                "C", "A", "C", "D", "C", "B", "A", "C", "B", "D", "B", "C", "B", "A", "D", "C", "B"
             )
 
             # Call quiz function to run quiz
