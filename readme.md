@@ -41,26 +41,55 @@ Please also make sure that Python 3.8 or is installed.
 
 ## Getting Started 
 
-First you must clone the [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
+#### Clone Repo
 
-Alternatively, download the zipped folder and via your terminal nevigate to the root directory of the app by using change directory ```cd``` command. 
+##### Unix-based Systems (macOS, Linux)
 
+- First you must clone the source respository from [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
+
+##### Feel free to copy and paste the following code steps! 
+
+- Next launch the terminal on your device and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
+
+- Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
+
+- Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
+
+#### Download Zip File
+
+- If you opted to download the zip file, please download it from here - [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
+
+- Then please navigate to whereever the file is located on your device and unzip the file. 
+
+- Then launch the terminal from your device and find the unzipped T1A3_Terminal_App project directory. 
+
+##### Tip: If you're using VSCode you can just run ```code .``` from the root directory. 
+
+- Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
+
+- Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
+
+##### Windows
+
+- Install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+- Then clone the source respository from [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
+
+- Navigate to T1A3_Terminal_App project directory.
+
+- Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
+
+- Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
+
+Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know before it installs the packages, you may have to scroll up if your terminal is small, after you run the above code.
+
+If for highly the unlikely situation where the above steps don't work, please install Python 3.12.1 or higher and try again. Alternatively, download the zipped folder and via your terminal navigate to the root directory of the app by using change directory ```cd T1A3_Terminal_App``` command. 
+
+For more information please see [About Remote Respositories](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories).
 
 ###### Need Help?
 
 If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd```. 
-
-##### Feel free to copy and paste the following code steps! 
-
-- Launch your terminal and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
-
-- Convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
-
-- Then run the bash script which will start a virtual terminal environment: ```scripts/run.sh```
-
-Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know after you run the above code.
-
-If for the unlikely reason the above steps aren't working, please install Python 3.12 or higher and try again. 
 
  ---
 
@@ -68,14 +97,15 @@ If for the unlikely reason the above steps aren't working, please install Python
 
 The application runs both external and built in Python system packages, these include:
 
-##### System Packages
+##### Stanard Library Imports
 - csv
 - time
 - random
 - getpass
 - os.path
+- operator
 
-##### External Packages
+##### Related third party imports
 - Rich
 
 These are downloaded automatically in a virtual environment when running the run.sh file above. 
@@ -186,7 +216,7 @@ The image above is notifying username - 'Tommy' that they have achieved a new ga
 
 ## Topic High Scores
 
-![Topic High Scores](images/highscores.png)
+![Topic High Scores](images/highscoresboard.png)
 
 Accessible by entering 2 from the main menu is the topic high scores table. Here, any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the score. Luckily, high scores are not just viewable for the current username signed in but for all usernames, allowing users to compete against one and other for the top spot! 
 

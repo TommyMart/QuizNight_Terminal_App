@@ -107,7 +107,8 @@ def quiz_topics(username, rand_quiz=None):
                 "A",
                 "C",
                 "B",
-                "A")
+                "A"
+                )
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
 
@@ -155,8 +156,24 @@ def quiz_topics(username, rand_quiz=None):
             )
 
             # Answers
-            answers = ("B", "D", "B", "C", "D", "B", "A", "D",
-                       "C", "D", "B", "C", "A", "C", "D", "C")
+            answers = (
+                    "B", 
+                    "D", 
+                    "B", 
+                    "C", 
+                    "D", 
+                    "B", 
+                    "A", 
+                    "D",
+                    "C", 
+                    "D", 
+                    "B", 
+                    "C", 
+                    "A", 
+                    "C", 
+                    "D", 
+                    "C"
+                    )
 
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
@@ -218,7 +235,8 @@ def quiz_topics(username, rand_quiz=None):
                 "B",
                 "D",
                 "A",
-                "D")
+                "D"
+            )
 
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
@@ -271,7 +289,23 @@ def quiz_topics(username, rand_quiz=None):
 
             # Answers
             answers = (
-                "C", "A", "C", "D", "C", "B", "A", "C", "B", "D", "B", "C", "B", "A", "D", "C", "B"
+                "C", 
+                "A", 
+                "C", 
+                "D", 
+                "C", 
+                "B", 
+                "A", 
+                "C", 
+                "B", 
+                "D", 
+                "B", 
+                "C", 
+                "B", 
+                "A", 
+                "D", 
+                "C", 
+                "B"
             )
 
             # Call quiz function to run quiz
@@ -334,7 +368,8 @@ def quiz_topics(username, rand_quiz=None):
                 "B",
                 "C",
                 "B",
-                "A")
+                "A"
+                )
 
             # Call quiz function to run quiz
             quiz(questions, options, answers, topic_choice, username)
