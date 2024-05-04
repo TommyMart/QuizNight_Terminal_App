@@ -51,6 +51,8 @@ You can clone the source respository from the [T1A3 Terminal App Repository](htt
 
 - Next launch the terminal on your device and enter: ```git clone https://github.com/TommyMart/T1A3_Terminal_App.git```
 
+- Navigate into the T1A3 Terminal App directory: ```cd T1A3_Terminal_App```
+
 - Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
 
 - Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
@@ -65,11 +67,9 @@ If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when try
 
 - If you opted to download the zip file, please download it from here - [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
 
-- Then please navigate to whereever the file is located on your device and unzip the file. 
+- Then please navigate to where ever the file is located on your device and unzip the file. 
 
-- Then launch the terminal from your device and find the unzipped T1A3_Terminal_App project directory. 
-
-##### Tip: If you're using VSCode you can just run ```code .``` from the root directory. 
+- Then launch the terminal from your device and navigate to the unzipped T1A3_Terminal_App project directory. 
 
 - Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
 
@@ -85,7 +85,7 @@ You should now see ```Are you a new user? (Y/N): ```
 
 - Then clone the source respository from [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
 
-- Navigate to T1A3_Terminal_App project directory.
+- Navigate into the T1A3 Terminal App directory: ```cd T1A3_Terminal_App```
 
 - Then please convert the run.sh file into an executable bash script by running: ```chmod +x scripts/run.sh```
 
