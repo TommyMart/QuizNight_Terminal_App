@@ -45,7 +45,7 @@ Please also make sure that Python 3.8 or is installed.
 
 ##### Unix-based Systems (macOS, Linux)
 
-- First you must clone the source respository from [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App).
+You can clone the source respository from the [T1A3 Terminal App Repository](https://github.com/TommyMart/T1A3_Terminal_App), or just follow the following steps.
 
 ##### Feel free to copy and paste the following code steps! 
 
@@ -58,6 +58,8 @@ Please also make sure that Python 3.8 or is installed.
 - Done!! How easy was that? 
 
 You should now see ```Are you a new user? (Y/N): ```
+
+If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when trying to run the previous ```chmod +x scripts/run.sh``` code, it might be the odd case of because the command was copy and pasted. Try writing the command yourself instead of copying and pasting in this instance and it should hopefully work. I'm not sure why this is the case but some of my fellow students ran into this error and following the above instructions fixed the issue. Good luck!
 
 #### Option 2 - Download Zip File
 
@@ -99,8 +101,6 @@ For more information please see [About Remote Respositories](https://docs.github
 
 If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd``` followed by the directory name like so ```cd T1A3_Terminal_App```. 
 
-If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when trying to run the previous ```chmod +x scripts/run.sh``` code, it might be the odd case of because the command was copy and pasted. Try writing the command yourself instead of copying and pasting in this instance and it should hopefully work. I'm not sure why this is the case but some of my fellow students ran into this error and following the above instructions fixed the issue. 
-
  ---
 
 ## Packages
@@ -108,17 +108,40 @@ If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when try
 The application runs both external and built in Python system packages, these include:
 
 ##### Stanard Library Imports
+
 - csv
+
+Is used in the app to write comma seperated value files. More info [here](https://docs.python.org/3/library/csv.html).
+
 - time
+
+Used in the app to take time stamps based on seconds passed since epoch. More info [here](https://docs.python.org/3/library/time.html).
+
 - random
+
+Is used in the app to randomly shuffle tuples and generate random integers. More info [here](https://docs.python.org/3/library/random.html).
+
 - getpass
+
+Is used in the app to make the user password input invisible. More info [here](https://docs.python.org/3/library/getpass.html).
+
 - os.path
+
+Is used in the app to check if a csv has been created or not. More info [here](https://docs.python.org/3/library/os.path.html).
+
 - operator
 
+Is used in the app to get an piece of data in a tuple from a sorted list, lambda was initially used but it is not recognised as part of the Pep 8 styling. More info [here](https://docs.python.org/3/library/operator.html).
+
 ##### Related third party imports
+
 - Rich
 
+Is used in the app for text colours and styling, emojis and tables. More info [here](https://rich.readthedocs.io/en/stable/introduction.html).
+
 Don't worry - These are downloaded automatically in a virtual environment when running the run.sh file above. Sit back and relax, we've taken care of everything for you. 
+
+
 
 ---
 
@@ -560,7 +583,7 @@ In some instances the Pep 8 guidelines were overridden based common sense and re
 
 #### No Global Variables
 
-I chose to assignment variables locally and either return them, or pass them as arguments between functions. This was mainly used for the username, which was created during the sign in stage and passed through the quiz functions so that it could be written to the total points csv file and then be accessed for the high scores board. I wasn't sure if this was standard Python 3 practice and google gave me mixed responses, therefore it was decided to stay with the original method. 
+I chose to assignment variables locally and either return them, or pass them as arguments between functions. This was mainly used for the username, which was created during the sign in stage and passed through the quiz functions so that it could be written to the total points csv file and then be accessed for the high scores board. I wasn't sure if this was standard Python 3 practice and google gave me mixed responses, therefore it was decided to stay with the original method which is less messy code. 
 
 ---
 
