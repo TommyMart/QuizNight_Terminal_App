@@ -99,6 +99,8 @@ For more information please see [About Remote Respositories](https://docs.github
 
 If you're unsure where abouts you are within the file tree of your device, you can execute the print working directory command ```pwd```, which will print the directory in which you currently are. Another great command is ```ls```, this stands for list and will list all the files and directories within the current directory. If you want to move into a directory within that list use the change directory command ```cd``` followed by the directory name like so ```cd T1A3_Terminal_App```. 
 
+If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when trying to run the previous ```chmod +x scripts/run.sh``` code, it might be the odd case of because the command was copy and pasted. Try writing the command yourself instead of copying and pasting in this instance and it should hopefully work. I'm not sure why this is the case but some of my fellow students ran into this error and following the above instructions fixed the issue. 
+
  ---
 
 ## Packages
@@ -288,6 +290,8 @@ The sign in function require the user to enter their previously entered username
 Error handling has been ulitised by printing a incorrect username or password string if there isn't a match, the user then has the opportunity to retry or enter s to sign up. If the user enters a character other than Y or N, then 'Invalid input' is printed to the screen, and then 'please enter Y or N' is displayed. Try and except code error handling has also been added in case of the unlikely event that an error is thrown during the main, sign_in or sing_up functions. 
 
 ```"Oops! Something seems to be not working, please try again."```
+
+If I were to develop a similar app in the future, I would include a loop that looks through the csv file for usernames when signing up, and if the name was already taken display "username" unavailable. Or something along those lines... This would not be difficult or take much time, but I simply did not have the free time to write before the assignment deadline. 
 
 
 ### Feature 2. The Quiz 
@@ -518,7 +522,7 @@ Testing is the final step from a project management perspective. This will be ac
 
 ---
 
-Given user terminals are often ran with a black background, colours were tested against this background to ensure the visability of the app was adequate. With some minor adjustments the colours used with a black terminal look great! And have a high contrast that should be easily visable for most. 
+Given user terminals are often ran with a black background, the app colours were tested against different backgrounds to ensure the visability of the app was adequate. With some minor adjustments the colours used with a black terminal look great! And have a high contrast that should be easily visable for most. It is recommended to only use white or black backgrounds, as colours may interfere with the app colours and limit legibility. 
 
 ##### Main Menu on dark background
 
@@ -538,6 +542,12 @@ Error handling has also been implemented into some of the child functions and lo
 
 ---
 
+## Flowchart
+
+Here is a simple flow chart to visualise the overall flow of the app. 
+
+![Flow Chart](images/flowchart.png)
+
 ## Challenges 
 
 #### DRY
@@ -547,6 +557,10 @@ Initally the menus were called in a one function, but due to wanting to add emoj
 #### Pep 8
 
 In some instances the Pep 8 guidelines were overridden based common sense and readability. This occured mainly during the table rows and columns, where the recommedned line length was exceeded. I thought it was important that each column and row stayed as one line of code to avoid messy and confusing code. 
+
+#### No Global Variables
+
+I chose to assignment variables locally and either return them, or pass them as arguments between functions. This was mainly used for the username, which was created during the sign in stage and passed through the quiz functions so that it could be written to the total points csv file and then be accessed for the high scores board. I wasn't sure if this was standard Python 3 practice and google gave me mixed responses, therefore it was decided to stay with the original method. 
 
 ---
 
