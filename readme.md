@@ -428,12 +428,15 @@ Error handling was implemented to this function by using try and except. The ran
 
 ## PROJECT MANAGEMENT
 
-For project management and planning a Trello Board was created, this provided a due date for each feature and a checklist of items needed to be completed to satify the completation of the feature. Once done the feature card is able to be moved to the 'Done' category, this greatly helped in organisation, time management and lessened stress when not knowing which feature to work on. 
+For project management and planning a Trello Board was created, this provided a due date for each feature and a checklist of items needed to be completed to satify the completation of the feature. Once completed, the feature card is able to be moved to the 'Done' category, this greatly helped in organisation, time management and lessened the stress of not knowing which feature to focus on. Successfully using project and time management I was able to treat the assignment as lots of smaller tasks which felt great ticking off, or, moving to the done column. The due dates were mainly organised into a few different dates that was based around my schedule and what days I would be able to dedicate to study. 
 
+I used the trello board regularly throughout the planning and development process, checking in everyday and slowly moving the cards from 'to do', to 'doing', to 'done'. Which felt great! It was especially useful when I had not been able to study for a couple of days and needed a refresher of what needed doing, instead of feeling overwhelmed I was able to jump straight in. It definitely saved me time and in doing so was able to hand up the assignment a day earlier than I had planned. 
+
+Pre planning was also done over the weekend over the 20th, where I read about the many different terminal app ideas and brainstormed what could be a fun and interesting idea. I decided that by the 24th that an idea needed to be decided upon so that I had sufficient time to create a high quality functioning app. I wanted to develop something that could help me in some way moving forward in life or study, and knowing that we have CS Fundamental quizzes and exams coming up in Term 2, a quiz game was decided upon. The quiz functions are easily changable, so using it in the future for study will be a fun and rewarding way to help next term and beyond. 
 
 ### Sign Up/In
 
-Due date: 3rd May 
+Due date: 3rd May \
 Completion: 1st May
 
 - Import csv system package.
@@ -463,7 +466,7 @@ Completion: 1st May
 
 ### Quiz 
 
-Due date: 1st May
+Due date: 1st May\
 Completation: 1st May
 
 - Write a quiz function that takes the index, or question number, and accesses each index within the three questions, options and answer lists, then returns if the users guess is equal to the answer.
@@ -479,7 +482,7 @@ Completation: 1st May
 
 ### Total Points and Time Taken
 
-Due Date: 3rd May
+Due date: 3rd May\
 Completion 1st May
 
 - Write a time stamp to use as start time.
@@ -494,7 +497,7 @@ Completion 1st May
 
 ### High Scores Board
 
-Due Date: 4th May
+Due date: 4th May\
 Completion: 2nd May
 
 - Open the csv file which hold the topics, scores and username in read mode. 
@@ -510,6 +513,9 @@ Completion: 2nd May
 
 ### Random Quiz
 
+Due date: 4th May\
+Completion: 2nd May
+
 - Import Random. 
 - Write random function that generates random a integer between range 1 and 5 inclusive each time it is called. 
 - Pass that number to the Quiz function so that the random integar equals the quiz topic value.
@@ -524,21 +530,44 @@ Completion: 2nd May
 
 Some other cards used in project management trello board but not mentioned above are:
 
-- Error Handling
-- Aesthetics 
-- Package research
-- Quiz Data
-- Main Menu
-- Quiz Topics Menu
-- Write Scripts
+##### Project Planning
+Due date: 24th of May
+Completion: 24th of May
+##### Package research
+Due date: 27th of May\
+Completion: 27th of May
+##### Quiz Data
+Due date: 27th of May\
+Completion: 27th May
+##### Main Menu
+Due date: 27th of May\
+Completion: 26th of May
+##### Quiz Topics Menu
+Due date: 3rd of May\
+Completion: 26th of May
+##### Aesthetics 
+Due date: 4th of May\
+Completion: 2nd of May
+##### Error Handling
+Due date: May of 4th\
+Completion: 3rd of May
+##### Write Scripts
+Due date: 4th of May\
+Completion: 4th of May
 
 ##### Work in progress Trello Board
 
+1st of May 2024
 ![WIP Trello Board](images/WIPTrello.png)
+
+##### Completed Trello Board
+
+4th of May 2024
+![Completed Trello Board](images/completedtrello.png)
 
 ### Testing
 
-Due date: 4th May
+Due date: 4th May /
 Completed 4th May
 
 Testing is the final step from a project management perspective. This will be achieved manually by trying to run through every possible scenario. The file will also be passed to my fellow students, preferably running different operating systems, to test the functionality of the quiz. And that the bash scripts install the correct packages and run successfully in the virtual encironnent. 
