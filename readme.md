@@ -27,7 +27,7 @@ Link to [Trello Board](https://trello.com/b/wfUXTR4Q/quiz-night-terminal-app).
 
 ## System / Hardware Requirements
 
-There are no system or hardware requirements for the application besides the device needs to have a terminal to run the app. The application does not need much processing power so should be runnable on all modern devices. 
+There are no system or hardware requirements for the application, besides the device needs to have a terminal to run the app. The application does not need much processing power so should be runnable on all modern devices. 
 
 The application has been designed to run on the following operating systems:
 
@@ -59,7 +59,7 @@ You can clone the source respository from the [T1A3 Terminal App Repository](htt
 
 You should now see ```Are you a new user? (Y/N): ```
 
-If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when trying to run the previous ```chmod +x scripts/run.sh``` code, it might be the odd case of because the command was copy and pasted. Try writing the command yourself instead of copying and pasting in this instance and it should hopefully work. I'm not sure why this is the case but some of my fellow students ran into this error and following the above instructions fixed the issue. Good luck!
+If you're getting ```zsh: command not found: chmod +x scripts/run.sh``` when trying to run the previous ```chmod +x scripts/run.sh``` command, it might be the odd case of because the command was copy and pasted. Try writing the command yourself instead of copying and pasting in this instance and it should hopefully work. I'm not sure why this is the case but some of my fellow students ran into this error and following the instructions above fixed the issue. Good luck!
 
 #### Option 2 - Download Zip File
 
@@ -91,7 +91,7 @@ You should now see ```Are you a new user? (Y/N): ```
 
 - Then run the bash script which will start a virtual terminal environment and install the required packages: ```scripts/run.sh```
 
-Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know before it installs the packages, you may have to scroll up if your terminal window is small, after you run the above code.
+Incase you thought you had Python 3.8 or higher installed but you don't, the terminal will let you know before it installs the packages, you may have to scroll up if your terminal window is small, after you run the above commands.
 
 In the highly unlikely situation where the above steps don't work, please install Python 3.12.1 or higher and try again. Alternatively, download the zipped folder and via your terminal navigate to the root directory of the app by using change directory ```cd T1A3_Terminal_App``` command. 
 
@@ -131,7 +131,7 @@ Is used in the app to check if a csv has been created or not. More info [here](h
 
 - operator
 
-Is used in the app to get an piece of data in a tuple from a sorted list, lambda was initially used but it is not recognised as part of the Pep 8 styling. More info [here](https://docs.python.org/3/library/operator.html).
+Is used in the app to access a piece of data from a sorted list, lambda was initially used but it is not recognised as part of the Pep 8 styling. More info [here](https://docs.python.org/3/library/operator.html).
 
 ##### Related third party imports
 
@@ -186,7 +186,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ---
 
-##### For best user experience, please make sure your terminal window is at a medium size. We also prefer a black background, but hey, that's just our opinion! 
+##### For the best user experience, please make sure your terminal window is at a medium size. We also prefer a black background over white, but hey, that's just our opinion! 
 
 #### Now let's have some Quiz Night fun!
 
@@ -217,7 +217,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ![Quiz Topics](images/Screenshot2024-04-30at2.25.58pm.png)
 
-The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral values. To start any of the quizzes please enter their value. 
+The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral selection values. To start any of the quizzes please enter their numeral value. 
 
 - Enter 1 for Music 
 - Enter 2 for History 
@@ -235,54 +235,54 @@ If you chose to take a quiz, a 'get ready' timer bar will run before your quiz a
 
 When the the bar reaches 100%, it's time to play!
 
-The question is displayed followed by a choice of options and labelled as A, B, C, or D. The user is then prompted to enter from the following option selections. Once a selection has been entered the user is notified if they their answer is correct or incorrect, if incorrect, the correct answer is displayed to the user. 
+The question is displayed followed by a choice of options which are labelled as A, B, C, or D. The user is then prompted to enter one of the option selections, once a selection has been entered the user is notified if they their answer is correct or incorrect, and if incorrect, the correct answer is displayed to the user. 
 
 ![Quiz question example](images/Screenshot2024-04-30at2.32.59pm.png)
 
-If the user enters a character that is not from the selected options they are notified that their selection was invalid and are not able to re answer the question or shown the answer. 
+If the user enters a character that is not from the selected options, they are notified that their selection was invalid and they will not be able to re answer the question, or shown the answer. 
 
 ![Invalid quiz answer](images/Screenshot2024-04-30at2.39.04pm.png)
 
-Once the user has answered all the questions, score percentile, time and total points are displayed. Total points is a function that takes the user's score and time taken and provides a total points score for the sake of the high scores board. If the score is a new high score the user is notifed at the end of the quiz after their results as shown in the image below. 
+Once the user has answered all the questions, score percentile, time and total points are displayed as results. Total points is a function that takes the user's score and time taken and provides a total points score for the sake of the high scores board. If the total points score is a new high score for the topic the user is notifed at the end of the quiz, after their results, as shown in the image below. 
 
 ![Quiz Results](images/scores.png)
 
-The image above is notifying username - 'Tommy' that they have achieved a new game high score of 1148.51 points! 
+The image above is notifying username - 'Tommy' that they have achieved a new topic game high score of 1148.51 points! 
 
 
 ## Topic High Scores
 
 ![Topic High Scores](images/highscoresboard.png)
 
-Accessible by entering 2 from the main menu is the topic high scores table. Here, any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the score. Luckily, high scores are not just viewable for the current username signed in but for all usernames, allowing users to compete against one and other for the top spot! 
+Accessible by entering 2 from the main menu is the topic high scores table. Here, any user on the device can view the top 3 highest scores for each topic and the username of the user who achieved the score. Luckily, high scores are not just viewable for the current username signed in but for all users, allowing users to compete against one and other for top spot! 
 
-The image above only shows Tommy's scores because at this stage they are the only user to have played any quiz. If no quiz has been played the high scores table is not shown, instead the user is notified that there are no quiz scores to be displayed. 
+If no quizzes have been attempted the high scores table is not shown, instead the user is notified that there are no quiz scores to be displayed when entering 2 from the main menu. 
 
 ## Quick Start Random Quiz
 
-This option from the main menu is for those who don't like waiting! This allows users to jump straight in and let the app decide which quiz topic the user will take. Those topic choices are of course music, history, captial cities, computer science and general knowledge. 
+This option from the main menu is for those who don't like waiting! This allows users to jump straight in and let the app decide which quiz topic the user will play. Those topic choices are of course music, history, captial cities, computer science and general knowledge. 
 
 ## Quiz Instructions
 
-Unlike the main menu selection above, instructions, accessible by entering 4 from the main menu, is for those are like to understand the ins and outs of the app before playing. Or, of course, if the user doesn't understand something. 
+Unlike the random quiz selection above, 'instructions', accessible by entering 4 from the main menu, is for those who like to understand the ins and outs of the app before playing. Or, of course, if the user doesn't understand something. The instructions also point the user to the readme for further help. 
 
 ## EXIT
 
-Maybe you've had enough, or, more likely, maybe your sister wants to try and beat your new high score! 
+Maybe you've had enough, or, more likely, your sister wants to try and beat your new high score! 
 
-You can probably guess what entering 5 does from the main menu.. Yes, you're correct, it exits the app. 
+You can probably guess what entering 5 does from the main menu..? Yes, you're correct, it exits the app. 
 
-```"Goodbye, we hope to see you again soon!"```
+```"Goodbye from all of us here at Quiz Night. We hope to see you again soon!```
 
 ---
 
 ## FEATURES
 
-##### For further explanation of the code with a visual representation, please refer to the in-code comments in the main.py, quiz_functions.py and quizzes.py Python files. 
+##### For further explanation and with visual representation, please refer to the in-code comments in the main.py, quiz_functions.py and quizzes.py Python files. 
 
 ### Feature 1. Sign In/Up 
 
-A sign in / up feature that requires a password will be implemented. The main reason for this feature is because of the high scores table and the username associated with the scores. Just having the scores by themselves and no name attached would not have the same effect. 
+The sign in / up feature requires a username and password to be be assigned before playing the quiz. The main reason for this feature is because of the high scores table and the username associated with the scores. Just having the scores by themselves on a high score board with no username attached would not be the same. 
 
 The sign up feature requires the user to enter a username that is five characters or more long, it is then converted to a title (capital first letter) to greet the user once sign up is completed. The next user requirement is a password, this also needs to be 5 or more characters long and is written invisibly to the user usering the getpass package. The username and password is then written to a csv file called user_names.csv to facilitate the sign in function. 
 
@@ -323,7 +323,7 @@ Some may think, hmmmm, writing code for a quiz must be pretty easy... Well, I've
 
 Let's put aside time taken and total points for now, I'll explain them later. 
 
-Initally, a function was written that takes the topic choice, question, four guess options, answer and username. The questions, answers and options must then be bundled together and randomly sorted so that their indexes remained constant between the sets but shuffled for each quiz attempt. This allows the question order to be at random, eridicating the chance of users writing down or memorising the answers and inputting them without reading the question. 
+Initally, a function was written that takes the topic choice, question, four guess options, answer and username as arguments. The questions, answers and options must then be bundled together and randomly sorted so that their indexes remained constant between the sets but shuffled for each quiz attempt. This allows the question order to be at random, eridicating the chance of users writing down or memorising the answers and inputting them without reading the question. 
 
 This is achieved by zipping the lists, using the random shuffle package to shuffle, and then assign the newly shuffled lists to new variables - shuffled_questions, shuffled_options, shuffled_answers. These new variable lists can now be used for the quiz and will have the same corresponding indexes, so the questions, options and answers still marry up. 
 
@@ -354,7 +354,7 @@ Error handling has been utilised by printing 'Incorrect!' if the user enters a w
 
 ### Feature 3. Total Points and Time Taken 
 
-To eliminate the chance of a user googling the answers a total points scoring function is created using score, number of questions and total time. It was achieved by basic multiplication, adding and subtracting, plus some trial and error with constants (allocated time and score *). 
+To eliminate the chance of a user googling the answers a total points scoring function is created using score, number of questions and total time as arguments. It was achieved by basic multiplication, adding and subtracting, plus some trial and error with constants (allocated time and score *). 
 
 A time stamp is saved to a start_time variable which happens after the get ready progress bar has reached 100%, this is achieved by using the time package. The quiz loop then runs for all questions and then another time stamp is saved to a end_time variable. The total time is calculated by subtracting the start time and from the end time which is displayed to the user as 'total time taken' in the results section and then passed to the calculate_points function to calculate total points. 
 
@@ -413,14 +413,14 @@ A parent try and except was also used at the very start of the function so if an
 
 ### Feature 5. Random Quiz 
 
-The function uses the random package to assign a random integer between 1 and 5, because there are 5 quiz topics, to the variable rand_quiz. That variable rand_quiz integar is then passed to the quiz topics function and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar as the topic choice. The quiz topic table is not ran because the rand_quiz does not equal None. 
+The function uses the random package to assign a random integer between 1 and 5, because there are 5 quiz topics, to the variable rand_quiz. That variable rand_quiz integar is then passed to the quiz topics function as an argument and the rand_quiz integer variable is then assigned to topic choice which runs the quiz with the corresponding random integar as the topic choice. The quiz topic table is not ran because the rand_quiz argument has a value. 
 
 For example: 
 
 - If the random integer is 1, the topic choice is 1 and the music quiz is ran.
 - If the random integer is 4, the topic choice is 4 and the computer science quiz is ran. 
 
-The random quiz feature takes the username variable, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. This is so the users quiz total points and username can be appended to the list csv file. The username must also be passed through other functions so it is mostly accessible. The rand_quiz must also be set to equal None in the quiz topics function, so that if the function is called from the main menu, rand_quiz doesn't impact what quiz is ran because it equals none if a topic is called from that menu. 
+The random quiz feature takes the username variable as an argument, passed from the sign in/up to the main menu, to the topic choice through to the random quiz function. This is so the users quiz total points and username can be appended to the list csv file. The username must also be passed as an argument through other functions so it is mostly accessible. The rand_quiz argument must also be set to equal None in the quiz topics function if it is not passed a value, so that if the function is called from the main menu, rand_quiz doesn't impact what quiz is ran. 
 
 Error handling was implemented to this function by using try and except. The random integer can also only be between 1 and 5 which corresponds to each quiz, so that no errors can occur. 
 
@@ -522,7 +522,7 @@ Completion: 2nd May
 
 ### Other Cards
 
-Some other cards used in project management trello board are:
+Some other cards used in project management trello board but not mentioned above are:
 
 - Error Handling
 - Aesthetics 
@@ -541,11 +541,11 @@ Some other cards used in project management trello board are:
 Due date: 4th May
 Completed 4th May
 
-Testing is the final step from a project management perspective. This will be achieved manually by trying to run through every possible scenario. The file will also be passed to my fellow students, preferably running different operating systems, to test the functionality of the quiz, make sure no errors occur, and that the bash scripts install the correct packages in the virtual encironnent. 
+Testing is the final step from a project management perspective. This will be achieved manually by trying to run through every possible scenario. The file will also be passed to my fellow students, preferably running different operating systems, to test the functionality of the quiz. And that the bash scripts install the correct packages and run successfully in the virtual encironnent. 
 
 ---
 
-Given user terminals are often ran with a black background, the app colours were tested against different backgrounds to ensure the visability of the app was adequate. With some minor adjustments the colours used with a black terminal look great! And have a high contrast that should be easily visable for most. It is recommended to only use white or black backgrounds, as colours may interfere with the app colours and limit legibility. 
+Given user terminals are often ran with a black background, the app colours were tested against different backgrounds to ensure the visability of the app was adequate. With some minor adjustments the colours used with a black terminal look great! And have a high contrast that should be easily visable for most. It is recommended to only use white or black backgrounds, as different colour backgrounds may interfere with the app colours and limit legibility. 
 
 ##### Main Menu on dark background
 
@@ -583,7 +583,7 @@ In some instances the Pep 8 guidelines were overridden based common sense and re
 
 #### No Global Variables
 
-I chose to assignment variables locally and either return them, or pass them as arguments between functions. This was mainly used for the username, which was created during the sign in stage and passed through the quiz functions so that it could be written to the total points csv file and then be accessed for the high scores board. I wasn't sure if this was standard Python 3 practice and google gave me mixed responses, therefore it was decided to stay with the original method which is less messy code. 
+I chose to assign variables locally within functions and either return them, or pass them as arguments between functions. This was mainly used for the username, which was created during the sign in stage and passed through the quiz so that it could be written to the total points csv file and then be accessed for the high scores board. I wasn't sure if this was standard Python 3 practice and a google search gave me a mixed response, therefore it was decided to stay with the original method which is less messy code. 
 
 ---
 
