@@ -215,7 +215,7 @@ If for any reason you cannot remember your username or password, then it's proba
 
 ## Quiz Topics
 
-![Quiz Topics](images/Screenshot2024-04-30at2.25.58pm.png)
+![Quiz Topics](images/quiztopics.png)
 
 The Quiz Topics menu shown above displays the quiz topic genres available and their corresponding numeral selection values. To start any of the quizzes please enter their numeral value. 
 
