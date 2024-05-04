@@ -430,9 +430,9 @@ Error handling was implemented to this function by using try and except. The ran
 
 For project management and planning a Trello Board was created, this provided a due date for each feature and a checklist of items needed to be completed to satify the completation of the feature. Once completed, the feature card is able to be moved to the 'Done' category, this greatly helped in organisation, time management and lessened the stress of not knowing which feature to focus on. Successfully using project and time management I was able to treat the assignment as lots of smaller tasks which felt great ticking off, or, moving to the done column. The due dates were mainly organised into a few different dates that was based around my schedule and what days I would be able to dedicate to study. 
 
-I used the trello board regularly throughout the planning and development process, checking in everyday and slowly moving the cards from 'to do', to 'doing', to 'done'. Which felt great! It was especially useful when I had not been able to study for a couple of days and needed a refresher of what needed doing, instead of feeling overwhelmed I was able to jump straight in. It definitely saved me time and in doing so was able to hand up the assignment a day earlier than I had planned. 
+I used the trello board regularly throughout the planning and development process, checking in everyday that I was able to study and slowly moving the cards from 'to do', to 'doing', to 'done'. Which felt great! It was especially useful when I had not been able to study for a couple of days and needed a refresher of what needed doing, instead of feeling overwhelmed, I was able to jump straight in. It definitely saved me time, which led to handing up the assignment a day earlier than I had planned. 
 
-Pre planning was also done over the weekend over the 20th, where I read about the many different terminal app ideas and brainstormed what could be a fun and interesting idea. I decided that by the 24th that an idea needed to be decided upon so that I had sufficient time to create a high quality functioning app. I wanted to develop something that could help me in some way moving forward in life or study, and knowing that we have CS Fundamental quizzes and exams coming up in Term 2, a quiz game was decided upon. The quiz functions are easily changable, so using it in the future for study will be a fun and rewarding way to help next term and beyond. 
+Pre planning was also done over the weekend of the 20th, where I read about many different terminal app ideas out there, and brainstormed what could be a fun idea for my app assignment. I decided that by the 24th an idea needed to be decided upon so that I had sufficient time to create a high quality functioning app. I wanted to develop an app that could help me in some way in the future, be that in life or study, and knowing that we have regular CS Fundamental tests and exams coming up in Term 2, a quiz game was decided upon. The quiz data sets are easily changable, so using it in the future for study will be an easy, fun and rewarding way to prepare. 
 
 ### Sign Up/In
 
@@ -528,10 +528,10 @@ Completion: 2nd May
 
 ### Other Cards
 
-Some other cards used in project management trello board but not mentioned above are:
+Some other cards used in the project management Trello board but not mentioned above are:
 
 ##### Project Planning
-Due date: 24th of May
+Due date: 24th of May\
 Completion: 24th of May
 ##### Package research
 Due date: 27th of May\
